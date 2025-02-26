@@ -1,5 +1,10 @@
 # Auto-updating packages
 
+```{admonition} User types
+:class: tip
+This page is useful for user type 4-5.
+```
+
 {bdg-dark}`Git Workflow`
 
 When building your book, your making use of packages: the teachbooks and jupyterbook packages themselves, but also packages for extensions. These are regularly updated, while those updates are not necessarily taken into your book. This is all defined in the `requirements.txt` file, which is provided as part of the [template](../external/template/README.md). There are three options:
