@@ -60,6 +60,7 @@ The following pages contain content written by others, part of has been reused a
 - Pages {ref}`copyright` and {ref}`copyright_considerations` include text from {cite:t}`tud_cip_24` that is used in the copyright checklist items. Original content licensed under CC BY. 
 - Page {ref}`copyright_licenses`: {numref}`Figure %s<fig_license_types>` is included unmodified, along with paraphrased and quoted text (including hyperlinks) from {cite:t}`hall21`. Work is licensed under CC BY.
 - Page {ref}`copyright_licenses`: {numref}`Figure %s<fig_license_compatibility>` is included unmodified. Work is provided by Kennisland under a CC0 license. Accessed at [](https://wiki.creativecommons.org/wiki/File:CC_License_Compatibility_Chart.png) on December 17, 2024.
+- page [](./features/versioning.md): includes text from {cite:t}`semver` that has been modified. Original content licensed under CC BY 3.0.
 
 
 

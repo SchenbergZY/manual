@@ -15,6 +15,7 @@ Furthermore, establish a clear editing and review process.
 
 For the editing process, establish some practical rules on whether to use issues, branches and forks for adding content, fixing typos or making other changes. Furthermore, it can help to write down when you expect (draft) merge/pull requests and how to use the assign and review options in GitHub/GitLab. It is advisable to have at least a maintainer review each piece of content to maintain quality and consistency. Provide explanation on how you organize the book-editing and how you'd like to receive feedback in both the readme as the published book. The use of the [repository button {fa}`fa-github`, suggest edit {fa}`pencil` and issue button {fa}`lightbulb`](https://jupyterbook.org/en/stable/basics/repository.html) is advised.
 
+(draft_book)=
 ## Define draft version of book
 If there's many people working on different parts of the book and material is staged for publication to students, we recommend using at least two separate branches, one which is released to students, the other one for development.  Using the [](../external/deploy-book-workflow/README.md), it's very easy to share multiple versions of your book on the same root-URL. 
 
