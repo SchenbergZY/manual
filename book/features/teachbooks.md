@@ -1,67 +1,12 @@
 (teachbooks-package)=
-# Pre- and postprocessing book
+# Draft-Release Workflow
 
 ```{admonition} User types
 :class: tip
-This page is useful for all users to understand how the book building process works and can be influenced, although the implementation is likely going to be carried out by User Types 3, 4 or 5.
+This page is useful for user type 3-5.
 ```
 
 {bdg-secondary}`Python Package`
-
-The package is a CLI tool that primarily provides a wrapper around the Jupyter Book package which is used for pre- and postprocessing. In this case "wrapper" refers to the CLI usage: CLI commands generally invoke `jupyter-book` commands internally; the `jupyter-book` package is _not_ distributed within the `teachbooks` package.
-
-The source code and function of the package will eventually be documented on a Sphinx-built website ([teachbooks.io/TeachBooks/](https://teachbooks.io/TeachBooks/)), however, this is currently still under construction.
-
-## Primary Features
-
-Key features (described in the sections below) include:
-- pre- and post-processing steps for the Jupyter Book package
-- Draft-Release Workflow (`teachbooks build --release book`)
-- Start and stop a local server to check your book (`teachbooks serve`)
-
-This list will be updated periodically as features are added. Check the [Release Notes](https://github.com/TeachBooks/TeachBooks/releases) in the GitHub repository for the most up-to-date information.
-
-## Installation
-
-The package is currently only [available on PyPI](https://pypi.org/project/teachbooks/) and can be installed as follows:
-
-```
-pip install teachbooks
-```
-
-The first stable release (`v1.0.0`) is expected to be released in Spring 2025. Until then the package is very much useable but will be updated frequently. Therefore, get in the habit of updating the package regularly:
-
-```bash
-pip install --upgrade teachbooks
-```
-
-We recommend you install this in an environment that is specifically dedicated for building books. Python virtual environments are a good way to manage this and would be consistent with what is used by the GitHub servers via the {ref}`Deploy Book Workflow <deploy-book-workflow>`. However, if you use non-Python tools to edit and check your book, a Conda environment may be a better choice.
-
-## Contribute
-
-This tool's repository is stored on [GitHub](https://github.com/TeachBooks/TeachBooks). The `README.md` of the repository describes how you can contribute---don't hesitate to make an issue if you would like to request new features!
-
-## Description of Features
-
-(teachbooks-pre-post)=
-### Jupyter Book Pre- and Post-Processing
-
-Using the teachbooks CLI in the book building process generally invokes Jupyter Book. Many of the features in this package are then invoked in the stages before and after this command. The process generally includes the following steps:
-
-1. Edit source code and prepare to build a book
-2. Execute `teachbooks [OPTIONS] COMMAND [ARGS]`
-3. Pre-processing step: carried out by `teachbooks`
-4. Build step: book is built using `jupyter book [OPTIONS] COMMAND [ARGS]`
-5. Post-processing step: carried out by `teachbooks`
-
-Additional options like those used in jupyterbook (`--all` for example) can be used with `teachbooks` in an identical usage as with the `jupyter-book` command.
-
-```{note}
-The pre- and post-processing steps have not yet bet formally defined; they only exist implicitly in the source code for the `build` CLI command. If you are interested in suggesting a feature or contributing to the package, please visit the [GitHub repository](https://github.com/teachbooks/teachbooks) and take a look at the Discussions and Issues. For example, [this one](https://github.com/orgs/TeachBooks/discussions/28).
-```
-
-(teachbooks-draft-release)=
-### Draft-Release Workflow
 
 Often it is necessary to prepare, review and edit materials in parallel to material that is currently being used by students, or another target audience. This workflow enables an author to easily maintain separate versions of a book without having to repeatedly comment out lines of a table of contents or page when building different versions. It is also easy to implement in CI/CD settings (it is already implemented in the {ref}Deploy Book Workflow <deploy-book-workflow>`, which builds our TeachBooks).
 
@@ -107,38 +52,22 @@ Note that `teachbooks build book` would build a book without stripping the tagge
 TeachBooks: running build with strategy 'draft'
 ```
 
-(teachbooks-serve)=
-### Local Python server
+## Installation
 
-```{tip}
-Visit the {ref}`Local Server page <setup-local-server>` for an explanation of why you need a local server.
+The package is currently [available on PyPI](https://pypi.org/project/teachbooks/) and can be installed as follows:
+
+```
+pip install teachbooks
 ```
 
-The TeachBooks Python package includes a command line interface (CLI) that can be used to start a local server:
+The first stable release (`v1.0.0`) is expected to be released in Spring 2025. Until then the package is very much useable but will be updated frequently. Therefore, get in the habit of updating the package regularly:
 
 ```bash
-teachbooks serve
-```
-By default it assumes you have a book in `./book/`, are running the command from the root `./` of your repository and will serve `./book/_build/html`. If not, it will serve the repository root. You can also specify the directory to serve:
-
-```bash
-teachbooks serve path unconventional_book_dir/_build/html
+pip install --upgrade teachbooks
 ```
 
-```{tip}
-Remember that the browser is serving static files provided by the local server and does not always keep track when they are updated. 
+We recommend you install this in an environment that is specifically dedicated for building books. Python virtual environments are a good way to manage this and would be consistent with what is used by the GitHub servers via the {ref}`Deploy Book Workflow <deploy-book-workflow>`. However, if you use non-Python tools to edit and check your book, a Conda environment may be a better choice.
 
-You should reload the page if you are editing and rebuilding the book. You can try `CTRL+R` `ctrl`+`F5`. If this does not work, on Chrome try right-clicking somewhere on the page, select \"Inspect\", open the \"Network\" tab, then reload with `CTRL+R`.
-```
+The package is a CLI tool that primarily provides a wrapper around the Jupyter Book package which is used for pre- and postprocessing. In this case "wrapper" refers to the CLI usage: CLI commands generally invoke `jupyter-book` commands internally; the `jupyter-book` package is _not_ distributed within the `teachbooks` package.
 
-To stop the server, simply run
-
-```bash
-teachbooks serve stop
-```
-
-The CLI tool is set up to make the book edit and check workflow as easy as possible locally:
-- you can rebuild the book without restarting the server.
-- it reuses an existing server if already running.
-- it prints the URL where the book is served after building the book to easily access it by clicking the link in standard output.
-- the `teachbooks serve stop` command prevents Python processes running in the backgroudn and slowing down your computer (it saves the server state in a pickle file). 
+The source code and function of the package will eventually be documented on a Sphinx-built website ([teachbooks.io/TeachBooks/](https://teachbooks.io/TeachBooks/)), however, this is currently still under construction.

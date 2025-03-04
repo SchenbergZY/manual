@@ -28,6 +28,7 @@ Remember that the browser is serving static files provided by the local server a
 You should reload the page if you are editing and rebuilding the book. You can try `CTRL+R` `ctrl`+`F5`. If this does not work, on Chrome try right-clicking somewhere on the page, select \"Inspect\", open the \"Network\" tab, then reload with `CTRL+R`.
 ```
 
+(teachbooks-serve)=
 ## TeachBooks Server: `teachbooks serve`
 
 If you have the TeachBooks Python package installed (`pip install teachbooks`), starting a server is as simple as:
@@ -37,6 +38,51 @@ teachbooks serve
 ```
 
 See the {ref}`TeachBooks Package page <teachbooks-serve>` for additional guidance on using the CLI tool.
+
+
+By default it assumes you have a book in `./book/`, are running the command from the root `./` of your repository and will serve `./book/_build/html`. If not, it will serve the repository root. You can also specify the directory to serve:
+
+```bash
+teachbooks serve path unconventional_book_dir/_build/html
+```
+
+```{tip}
+Remember that the browser is serving static files provided by the local server and does not always keep track when they are updated. 
+
+You should reload the page if you are editing and rebuilding the book. You can try `CTRL+R` `ctrl`+`F5`. If this does not work, on Chrome try right-clicking somewhere on the page, select \"Inspect\", open the \"Network\" tab, then reload with `CTRL+R`.
+```
+
+To stop the server, simply run
+
+```bash
+teachbooks serve stop
+```
+
+The CLI tool is set up to make the book edit and check workflow as easy as possible locally:
+- you can rebuild the book without restarting the server.
+- it reuses an existing server if already running.
+- it prints the URL where the book is served after building the book to easily access it by clicking the link in standard output.
+- the `teachbooks serve stop` command prevents Python processes running in the backgroudn and slowing down your computer (it saves the server state in a pickle file). 
+
+### Installation of TeachBooks
+
+The TeachBooks package is currently [available on PyPI](https://pypi.org/project/teachbooks/) and can be installed as follows:
+
+```
+pip install teachbooks
+```
+
+The first stable release (`v1.0.0`) is expected to be released in Spring 2025. Until then the package is very much useable but will be updated frequently. Therefore, get in the habit of updating the package regularly:
+
+```bash
+pip install --upgrade teachbooks
+```
+
+We recommend you install this in an environment that is specifically dedicated for building books. Python virtual environments are a good way to manage this and would be consistent with what is used by the GitHub servers via the {ref}`Deploy Book Workflow <deploy-book-workflow>`. However, if you use non-Python tools to edit and check your book, a Conda environment may be a better choice.
+
+The package is a CLI tool that primarily provides a wrapper around the Jupyter Book package which is used for pre- and postprocessing. In this case "wrapper" refers to the CLI usage: CLI commands generally invoke `jupyter-book` commands internally; the `jupyter-book` package is _not_ distributed within the `teachbooks` package.
+
+The source code and function of the package will eventually be documented on a Sphinx-built website ([teachbooks.io/TeachBooks/](https://teachbooks.io/TeachBooks/)), however, this is currently still under construction.
 
 ## Live Server: a VS Code Extension
 
