@@ -36,9 +36,7 @@ For new TeachBooks users, we advise you to use GitHub. In addition, we recommend
 
 GitLab is a cloud-based version control system built around Git; it is a competitor of GitHub, as the two provide many of the same services (but note the names of things can differ, for example, a _Pull Request_ on GitHub is a _Merge Request_ on GitLab). GitLab provides a lot more features to extent Git such as Issues, Merge Requests, CI/CD pipelines, etc.
 
-TU Delft has a license to use GitLab on our own local webservers---this means that all of the files are stored digitally on the TU Delft campus, rather than some unkown webserver that could be physically located in an undesirable (physical) location. This is also why we have our “own” GitLab located at `gitlab.tudelft.nl`, rather than the “normal” GitLab at `gitlab.com`.
-
-One reason we don't recommend beginning TeachBooks users at TU Delft start with the TU Delft GitLab is that it does not have an automatic website hosting service set up; instead, it must be manually set up on a TU Delft web server (this is straightforward to do, for exmaple, by BSc students from the Computer Science faculty). GitHub Pages provides this service for free and has proven to be very reliable, so start there!
+For TU Delft employees: TU Delft has a license to use GitLab on our own local webservers---this means that all of the files are stored digitally on the TU Delft campus, rather than some unkown webserver that could be physically located in an undesirable (physical) location. This is also why we have our “own” GitLab located at `gitlab.tudelft.nl`, rather than the “normal” GitLab at `gitlab.com`. One reason we don't recommend beginning TeachBooks users at TU Delft start with the TU Delft GitLab is that it does not have an automatic website hosting service set up; instead, it must be manually set up on a TU Delft web server (this is straightforward to do, for example, by BSc students from the Computer Science faculty). GitHub Pages provides this service for free and has proven to be very reliable, so start there!
 
 ### Additional lessons
 
