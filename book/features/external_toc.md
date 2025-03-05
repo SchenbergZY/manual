@@ -11,7 +11,12 @@ This page is useful for user type 3-5.
 ## Introduction
 When creating books, you might want to reuse material from other people or from other books you made. In some cases you might even want to have the exact same material into your book. You could do so by manually copying material over. However, whenever the source material is updated, you have to do that again. As an alternative, you can use the underlying git system to refer to the source file directly. This allows you to pick a specific version, or keep the most up-to-date version of it. This pages explains how to do so directly in the table of contents using the TeachBooks package.
 
-Previously, this was implemented using [submodules] (../external/Nested-Books/README.md), but this implementation was more difficult to use. However, the approach using submodules allows to embed pages which: refer to content in the `_static` folder of the other book, include local images referenced with raw-HTML code, are part of a private book. Furthermore, if you'd like to be notified on updates of the other book, the approach using submodules allows notifications in any case, while the approach described on this page only allows for notifications by 'watching' the other book repository and requiring the other repo owner to release new version with 'releases'.
+Previously, this was implemented using [submodules](../external/Nested-Books/README.md), but this implementation was more difficult to use. However, the approach using submodules allows to embed pages which: 
+- refer to content in the `_static` folder of the other book.
+- include local images referenced with raw-HTML code.
+- are part of a private book.
+- _automatically_ notify you upon changes in the source book using Github's "Dependabot".
+These features are not incorporated in the new workflow yet.
 
 ## What does it do?
 
