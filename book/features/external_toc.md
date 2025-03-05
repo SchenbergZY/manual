@@ -67,7 +67,8 @@ The link can be pointing to a file on a branch (which will take the most recent 
 
 If you're building your book online in GitHub, the [deploy-book-workflow](../external/deploy-book-workflow/README.md) will deal with these files during the `teachbooks build` command. If you want to build the book locally, run the command `teachbooks build`.
 
-If the source file is from another book, the contents of the `requirements.txt`, `_config.yml` and `*.bib` file are merged to make sure the page has the same functionality as in the source repository. If this leads to compatibility issue, you'll be warned during the build. Furthermore, licenses of external books will be checked to avoid copyright issues.
+If the source file is from another book, the contents of the `requirements.txt`, `_config.yml` are checked for any missing/incompatible entries. If this leads to compatibility issue, you'll be warned during the build which will help you solve these dependencies or plugins manually by updating your main book's `_config.yml` and `requirements.txt`
+Additionally, any `references.bib` files are merged into your main book's `references.bib` file, and the licenses of the external content are validated to allow for re-use. External content without a permissive license will result in an error to try to prevent any accidental copyright infringement.
 
 ## Contribute
 
