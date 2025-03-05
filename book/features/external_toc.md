@@ -20,7 +20,7 @@ These features are not incorporated in the new workflow yet.
 
 ## What does it do?
 
-This functionality, part of the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) allows you to refer to `.ipynb` and `.md` files stored on public repositories. These files are then handles as if they were normal files in your book, leading to a the file as a page in your built book. To prevent issues it warns you if there's a mismatch in `requirements.txt`, combines `.bib`-files, merges plugins in `_config.yml` and checks licenses.
+This functionality, part of the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) allows you to refer to `.ipynb`, `.md` and `.rst` files stored on public repositories. These files are then handles as if they were normal files in your book, leading to a the file as a page in your built book. To prevent issues it validates that the external content has a permissive license, automatically combines any `reference.bib` files, and warns you if there's a mismatch in `requirements.txt` or with plugins in `_config.yml`.
 
 ## Installation
 To use this extenstion, follow these steps:
