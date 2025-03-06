@@ -30,6 +30,10 @@ parts:
       - file: workflows/merge_request.md
     - file: installation-and-setup/collab
     - file: installation-and-setup/versioning
+      sections:
+      - file: installation-and-setup/versions_URLs
+      - file: installation-and-setup/versioning_changelog
+      - file: installation-and-setup/publisher
     - file: installation-and-setup/copyright.md
       sections:
       - file: installation-and-setup/copyright/considerations
@@ -62,6 +66,7 @@ parts:
         - file: external/Nested-Books/README.md
           title: (Deprecated) Share content between books using submodules
       - file: features/update_env
+      - file: features/versioning
     - file: features/sphinx_extensions.md
       sections: 
       - file: external/Download-Link-Replacer/README.md

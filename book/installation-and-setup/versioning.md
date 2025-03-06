@@ -5,27 +5,29 @@
 This page is useful for user type 4-5.
 ```
 
-Online books can be easily updated, however, this might confuse readers. Therefore, it's good practice to be aware of this and, where needed, provide explicit version to the readers. It's recommended to do this in multiple ways, which can be combined:
-- Publish versions on separate (fixed) URLs
-- Use some sort of semantic versioning with tags
-- Keep both source code as (export of) websites of archived versions
-- Publishing your book more officially
+Online books can be easily updated, however, this might confuse readers. Therefore, it's good practice to be aware of this and, where needed, provide an explicit version to the readers.
 
-## Publish version on separate (fixed) URLs
-When making books for education, typically your book can change substantially for consequential academic years. Using the [](../external/deploy-book-workflow/README.md), you can release the different version of your book all under the same root URL. If you name each students' version of each year to the `<current academic year>`, the students URL includes that academic year too. It is recommended to yearly update the current academic year branch as the `PRIMARY BRANCH` when using the [GitHub workflow](gh-workflow-settings). This ensures that students are redirected to a consistent URL, even when new versions of the book are added later. Eventually, you can add old branches to the list of `BRANCHES_ARCHIVED` when using the [GitHub workflow](gh-workflow-settings) to include a banner on the page indicating its archived state.
+For example when making taylor-made books for specific academic years, you want students to be able to find their own book (even after the academic year is over). For students which take the course twice, you might want to provide some sort of changelog of what has been changed.
 
-If you plan on maintaining only one public version, it is advisable to set `BEHAVIOR_PRIMARY` from the default `redirect` to `copy`. This ensures that the primary branch is copied to the root, making the URL more compact.
+Another example could be a book in which you add content and solutions during the course or you're fixing mistakes which may have misinformed the reader. If this is not directly visible in the table of contents, students might not be aware of these changes. Again, a changelog could be useful to inform the reader about the change. Furthermore, a smart versioning system might tell the reader something about the impact of the addition differentiating errata and additions.
 
-Don't forget to explain how you organize these URLs in your README and eventually in the book itself too with a sentence like this:
+You could also think of your published book which is referenced by other people. Don't be afraid, git makes it very easy to make this possible. Git allows you to go back in the git history. To make this as easy as possible for readers, you can assign versions using TeachBooks versioning instead of having the readers scroll through a long list of (not alway very descriptive) commit descriptions.
 
-> This is the 2024-2025-version of this book. Go to `<link to root URL>` to view the most recent version of this book, or adapt the year in `<link to root URL>/<year>` to the year when you took the course.
+Maybe this all sounds confusing and difficult. No worries! A use-case could be a book which progresses in time, but in which you don't want to deal with the additional hassle of versioning. Your book could be perfectly fine without any measures on this topic!
 
-If you've many version of the book, at some point you might reach the 1 GB GitHub Pages limit. This is only expected for extremely large books with a lot of non-text-based (binary) content. To prevent going over that limit, store large content not used for building the website (like images) on an external server. This can be another GitHub repository or a (paid) object store
+If you are part of the previous group, but at some point decide to make a new version of the book while keeping the old one, you could do so without dealing with version numbers and changelogs. Just publish both versions online.
 
-## Semantic versioning
+Finally, you might consider publishing your book at an online publisher. This could increase findability of your book and you might benefit from the brand of the publisher, but it may have flexibility, copyright and licensing consequences.
 
-## Publishing your book with publisher
-You can choose to publish your online book with a publisher. This could increase findability of your book, but may have versioning, copyright and licensing consequences
+So, there's a few use-cases for which different (combinations) of solutions exist. These are summarized in the table below in order of increasingly effort and impact. You can combine use-cases to your liking:
 
-For TU Delft employees, you can decide to publish via TU Delft OPEN interactive textbooks. Publishing will give you a copyright check, ISBN or DOI number, and registration in several shared databases but limits the amount of changes you can make to your book: for substantial changes a new published version is needed with an updated copyright checks. Small changes like typos can always be made, which are processed in the published version every hour.
-In case of editing a book for a course during that actual course and/or your book has limited value outside your course's content, we advise you only to publish an archived version of your book whenever the academic year is over.
+| Use-case | [Publish versions on separate URLs](./versions_URLs.md) | [Use TeachBooks versioning with a changelog](versioning_changelog)  | [Publish your book with a publisher](./publisher.md) |
+|:---:|:---:|:---:|:---:|
+| Book changes over time, but you don't want to deal with versioning |  |  |  | 
+| Occasionally releasing a new version while keeping the previous version, with minimal effort for versioning | Recommended | | |
+| Continuously adding content and solutions or updating crucial mistakes |  | Recommended |  |
+| Allow referencing specific versions | Can be considered | Recommended | |
+| Taylor-made book per academic year | Recommended |  Recommended in case of students retaking a course | |
+| Increase findability or benefit from publisher's brand |  |  | Recommended |
+
+Read more about each of these measures on the following sub-pages.
