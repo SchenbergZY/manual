@@ -1,4 +1,4 @@
-(teachbooks-package)=
+(external-toc)=
 # Sharing content between books in table of contents
 
 ```{admonition} User types
@@ -9,14 +9,14 @@ This page is useful for user type 3-5.
 {bdg-secondary}`Python Package: teachbooks`
 
 ## Introduction
-When creating books, you might want to reuse material from other people or from other books you made. In some cases you might even want to have the exact same material into your book. You could do so by manually copying material over. However, whenever the source material is updated, you have to do that again. As an alternative, you can use the underlying git system to refer to the source file directly. This allows you to pick a specific version, or keep the most up-to-date version of it. This pages explains how to do so directly in the table of contents using the TeachBooks package.
 
-Previously, this was implemented using [submodules](../external/Nested-Books/README.md), but this implementation was more difficult to use. However, the approach using submodules allows to embed pages which: 
-- refer to content in the `_static` folder of the other book.
-- include local images referenced with raw-HTML code.
-- are part of a private book.
-- _automatically_ notify you upon changes in the source book using Github's "Dependabot".
-These features are not incorporated in the new workflow yet.
+When creating books, you might want to reuse material from other people or from other books you made. In some cases you might even want to have the exact same material into your book. You could do so by manually copying material over. However, whenever the source material is updated, you have to do that again. As an alternative, you can use the underlying git system to refer to the source file directly. This allows you to pick a specific version, or keep the most up-to-date version of it. This pages explains how to do so directly in the table of contents using the **External Content** (or **External TOC**) feature which is part of the TeachBooks Python package.
+
+Previously, this book feature was implemented using [submodules](../external/Nested-Books/README.md), but the implementation was more difficult to use. Despite this, submodules are still a widely used Git feature that can be very useful for book authors, so check out the [submodules page](../external/Nested-Books/README.md) to learn more, especially if the External TOC tool does not satisfy your needs.
+
+```{warning}
+The External TOC features are not incorporated in the new deploy book workflow yet (this will happen once the workflow specifies `teachbooks>=0.2.0`).
+```
 
 ## What does it do?
 
