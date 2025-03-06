@@ -6,7 +6,7 @@
 This page is useful for user type 3-5.
 ```
 
-{bdg-secondary}`Python Package`
+{bdg-secondary}`Python Package: teachbooks`
 
 ## Introduction
 When creating books, you might want to reuse material from other people or from other books you made. In some cases you might even want to have the exact same material into your book. You could do so by manually copying material over. However, whenever the source material is updated, you have to do that again. As an alternative, you can use the underlying git system to refer to the source file directly. This allows you to pick a specific version, or keep the most up-to-date version of it. This pages explains how to do so directly in the table of contents using the TeachBooks package.

@@ -6,7 +6,7 @@
 This page is useful for all users to understand how the book building process works and can be influenced, although the implementation is likely going to be carried out by User Types 3, 4 or 5.
 ```
 
-{bdg-secondary}`Python Package`
+{bdg-secondary}`Python Package: teachbooks`
 
 The package is a CLI tool that primarily provides a wrapper around the Jupyter Book package which is used for pre- and postprocessing. In this case "wrapper" refers to the CLI usage: CLI commands generally invoke `jupyter-book` commands internally; the `jupyter-book` package is _not_ distributed within the `teachbooks` package.
 
