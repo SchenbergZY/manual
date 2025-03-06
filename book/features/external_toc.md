@@ -29,14 +29,14 @@ To use this extenstion, follow these steps:
 
 Install the module `teachbooks` package using `pip`:
 ```
-pip install git+https://github.com/BSchilperoort/TeachBooks@external-git-content
+pip install teachbooks>=0.2.0
 ```
     
 **Step 2: Add to `requirements.txt`**
 
 Make sure that the package is included in your project's `requirements.txt` to track the dependency:
 ```
-git+https://github.com/BSchilperoort/TeachBooks@external-git-content
+teachbooks>=0.2.0
 ```
 
 ## Usage
