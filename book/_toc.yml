@@ -61,7 +61,10 @@ parts:
       - file: external/deploy-book-workflow/README.md
       - file: features/pull_request_build.md
       - file: features/local_server
-      - file: external/Nested-Books/README.md
+      - file: features/external_toc
+        sections:
+        - file: external/Nested-Books/README.md
+          title: (Deprecated) Share content between books using submodules
       - file: features/update_env
       - file: features/versioning
     - file: features/sphinx_extensions.md

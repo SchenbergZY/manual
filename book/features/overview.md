@@ -9,11 +9,11 @@ Since the list of TeachBook features is getting quite long, we have grouped them
 - Book styling
 - TeachBooks student-view features
 
-Additionally, not all features are built using the same type of sourcecode. For transparency, tags will help differentiate between the different backgrounds of the features:
+Additionally, not all features are built and shared in the same way. We do our best to make sure that as many tools as possible are included automatically when using our TeachBooks Template Book; if you are not using the Template, we try to make sure each of our tools can be used independently. For transparency, tags will help differentiate between the different backgrounds of the features:
 - {bdg-warning}`Javascript overlay`
 - {bdg-success}`Chrome Extension`
 - {bdg-white}`GitHub App and Javascript script`
-- {bdg-secondary}`Python Package`
+- {bdg-secondary}`Python Package: teachbooks`
 - {bdg-light}`GitHub Reusable Action`
 - {bdg-light}`GitHub Template`
 - {bdg-dark}`Git Workflow`
