@@ -1,4 +1,4 @@
-(teachbooks-package)=
+(draft-release)=
 # Draft-Release Workflow
 
 ```{admonition} User types
