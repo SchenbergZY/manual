@@ -27,18 +27,14 @@ A full list of all available interactive elements is available on the website of
 - Interactive video
 - Image hotspot
 
-More information on H5p: [Teaching Support - Educational Tools - H5P](https://www.tudelft.nl/teaching-support/educational-tools/h5p)
+Some best-practices on the use of H5p:
+- H5p requires its own hosting. TU Delft provides this for TU Delft employees.
+- To startup your H5p-account, first login to H5p via Brightspace. You can follow instructions as under [https://www.tudelft.nl/teaching-support/educational-tools/h5p](https://www.tudelft.nl/teaching-support/educational-tools/h5p). 
+- After that, direct login is possible via [tudelft.h5p.com](https://tudelft.h5p.com)
+- Place your H5p-elements in a shared folder in H5p.
+- Disable the display options "Toolbar Below Content" and "Display author's name to public (anonymous users) (only relevant when content's status is set to Public )" for each element for a smooth experience. On the other hand, the options 'Toolbar below content' in combination with 'Allow users to download content' allow people to reuse your questions, making them more open.
+- Use it in combination with [](../external/sphinx-iframes/README.md) to allow for a proper dark mode, dynamic scaling and a transparent background.
 
-## Example
-Truss structures are modelled as rigid bars (so elements which cannot deform) connected by hinges (so elements can rotate with respect to one each other). In our model, hinges are indicate with a circle, and bars with a line. For example, the structure you've seen in the second example (with two diagonal bars removed) is modelled as follows:
+In the next subpage, these exampled are shown.
 
-```{figure} ../images/Truss1.svg
-:name: truss structure
-
-Bars and hinges in truss structure
-```
-
-Now that you've been introduced to truss structures, answer the following question:
-
-```{h5p} https://tudelft.h5p.com/content/1291910926067816717/embed
-```
+More information on H5p using the TU Delft provided hosting: [Teaching Support - Educational Tools - H5P](https://www.tudelft.nl/teaching-support/educational-tools/h5p)

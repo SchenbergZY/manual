@@ -74,6 +74,8 @@ parts:
       - file: basic-features/utterances.md
       - file: features/jupyterquiz.ipynb
       - file: features/h5p.md
+        sections:
+        - file: examples/h5p_examples.md
       - file: features/plotly.ipynb
       - file: external/Sphinx-Grasple-public/README.md
       - file: features/HTML_javascript.md
@@ -103,7 +105,6 @@ parts:
     chapters:
     - file: examples/overview.md
     - file: examples/book_structure.md
-    - file: examples/h5p_examples.md
     - file: examples/live_code.md
     - file: examples/example_gumbel.ipynb
     - file: examples/theory_questions.md
