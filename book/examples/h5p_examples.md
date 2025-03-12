@@ -19,6 +19,8 @@ Problem Statement
 As can be seen on the right-hand-side menu, the sub-chapter includes the problem statement, the elaboration on the model and solution method and finally an exercise for the student. The code in the page is activated by pressing the live code button which will make the code cells editable and executable. Additionally, interactive figures are included into the text with movable sliders to directly see the effect of the changes made.
 
 ```{iframe} ../_static/power.html
+:height: 580
+:width: 100%
 ```
 
 The H5p quizzes can shine in the section on questions, discussions and comments. Next to many multiple choice questions (which are discussed later) there are dialog cards which can ask more conceptual and open ended questions. Pressing on the blue button `Turn` will flip around the card and reveal the model answer. The great thing about the integration of both interactive aspects (coding and questions) helps the student to play around with the code and understand the topic from a less theoretical point-of-view.
