@@ -19,7 +19,7 @@ Problem Statement
 As can be seen on the right-hand-side menu, the sub-chapter includes the problem statement, the elaboration on the model and solution method and finally an exercise for the student. The code in the page is activated by pressing the live code button which will make the code cells editable and executable. Additionally, interactive figures are included into the text with movable sliders to directly see the effect of the changes made.
 
 ```{iframe} ../_static/power.html
-:height: 580
+:height: 580px
 :width: 100%
 ```
 
