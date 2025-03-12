@@ -18,28 +18,17 @@ Problem Statement
 
 As can be seen on the right-hand-side menu, the sub-chapter includes the problem statement, the elaboration on the model and solution method and finally an exercise for the student. The code in the page is activated by pressing the live code button which will make the code cells editable and executable. Additionally, interactive figures are included into the text with movable sliders to directly see the effect of the changes made.
 
-```{figure} figures/Live_code2.PNG
----
-width: 600
-align: center
----
-Interactive Graph
+```{iframe} ../_static/power.html
 ```
 
 The H5p quizzes can shine in the section on questions, discussions and comments. Next to many multiple choice questions (which are discussed later) there are dialog cards which can ask more conceptual and open ended questions. Pressing on the blue button `Turn` will flip around the card and reveal the model answer. The great thing about the integration of both interactive aspects (coding and questions) helps the student to play around with the code and understand the topic from a less theoretical point-of-view.
 
-```{figure} figures/cards1.PNG
----
-width: 700
-align: center
----
-Dialoge Card
+```{h5p} https://tudelft.h5p.com/content/1292260184374358717/embed
 ```
 
-**Try it out!**
-
-```{h5p} https://tudelft.h5p.com/content/1292050206829217497/embed
+```{h5p} https://tudelft.h5p.com/content/1292260188487459217/embed
 ```
+
 
 ## Question Set 
 
@@ -49,20 +38,10 @@ Question sets consist of a question and one or more possible answers to that que
 
 The following question sets are taken from chapter 3.3. Weighted least-squares estimation of the MUDE 23/24 book. The chapter builds on the previous chapter on simple least-squares estimation and dwelves into the importance and properties of the weight matrix. The student is primarily quizzed using multiple choice questions to check their understanding. The answers can be provided in the shape of text, figures, equations, matrices and probably much more.
 
-```{figure} figures/Question_set_1.PNG
----
-width: 600
-align: center
----
-Text Answers
+```{h5p} https://tudelft.h5p.com/content/1292060781042105617/embed
 ```
 
-```{figure} figures/Question_set_2.PNG
----
-width: 600
-align: center
----
-Equations Answers
+```{h5p} https://tudelft.h5p.com/content/1292046737060674407/embed
 ```
 
 Since these questions are meant to develop the understanding of the students, feedback is vital! Feedback can be built into the questions to explain the reasoning behind a correct answer.
@@ -98,12 +77,7 @@ The complex fill in the blanks can be used to evaluate numerical answers.
 
 Chapter 3.7. Non-linear least-squares estimation from the MUDE 23/24 book makes use of the complex fill in the blanks quiz in order to check that the students understood the composition of the Jacobian Matrix specifically used in deriving the linearized functional model. This model is essential for accurately estimating values and assessing system behavior of complex processes that arent linear. 
 
-```{figure} figures/blanks1.PNG
----
-width: 600
-align: center
----
-Answer Boxes
+```{h5p} https://tudelft.h5p.com/content/1292064774866067777/embed
 ```
 As you can see, the precision of the answer sought for is specified and the figure below shows again the incorporation of feedback.
 
@@ -119,12 +93,7 @@ Wrong Answer + Feedback
 
 Since the cells can be used to evaluate numerical answers, they are an easy way to quiz the student on matrices and evaluate the result of each position independently. The optimization team of MUDE took this a step further and used this set-up to quiz the students on the SIMPLEX method. This method automates the solving of the augmented form of a linear programming problem with continuous variables. It makes use of tables and the manipulation of equations to find the optimal values. Unfortunately, with a large number of variables this tables tend to get quite big and filling in the cells becomes laborious.
 
-```{figure} figures/blanks3.PNG
----
-width: 600
-align: center
----
-SIMPLEX Method
+```{h5p} https://tudelft.h5p.com/content/1292131432784432037/embed
 ```
 **Truss structure**
 
@@ -157,14 +126,10 @@ align: center
 Problem Statement
 ```
 
-```{figure} figures/truefalse1.PNG
----
-width: 600
-align: center
----
-True or False
+The small circles below the question indicates that there are more questions in this series which can be viewed by clicking on the blue arrow pointing towards the left or right. Open the second, fourth and fifth question:
+
+```{h5p} https://tudelft.h5p.com/content/1292120485436114287/embed
 ```
-The small circles below the question indicates that there are more questions in this series which can be viewed by clicking on the blue arrow pointing towards the left or right.
 
 **Try it out!**
 
@@ -177,15 +142,14 @@ Drag and Drop questions are useful to make the distinction between different con
 
 **MUDE - Optimization**
 
-In this chapter, it was important that the students made the distinction between the terminology and mathematical meaning between different elements of the graphical solution method. A drag and drop question was used to link the term to its definition. The answer boxes can be dragged to the correct title in a playful manner.jup
+In this chapter, it was important that the students made the distinction between the terminology and mathematical meaning between different elements of the graphical solution method. A drag and drop question was used to link the term to its definition. The answer boxes can be dragged to the correct title in a playful manner.
 
-```{figure} figures/drag1.PNG
----
-width: 600
-align: center
----
-Drag and Drop
+The fourth question in this question set is a drag and drop question:
+
+```{h5p} https://tudelft.h5p.com/content/1292121213033110307/embed
 ```
+
+The correct answer leads to:
 
 ```{figure} figures/drag2.PNG
 ---

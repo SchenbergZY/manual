@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CO2 vs Power</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .slider {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .slider-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            width: 100%;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .output p {
+            margin: 5px 0;
+        }
+        .output .emoji {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sliderContainer" class="slider-container"></div>
+    <div id="outputContainer" class="output"></div>
+
+    <script>
+        var RPM = [800, 1000, 1200, 1400, 1700, 1800];
+        var CO2 = [708, 696.889, 688.247, 682.897, 684.955, 697.3];
+        var POW = [161.141, 263.243, 330.51, 381.561, 391.17, 370];
+
+        function weighted_obj(s) {
+            var delta_p = 1 / 3;
+            var delta_c = 1 - delta_p;
+            return -delta_p * POWfunc(s) + delta_c * CO2func(s);
+        }
+
+        var Pt = 460;
+        var Ct = 640;
+        function goal_attainment(s) {
+            return Math.max(Pt - POWfunc(s), CO2func(s) - Ct);
+        }
+
+        function CO2func(s) {
+            return interpolate(RPM, CO2, s);
+        }
+
+        function POWfunc(s) {
+            return interpolate(RPM, POW, s);
+
+        }
+
+        function interpolate(x, y, s) {
+            var i = 1;
+            while (x[i] < s) {
+                i++;
+            }
+            var x0 = x[i - 1];
+            var x1 = x[i];
+            var y0 = y[i - 1];
+            var y1 = y[i];
+            var t = (s - x0) / (x1 - x0);
+            
+            // Calculate the coefficients for the cubic spline interpolation
+            var h = x1 - x0;
+            var a = (1 - t) * (1 - t) * (1 - t);
+            var b = 3 * t * (1 - t) * (1 - t);
+            var c = 3 * t * t * (1 - t);
+            var d = t * t * t;
+            
+            // Perform cubic spline interpolation
+            var interpolatedValue = a * y0 + b * y[i - 1] + c * y[i] + d * y1;
+            
+            return interpolatedValue;
+        }
+
+        function func(x) {
+            
+            var weighted_obj_val = weighted_obj(x).toFixed(2);
+            var goal_attainment_val = goal_attainment(x).toFixed(2);
+
+            var outputContainer = document.getElementById("outputContainer");
+            var weighted_obj_val = weighted_obj(x).toFixed(2);
+            var goal_attainment_val = goal_attainment(x).toFixed(2);
+            var POWfunc_val = POWfunc(x).toFixed(2);
+            var CO2func_val = CO2func(x).toFixed(2);
+            
+            outputContainer.innerHTML = "<p>Weighted 🏋️ Objective: " + " = - 1/3 * POWfunc(" + x + ") + 2/3 * CO2func(" + x + ") = - 1/3 * "  + POWfunc_val + " + 2/3 * "  + CO2func_val + " = " + weighted_obj_val + "</p>" +
+                "<p>Goal 🥅 Attainment: max(460 - POWfunc(" + x + "), CO2func(" + x + ") - 640) = max(460 - " +  POWfunc_val + ", " + CO2func_val +  " - 640) = " + goal_attainment_val ;
+
+            var plotContainer = document.createElement("div");
+            plotContainer.id = "plotContainer";
+            plotContainer.style.height = "400px";
+            outputContainer.appendChild(plotContainer);
+
+            var plotData = [
+                {
+                    x: [CO2func(parseFloat(document.getElementById("x").value))],
+                    y: [POWfunc(parseFloat(document.getElementById("x").value))],
+                    type: 'scatter',
+                    mode: 'markers',
+                    name: 'Selected RPM'
+                }
+            ];
+
+            var plotLayout = {
+                xaxis: {
+                    title: 'CO2 (g/kWh)',
+                    range: [680, 710]
+                },
+                yaxis: {
+                    title: 'Power functions (kW)',
+                    range: [400, 150], // Flipped y-axis range
+                },
+                title: {
+                    text: 'CO2 vs Power',
+                    font: {
+                        size: 16
+                    }
+                }
+            };
+
+            Plotly.newPlot('plotContainer', plotData, plotLayout);
+        }
+
+        var sliderContainer = document.getElementById("sliderContainer");
+        var xSlider = document.createElement("input");
+        xSlider.type = "range";
+        xSlider.min = 800;
+        xSlider.max = 1800;
+        xSlider.value = 1000;
+        xSlider.step = 1;
+        xSlider.id = "x";
+        xSlider.oninput = function() {
+            func(parseFloat(document.getElementById("x").value));
+        };
+        xSlider.classList.add("slider");
+
+        var xLabel = document.createElement("label");
+        xLabel.innerHTML = "RPM";
+        xLabel.setAttribute("for", "x");
+        xLabel.style.textAlign = "right";
+
+        var valueDisplay = document.createElement("span");
+        valueDisplay.innerHTML = xSlider.value; // Set the initial value of the display element
+        valueDisplay.style.marginLeft = "10px"; // Add some margin to separate the value from the slider
+
+        xSlider.oninput = function() {
+            valueDisplay.innerHTML = xSlider.value; // Update the value display element when the slider value changes
+            func(parseFloat(document.getElementById("x").value));
+        };
+
+        sliderContainer.appendChild(xLabel);
+        sliderContainer.appendChild(xSlider);
+        sliderContainer.appendChild(valueDisplay); // Append the value display element
+
+
+        var outputContainer = document.getElementById("outputContainer");
+        outputContainer.style.height = "400px";
+        
+
+        // Call func with initial values
+        func(parseFloat(document.getElementById("x").value));
+    </script>
+</body>
+</html>
