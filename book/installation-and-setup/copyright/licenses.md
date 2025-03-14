@@ -72,11 +72,12 @@ The "ND" license prohibits derivative works: in other words, the material cannot
 The "NC" license prohibits commercial use. It sounds nice, right?
 > Great, I can guarantee that big for-profit companies can't use my work for their own gain. This is important to me at a public or non-profit institution.
 
-To be honest, it is more trouble than it's worth, primarily because the law seems to be vague on what constitutes commercial use. Many universities require tuition to cover operating expenses, which is often broken down into by nubmer of students, credits, courses, etc. This could be interpreted as a form of commercial use and thus prevent other educators from using your work, which is precisely the opposite of what you were trying to facilitate!
+To be honest, it is more trouble than it's worth, primarily because the law seems to be vague on what constitutes commercial use. Many universities require tuition to cover operating expenses, which is often broken down into by number of students, credits, courses, etc. This could be interpreted as a form of commercial use and thus prevent other educators from using your work, which is precisely the opposite of what you were trying to facilitate!
 
 ### Why is SA not preferred?
 
 The "SA" license requires that any derivative works be released under the same license. If you have two sources, each of which has a different SA license, how can you include your work that incorporates that content under the same license? You can't! Once again, if your goal is to convince others to share your work in a responsible way, your effort is thwarted. As with NC, this type of license seems to be more trouble than it's worth.
+A similar story holds for the other 'copyleft' lincenses, as all copyleft licences require that the original license is perserved in derivative work to some degree. 
 
 ### Summary of License Type Compatibility
 
