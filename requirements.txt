@@ -8,7 +8,7 @@ sphinx-exercise == 1.0.1
 sphinx-proof == 0.2.0
 sphinx-named-colors == 1.0.1
 sphinx-iframes == 1.0.5
-sphinx-prime-applets == 1.0.1
+sphinx-prime-applets == 1.0.2
 
 git+https://github.com/TeachBooks/Sphinx-Thebe
 
