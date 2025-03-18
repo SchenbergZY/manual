@@ -72,7 +72,6 @@ parts:
       - file: external/Download-Link-Replacer/README.md
       - file: external/Sphinx-launch-buttons/README.md
       - file: basic-features/utterances.md
-      - file: features/jupyterquiz.ipynb
       - file: features/h5p.md
         sections:
         - file: examples/h5p_examples.md
@@ -86,6 +85,7 @@ parts:
         sections:
         - file: features/widgets.ipynb
         - file: features/exercise_checking.ipynb
+      - file: features/jupyterquiz.ipynb
       - file: external/sphinx-iframes/README.md
       - file: external/Sphinx-PRIME-applets/README.md
     - file: features/visuals.md
