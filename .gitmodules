@@ -54,3 +54,7 @@
 	path = book/external/Sphinx-PRIME-applets
 	url = https://github.com/TeachBooks/Sphinx-PRIME-applets.git
 	branch = manual
+[submodule "book/external/JupyterBook-Patches"]
+	path = book/external/JupyterBook-Patches
+	url = https://github.com/TeachBooks/JupyterBook-Patches.git
+	branch = manual_docs
