@@ -6,7 +6,7 @@
 This page is useful for user type 3-5.
 ```
 
-{bdg-link-secondary}`Python Package: teachbooks <./teachbooks.html>`
+{bdg-link-secondary}`Python Package: teachbooks <./overview#teachBooks-python-package>`
 
 ## Introduction
 
