@@ -6,7 +6,7 @@
 This page is useful for user type 3-5.
 ```
 
-{bdg-link-secondary}`Python Package: teachbooks <./teachbooks.html>`
+{bdg-link-secondary}`Python Package: teachbooks <./overview#teachBooks-python-package>`
 
 Often it is necessary to prepare, review and edit materials in parallel to material that is currently being used by students, or another target audience. This workflow enables an author to easily maintain separate versions of a book without having to repeatedly comment out lines of a table of contents or page when building different versions. It is also easy to implement in CI/CD settings (it is already implemented in the {ref}`Deploy Book Workflow <deploy-book-workflow>`, which builds our TeachBooks).
 
