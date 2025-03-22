@@ -13,7 +13,7 @@ Additionally, not all features are built and shared in the same way. We do our b
 - {bdg-warning}`Javascript overlay`
 - {bdg-success}`Chrome Extension`
 - {bdg-white}`GitHub App and Javascript script`
-- {bdg-link-secondary}`Python Package: teachbooks <./teachbooks.html>`
+- {bdg-link-secondary}`Python Package: teachbooks <./overview.html#teachbooks-python-package>`
 - {bdg-light}`GitHub Reusable Action`
 - {bdg-light}`GitHub Template`
 - {bdg-dark}`Git Workflow`
