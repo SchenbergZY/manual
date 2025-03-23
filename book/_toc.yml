@@ -98,7 +98,6 @@ parts:
       sections:
       - file: external/annotater/README.md
       - file: basic-features/hypothesis.md
-    - file: features/teachbooks
 
   - caption: Examples
     chapters:
