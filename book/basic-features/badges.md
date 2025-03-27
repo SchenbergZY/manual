@@ -49,13 +49,13 @@ The basic code syntax for creating a button is as follows:
     :color: primary
     ``` 
 ```
-
-```{button-ref} ../features/overview.md
+[](../features/overview.md)
+```{button-ref} feature_overview
 :color: secondary
 ``` 
 
 ```
-    ```{button-ref} ../features/overview.md
+    ```{button-ref} feature_overview
     :color: secondary
     ``` 
 ```
