@@ -29,9 +29,11 @@ $$ F = m \cdot a = 10 \cdot 9.81 = 98 \text{N}$$
 
 To number the equations and refer in text, you need to provide a label to the equation. Just put the label between brackets and place it after the last \$\$, like this:
 
-    $$
-        F = m \cdot a
-    $$ (newtons_second_law)
+```md
+$$
+    F = m \cdot a
+$$ (newtons_second_law)
+```
 
 Resulting in:
 
