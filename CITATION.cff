@@ -14,8 +14,11 @@ preferred-citation:
   - email: info@teachbooks.io
     name: 'TeachBooks Development Team'
     website: 'https://teachbooks.io/'
-  url: 'https://teachbooks.io/manual/' 
+  url: 'https://doi.org/10.5281/zenodo.15100847' 
   identifiers:
+    - type: doi
+      value: 10.5281/zenodo.15100848
+      description: Zenodo record
     - type: url
       value: 'https://teachbooks.io/manual/'
       description: 'Published book on GitHub Pages'
@@ -39,6 +42,8 @@ preferred-citation:
   license: CC-BY-4.0
   license-url: 'https://creativecommons.org/licenses/by/4.0/'
   copyright: '© 2025 TeachBooks'
+  version: v1.2.1
+  date-released: '2025-03-28'
   languages:
     - en
   contact:
