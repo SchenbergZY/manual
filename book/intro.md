@@ -1,5 +1,7 @@
 # TeachBooks Manual
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15100848.svg)](https://doi.org/10.5281/zenodo.15100848)
+
 This manual is primarily designed for and by teachers for use in education, but should be a useful resource for anyone interested in creating and collaborating on <a href="https://jupyterbook.org/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="images/logo-wide.svg" alt="Jupyter book"></a>. Our aim is to provide a simple way to start book-making for new users (it only takes 10 clicks!) through advanced usage for experienced users. We hope you find this resource useful and refer back to it often.
 
 TeachBooks originated at Delft University of Technology in the Netherlands, and some of the material in this Manual reflects tools and resources specific to TU Delft. With the exception of a few tools for which we have educational licenses at Delft, everything in this Manual is open source. Despite this, we are happy to grow our community beyond Delft and welcome contributions from all users.
