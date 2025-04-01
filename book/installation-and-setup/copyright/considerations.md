@@ -1,10 +1,14 @@
-(copyright_considerations)=
-# Copyright Considerations
-
+````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
 This page reuses adapted CC BY content from {cite:t}`tud_cip_24`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
 ```
+````
+
+(copyright_considerations)=
+# Copyright Considerations
+
+
 
 Copyright law dictates how online book material can and should be created, maintained and shared. An author should understand a few key concepts, as well as best practices, in order to create a book that not only is a useful resource, but, also fairly reuses the work of others and, if provided with an open license, enables original content to also be reused.
 

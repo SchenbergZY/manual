@@ -76,32 +76,17 @@ This produces
 ##### Format as custom admonition
 The previous syntax might be used for other purposes as well. An alternative is a custom attribution admonition:
 
+````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
+Written by <author(s)>
 This page reuses CC BY 4.0 licensed content from {cite:t}`jason_moore`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
 ```
+````
 
 Therefore, use the following syntax:
 
 `````md
-```{attributiongrey} Attribution
-:class: attribution
-Written by <author(s)>
-This page reuses <license> content from {cite:t}`bib_id`. {fa}`quote-left`{ref}`Find out more here.<link to external resources section on credits and license page>`
-```
-`````
-
-Or to place this attribution in the margin:
-
-````{margin}
-```{attributiongrey} Attribution
-:class: attribution
-Written by <author(s)>
-This page reuses CC BY 4.0 licensed content from {cite:t}`jason_moore`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
-```
-````
-
-`````md
 ````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
@@ -110,6 +95,7 @@ This page reuses <license> content from {cite:t}`bib_id`. {fa}`quote-left`{ref}`
 ```
 ````
 `````
+
 To make this possible we use the custom admonitions of [the custom named colors sphinx extension](https://teachbooks.io/manual/external/Sphinx-Named-Colors/README.html#admonitions) in combination with a [custom css file](../../_static/attribution.css) in `book/_static/` and the line `named_colors_custom_colors: {'attributiongrey':[150,150,150]}` in `book/_config.yml` under `sphinx: config: `
 
 
