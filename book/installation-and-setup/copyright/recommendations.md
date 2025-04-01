@@ -97,7 +97,7 @@ Or to place this attribution in the margin:
 ```{attributiongrey} Attribution
 :class: attribution
 Written by <author(s)>
-This page reuses <license> content from {cite:t}`bib_id`. {fa}`quote-left`{ref}`Find out more here.<link to external resources section on credits and license page>`
+This page reuses CC BY 4.0 licensed content from {cite:t}`jason_moore`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
 ```
 ````
 
