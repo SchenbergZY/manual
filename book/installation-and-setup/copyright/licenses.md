@@ -1,7 +1,10 @@
 (copyright_licenses)=
 # Licenses
 
-> This page reuses adapted CC BY content from {cite:t}`hall21`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+```{attributiongrey} Attribution
+:class: attribution
+This page reuses adapted CC BY content from {cite:t}`hall21`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+```
 
 Here we present an overview of various license types, with a particular focus on the preference of TeachBooks to use Permissive Open Licenses, regardless of whether material is _content, code or data_ (described below). 
 

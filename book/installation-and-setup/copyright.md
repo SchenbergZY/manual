@@ -1,7 +1,10 @@
 (copyright)=
 # Copyright and Licenses checklist
 
-> This page reuses adapted CC BY content from the TU Delft Library. {cite:p}`tud_cip_24`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+```{attributiongrey} Attribution
+:class: attribution
+This page reuses adapted CC BY content from the TU Delft Library. {cite:p}`tud_cip_24`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+```
 
 ```{admonition} User types
 :class: tip
