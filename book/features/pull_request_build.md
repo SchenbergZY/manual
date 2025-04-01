@@ -1,9 +1,11 @@
-# Build pull requests from forks
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This section is useful for user type 3-5.
 ```
+````
+
+# Build pull requests from forks
 
 When writing a TeachBook it is useful to automatically build and view these changes online. This exactly why we designed and build the [deploy-book-workflow](../external/deploy-book-workflow/README.md) tool, which also allows for multiple versions of your book to exist at any time with customizable URL's. However, it doesn't cover all use cases. Luckily, **Read the Docs** is a free tool that can easily be used for this purpose. It also provides a very easy way to view differences between versions on each page!
 

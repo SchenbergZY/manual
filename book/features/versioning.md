@@ -1,6 +1,10 @@
-# TeachBooks Versioning
+````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This page reuses adapted CC BY 3.0 content from Tom Preston-Werner {cite:t}`semver`. {fa}`quote-left`{ref}`Find out more here.<external_resources>````
+````
 
-> This page reuses adapted CC BY 3.0 content from Tom Preston-Werner {cite:t}`semver`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+# TeachBooks Versioning
 
 Inspired by versioning systems in software management (i.e. semantic and CalVer versioning) TeachBooks suggests a versioning guideline in which the version number tells the reader about the impact of the change. This might more suitable for your online books than the more traditional way of versioning paper books (version 1, 2, etc.), because of the amount of edits which online books allow. We recommend TeachBooks versioning, which comes in two flavors:
 

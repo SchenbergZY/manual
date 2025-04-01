@@ -1,12 +1,14 @@
-(setup-local-server)=
-# Local Server to view interactive elements locally
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This section is useful for user type 4-5.
 ```
 
 {bdg-secondary}`Python Package: teachbooks`
+````
+
+(setup-local-server)=
+# Local Server to view interactive elements locally
 
 Perhaps you have already noticed that when building a book and testing it locally on your computer, some features do not work the way you expect, or worse---do not work at all! This is because many interactive features rely on browser functionality to work properly, for example: Grasple/H5p iframe exercises, Sphinx-Thebe Python interactivity and HTML/Javascript elements. Although the website is _static_ (i.e., there is no code running on a webserver that generates the content), modern web browsers have their own internal computing environments that run processes to deliver the rich content we desire in our books.
 

@@ -1,9 +1,11 @@
-# Install & authenticate required software
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 4-5.
 ```
+````
+
+# Install & authenticate required software
 
 Now that the types of users have been explained, you might have an idea which type corresponds to you! 
 

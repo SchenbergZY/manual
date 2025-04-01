@@ -1,9 +1,11 @@
-# Which git provider to choose
-
+````
 ```{admonition} User types
 :class: tip
 This page is useful for user type 4-5.
 ```
+````
+
+# Which git provider to choose
 
 The setup of tools and URLs is dependent on agreements you've made on [collaboration](./collab.md).
 

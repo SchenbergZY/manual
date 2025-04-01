@@ -1,11 +1,13 @@
-# H5p interactive elements
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This section is useful for user type 3-5.
 ```
 
 {bdg-danger}`iframe`
+````
+
+# H5p interactive elements
 
 ## Instruction
 H5p elements are interactive HTML-blocks which can be embedded in a Jupyter Book using an iframe. An H5p element can be created in the [TU Delft portal on the H5p website](https://tudelft.h5p.com/content) (sign in via Brightspace to H5p required first). The iframe code can be copied at Edit - Publish - Public - Embed code. This html code can be directly added to your markdown file using [](../external/sphinx-iframes/README.md):

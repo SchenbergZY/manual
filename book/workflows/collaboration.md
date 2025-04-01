@@ -1,9 +1,11 @@
-# Collaborative book-editing
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 3, 4 and 5.
 ```
+````
+
+# Collaborative book-editing
 
 A jupyter book is composed out of many files which contain the educational content produced by you. Through the use of branches it is possible to work on the book at the same time as your team-members. Working on content for the book is mainly individual work, the beauty of Git comes in when everybody's changes are merged into the main branch.
 

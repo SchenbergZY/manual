@@ -1,11 +1,13 @@
-# Auto-updating packages
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 4-5.
 ```
 
 {bdg-dark}`Git Workflow`
+````
+
+# Auto-updating packages
 
 When building your book, your making use of packages: the teachbooks and jupyterbook packages themselves, but also packages for extensions. These are regularly updated, while those updates are not necessarily taken into your book. This is all defined in the `requirements.txt` file, which is provided as part of the [template](../external/template/README.md). There are three options:
 1. `requirements.txt` only contains names of packages like: `download_link_replacer`. In that case, your [deploy-book-workflow](../external/deploy-book-workflow/README.md) will take the most up-to-date version when making your book website once a week (as the chache will be cleared once a week). This might lead to unexpected changes when new version come out, although new version are in general backwards compatible.

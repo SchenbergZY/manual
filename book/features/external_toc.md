@@ -1,12 +1,14 @@
-(external-toc)=
-# Sharing content between books in table of contents
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 3-5.
 ```
 
 {bdg-secondary}`Python Package: teachbooks`
+````
+
+(external-toc)=
+# Sharing content between books in table of contents
 
 ## Introduction
 
