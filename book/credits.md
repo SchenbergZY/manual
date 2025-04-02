@@ -5,11 +5,13 @@ You can refer to this book in its entirety as:
 
 > TeachBooks Development Team (2024), _TeachBooks Manual_. https://github.com/TeachBooks/manual. Retreived [Month, Year]. CC BY 4.0.
 
+This book is already registered on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15100848.svg)](https://doi.org/10.5281/zenodo.15100848)
+
 The introduction, structure and decisions on content is done under direction of the TeachBooks Development Team. The content is written by many contributors, of which there are many.
 
-We anticipate that the content of this book will change continuously. Therefore, if you'd like to refer to a specific chapter, we recommend using the source code directly with the citation that refers to the GitHub repository and lists the date and name of the file. Although content will be added over time, chapter titles and URL's in this book are expected to remain relatively static after Spring 2025. You can refer to individual chapters or pages within this book as:
+We anticipate that the content of this book will change continuously. Therefore, if you'd like to refer to a specific chapter, we recommend using the source code directly with the citation that refers to the GitHub repository and lists the date and name of the file. Although content will be added over time, chapter titles and URL's in this book are expected to remain relatively static. You can refer to individual chapters or pages within this book as:
 
-> `<Primary Author>` (2024), `<Title of Chapter or Page>`. In _TeachBooks Manual_. https://github.com/TeachBooks/manual (chapter `./book/intro/`, retrieved [`<date>`]).
+> `<Title of Chapter or Page>`. In _TeachBooks Manual_. https://github.com/TeachBooks/manual (chapter `./book/intro/`, retrieved [`<date>`]).
 
 Better yet, include a link to the specific commit! _If you know what this means, we assume you know how to do it._
 

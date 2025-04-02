@@ -1,9 +1,11 @@
-# Git: GitHub Desktop / Git in VS Code
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 4 and 5.
 ```
+````
+
+# Git: GitHub Desktop / Git in VS Code
 
 In this section you will learn how to install Git locally. Courses on Git usually make use of the command line interface to do run Git, but this introduces a steep learning curve. Instead, using Git from VS Code / GitHub Desktop is much more visual (i.e., more "clicky"), and therefore easier to use for those inexperienced with the command line.
 

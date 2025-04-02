@@ -51,7 +51,7 @@ sphinx:
       tex:
         macros:
           "newcolor": ['\definecolor{newcolor}{RGB}{111, 29, 119}{\color{newcolor}#1}',1]
-    named_colors_custom_colors: {'onlylight':[165,21,160],'lightanddark':[45,180,117,204,158,110],'hyphen-color':[45,180,117,165,21,160]}
+    named_colors_custom_colors: {'onlylight':[165,21,160],'lightanddark':[45,180,117,204,158,110],'hyphen-color':[45,180,117,165,21,160],'attributiongrey':[150,150,150]}
   local_extensions:
     apastyle: _ext/
     bracket_citation_style: _ext/

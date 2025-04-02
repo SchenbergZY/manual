@@ -1,12 +1,14 @@
-(apa)=
-# APA References
-
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 4 and 5.
 ```
 
 {bdg-primary}`(To be converted into) Sphinx Extension`
+````
+
+(apa)=
+# APA References
 
 ```{note}
 This feature is stable but because it relies on a local extension that is part of your book files and _not_ managed as part of a computing environment (e.g., `pip` or `conda`), unknown issues may arise. We would like to convert this feature into an independent Sphinx extension and/or Pybtext plugin. Visit the [project page on GitHub](https://github.com/orgs/TeachBooks/projects/17) to learn more.

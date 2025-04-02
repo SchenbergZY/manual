@@ -6,7 +6,7 @@ If you plan on maintaining only one public version, it is advisable to set `BEHA
 
 To share the built book / website of old versions for your book on GitHub you have a few options:
 - Create a branch for each version. When doing this, [the GitHub workflow](../external/deploy-book-workflow/README.md) will build it on GitHub pages. Here's a few tips:
-  - It's advised to use the version as branch name. In case of versions per academic year, you can just name each branch to the current academic year,  this leads to the URL with the same name. In that case.
+  - It's advised to use the version as branch name. In case of versions per academic year, you can just name each branch to the current academic year, this leads to the URL with the same academic year..
   - It is recommended to update the primary branch as the `PRIMARY BRANCH` when using the [GitHub workflow](gh-workflow-settings) whenever a new version is considered to be the most primary one. This ensures that readers are redirected to a consistent URL, even when new versions of the book are added later.
   - Eventually, you can add old branches to the list of `BRANCHES_ARCHIVED` when using the [GitHub workflow](gh-workflow-settings) to include a banner on the page indicating its archived state. Alternatively, you can add a banner manually to `_config.yml`, as explained [here](../basic-features/banner.md).
   - If you're using tags (as will be explained in [later](./versioning_changelog.md)), you can create a branch from a tag locally by running: `git branch <new_branch name> <tag/version>`.

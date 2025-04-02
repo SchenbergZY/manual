@@ -1,5 +1,6 @@
 # TeachBooks Manual
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15100848.svg)](https://doi.org/10.5281/zenodo.15100848)
 [![call-deploy-book](https://github.com/TeachBooks/manual/actions/workflows/call-deploy-book.yml/badge.svg)](https://github.com/TeachBooks/manual/actions/workflows/call-deploy-book.yml)
 
 This manual assists you in creating and collaborating on [JupyterBooks](https://jupyterbook.org/) for educational purposes. Some parts are specifically aimed for teachers at Delft University of Technology, although all material and tools are openly available. This manual aims at providing an easy start and advanced usages for new and existing users with or without skills on this topic. it is part of TeachBooks, for more information visit [https://teachbooks.io/](https://teachbooks.io/).
