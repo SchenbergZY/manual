@@ -5,7 +5,7 @@ You can refer to this book in its entirety as:
 
 > TeachBooks Development Team (2024), _TeachBooks Manual_. https://github.com/TeachBooks/manual. Retreived [Month, Year]. CC BY 4.0.
 
-This book is already registered on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15100848.svg)](https://doi.org/10.5281/zenodo.15100848)
+This book is registered on Zenodo too: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15100848.svg)](https://doi.org/10.5281/zenodo.15100848)
 
 The introduction, structure and decisions on content is done under direction of the TeachBooks Development Team. The content is written by many contributors, of which there are many.
 
