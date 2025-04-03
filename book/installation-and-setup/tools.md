@@ -1,4 +1,4 @@
-````
+````{margin}
 ```{admonition} User types
 :class: tip
 This page is useful for user type 4-5.
