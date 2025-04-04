@@ -30,10 +30,12 @@ As the TeachBooks Python Package and the Deploy Book Workflow are important tool
 (teachbooks_package)=
 ## TeachBooks Python Package
 
+````{margin}
 ```{admonition} User types
 :class: tip
 This section is useful for user type 4-5.
 ```
+````
 
 The TeachBooks Python package is a collection of tools that are used to enhance the Jupyter Book software package by adding features and making customization easier. In general, it is only of interest to user types 4 and 5 when building a book locally. However, it may be important for other users to know what the package does, as it is incorporated in the [Deploy Book Workflow](./deploy-book-workflow.md) and, therefore, any book created from the [TeachBooks Template](../external/template/README.md). This raises two important points:
 
