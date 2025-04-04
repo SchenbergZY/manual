@@ -16,9 +16,7 @@ When creating books, you might want to reuse material from other people or from 
 
 Previously, this book feature was implemented using [submodules](../external/Nested-Books/README.md), but the implementation was more difficult to use. Despite this, submodules are still a widely used Git feature that can be very useful for book authors, so check out the [submodules page](../external/Nested-Books/README.md) to learn more, especially if the External TOC tool does not satisfy your needs. Submodules have a few additional features not (yet) implemented using the External TOC.
 
-```{warning}
-The External TOC features are incorporated in `v0.2.0` of the TeachBooks package. If you are using a TeachBooks Template book or our deploy-book-workflow this will become part of your book builds in GitHub Actions as the cache for your book expires (typically around 1 week after not editing your book branch). We do not expect it to cause issues with existing books, but if it does, you can use the following in your requirements file: `teachbooks<0.2.0`. 
-```
+The External TOC features are incorporated in the teachbooks package starting with version `0.2.0`.
 
 ## What does it do?
 
