@@ -66,7 +66,7 @@ A list of tools and features that are dependent on, or related to, the Deploy Bo
 
 Important for these features:
 - [](../external/deploy-book-workflow/README.md): the main DBW page
-- [](../external/template/README.md): books created from Template include DBW by default
+- [](../external/template/README.md): books created from the Template include DBW by default
 - [](./draft-release.md): can be configured directly using the DBW
 - [](./update_env.md): behaviors of this tool may influence the DBW
 - {ref}`TeachBooks Python Package <teachbooks_package>`: included by default in the DBW
@@ -75,4 +75,6 @@ Important for these features:
 
 ### Environmnets and Caching
 
-_Work in progress._
+As described on the [DBW page](../external/deploy-book-workflow/README.md), there is a lot going on "under the hood" with regards to caching of GitHub Action artifacts. This can lead to undesired behavior when using the DBW, especially if package version numbers are not precisely defined. As this would mostly occur when multiple branches are being actively used (new commits on each branch at least once per week), and a package from the `requirements.txt` file is updated in the time between creation of two or more branches, which _also_ has a significant impact on the book building process...we except this to have a relatively low risk of occurring.
+
+Note that Specifying package version numbers explicitly and updating them via [Dependabot](./update_env.md) is an excellent way to ensure that environments in the DBW are always up to date and this issue is avoided.
