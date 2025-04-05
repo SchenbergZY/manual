@@ -48,6 +48,8 @@ For those who wish to use the package, it is available on [PyPI](https://pypi.or
 teachbooks build book
 ```
 
+This Manual describes the main features and usage of the package. For those who wish to understand more of hte technical details, note that the implementation the API is is documented at [teachbooks.readthedocs.io/](https://teachbooks.readthedocs.io/).
+
 ### List of Features
 
 Items in the list here are currently implemented in the TeachBooks package and described on other pages of this manual:
@@ -74,6 +76,18 @@ Important for these features:
 - {ref}`TeachBooks Python Package <teachbooks_package>`: included by default in the DBW
 - [](./pull_request_build.md): created to provide DBW-like behavior for PR's from forked repositories
 - [](./apa.md): a temporary fix is included in `teachbooks` to enable use in the DBW
+
+### Book Build Commands
+
+By default the DBW builds books using the following command:
+```
+teachbooks build book/
+```
+
+To use the [Draft-Release Workflow](./draft-release.md) with the Deploy Book Workflow the `BRANCHES_TO_PREPROCESS` variable must be configured for a specific branch, which will then execute the following command:
+```
+teachbooks build --release book/
+```
 
 ### Environmnets and Caching
 
