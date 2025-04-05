@@ -77,7 +77,7 @@ Important for these features:
 
 ### Environmnets and Caching
 
-As described on the [DBW page](../external/deploy-book-workflow/README.md), there is a lot going on "under the hood" with regards to caching of GitHub Action artifacts. This can lead to undesired behavior when using the DBW, especially if package version numbers are not precisely defined. As this would mostly occur when multiple branches are being actively used (new commits on each branch at least once per week), and a package from the `requirements.txt` file is updated in the time between creation of two or more branches, which _also_ has a significant impact on the book building process...we except this to have a relatively low risk of occurring.
+As described on the [DBW page](../external/deploy-book-workflow/README.md), there is a lot going on "under the hood" with regards to caching of GitHub Action artifacts. This can lead to undesired behavior when using the DBW, especially if package version numbers are not precisely defined. In general we expect the risk of this occurring to be low, as it should only happen when multiple branches are being actively used (new commits on each branch at least once per week), a package from the `requirements.txt` file is updated in the time between creation of two or more branches, and that package _also_ has a significant impact on the book building process. As the Python virtual environment cache is replaced by default if older than one week, the issue should resolve itself within that time frame.
 
 Note that Specifying package version numbers explicitly and updating them via [Dependabot](./update_env.md) is an excellent way to ensure that environments in the DBW are always up to date and this issue is avoided.
 
