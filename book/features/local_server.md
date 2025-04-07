@@ -4,7 +4,7 @@
 This section is useful for user type 4-5.
 ```
 
-{bdg-secondary}`Python Package: teachbooks`
+{bdg-link-secondary}`Python Package: teachbooks <./overview#teachbooks-python-package>`
 ````
 
 (setup-local-server)=

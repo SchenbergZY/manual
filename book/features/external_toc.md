@@ -4,7 +4,7 @@
 This page is useful for user type 3-5.
 ```
 
-{bdg-secondary}`Python Package: teachbooks`
+{bdg-link-secondary}`Python Package: teachbooks <./overview#teachbooks-python-package>`
 ````
 
 (external-toc)=
@@ -16,9 +16,7 @@ When creating books, you might want to reuse material from other people or from 
 
 Previously, this book feature was implemented using [submodules](../external/Nested-Books/README.md), but the implementation was more difficult to use. Despite this, submodules are still a widely used Git feature that can be very useful for book authors, so check out the [submodules page](../external/Nested-Books/README.md) to learn more, especially if the External TOC tool does not satisfy your needs. Submodules have a few additional features not (yet) implemented using the External TOC.
 
-```{warning}
-The External TOC features are not incorporated in the new deploy book workflow yet (this will happen once the workflow specifies `teachbooks>=0.2.0`).
-```
+The External TOC features are incorporated in the teachbooks package starting with version `0.2.0`.
 
 ## What does it do?
 

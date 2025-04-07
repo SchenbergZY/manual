@@ -1,3 +1,5 @@
+(draft-release)=
+# Draft-Release Workflow
 ````{margin}
 
 ```{admonition} User types
@@ -5,7 +7,7 @@
 This page is useful for user type 3-5.
 ```
 
-{bdg-secondary}`Python Package: teachbooks`
+{bdg-link-secondary}`Python Package: teachbooks <./overview#teachbooks-python-package>`
 
 ````
 

@@ -57,7 +57,7 @@ parts:
     - file: features/easy-editing.md
       sections:
       - file: external/template/README.md
-      - file: features/teachbooks
+      - file: features/draft-release
       - file: external/deploy-book-workflow/README.md
       - file: features/pull_request_build.md
       - file: features/local_server
