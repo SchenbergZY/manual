@@ -1,7 +1,7 @@
 ````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
-This page reuses adapted CC BY 3.0 content from Tom Preston-Werner {cite:t}`semver`. {fa}`quote-left`{ref}`Find out more here.<external_resources>````
+This page reuses adapted CC BY 3.0 content from {cite:t}`semver`. {fa}`quote-left`{ref}`Find out more here.<external_resources>````
 ````
 
 # TeachBooks Versioning
