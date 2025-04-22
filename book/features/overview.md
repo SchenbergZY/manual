@@ -89,7 +89,7 @@ To use the [Draft-Release Workflow](./draft-release.md) with the Deploy Book Wor
 teachbooks build --release book/
 ```
 
-### Environmnets and Caching
+### Environments and Caching
 
 As described on the [DBW page](../external/deploy-book-workflow/README.md), there is a lot going on "under the hood" with regards to caching of GitHub Action artifacts. This can lead to undesired behavior when using the DBW, especially if package version numbers are not precisely defined. In general we expect the risk of this occurring to be low, as it should only happen when multiple branches are being actively used (new commits on each branch at least once per week), a package from the `requirements.txt` file is updated in the time between creation of two or more branches, and that package _also_ has a significant impact on the book building process. As the Python virtual environment cache is replaced by default if older than one week, the issue should resolve itself within that time frame.
 
