@@ -5,6 +5,7 @@ This page is useful for user type 3-5.
 ```
 
 {bdg-link-secondary}`Python Package: teachbooks <./overview#teachbooks-python-package>`
+{bdg-succes}`WebApp`
 ````
 
 (external-toc)=
@@ -12,18 +13,20 @@ This page is useful for user type 3-5.
 
 ## Introduction
 
-When creating books, you might want to reuse material from other people or from other books you made. In some cases you might even want to have the exact same material into your book. You could do so by manually copying material over. However, whenever the source material is updated, you have to do that again. As an alternative, you can use the underlying git system to refer to the source file directly. This allows you to pick a specific version, or keep the most up-to-date version of it. This pages explains how to do so directly in the table of contents using the **External Content** (or **External TOC**) feature which is part of the TeachBooks Python package.
+When creating books, you might want to reuse material from other people or from other books you made. In some cases you might even want to have the exact same material into your book. You could do so by manually copying material over. However, whenever the source material is updated, you have to do that again. As an alternative, you can use the underlying git system to refer to the source file directly. This allows you to pick a specific version, or keep the most up-to-date version of it. This pages explains how to do so directly in the table of contents using the **External Content** (or **External TOC**) feature which is part of the TeachBooks Python package, or with making use of the [TeachBooks Recombiner](https://teachbooks.io/recombiner/)
 
 Previously, this book feature was implemented using [submodules](../external/Nested-Books/README.md), but the implementation was more difficult to use. Despite this, submodules are still a widely used Git feature that can be very useful for book authors, so check out the [submodules page](../external/Nested-Books/README.md) to learn more, especially if the External TOC tool does not satisfy your needs. Submodules have a few additional features not (yet) implemented using the External TOC.
 
-The External TOC features are incorporated in the teachbooks package starting with version `0.2.0`.
+The External TOC features are incorporated in the teachbooks package starting with version `0.2.0`. The [TeachBooks Recombiner](https://teachbooks.io/recombiner/) is a webapp to ease that process.
 
 ## What does it do?
 
 This functionality, part of the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) allows you to refer to `.ipynb`, `.md` and `.rst` files stored on public repositories. These files are then handles as if they were normal files in your book, leading to a the file as a page in your built book. To prevent issues it validates that the external content has a permissive license, automatically combines any `reference.bib` files, and warns you if there's a mismatch in `requirements.txt` or with plugins in `_config.yml`.
 
+To ease the process, the webapp [TeachBooks Recombiner](https://teachbooks.io/recombiner/) allows you to select the pages to take from other books and generate the syntax to add them to your book.
+
 ## Installation
-To use this extenstion, follow these steps:
+To use this extension, follow these steps:
 
 **Step 1: Install the Package**
 
@@ -64,6 +67,8 @@ The link can be pointing to a file on a branch (which will take the most recent 
 - `external: https://github.com/TeachBooks/manual/blob/release/book/intro.md` will take the most recent version of the intro page of this book on the release branch
 - `external: https://github.com/TeachBooks/manual/blob/06d67e8a0110c94d9147ce07090656dedc7d0e64/README.md` will take the file during the state of a specific commit (06d67e8).
 - `external: https://github.com/TeachBooks/manual/blob/v1.1.1/README.md` will take the file during the state of a specific tag (v1.1.1)
+
+These links can be created manually, copied from your browser, or by using the [TeachBooks Recombiner](https://teachbooks.io/recombiner/). For the TeachBooks Recombiner: add the book you want to take content from, select the chapters and follow the instructions which gives you the syntax to add to your `_toc.yml`.
 
 If you're building your book online in GitHub, the [deploy-book-workflow](../external/deploy-book-workflow/README.md) will deal with these files during the `teachbooks build` command. If you want to build the book locally, run the command `teachbooks build`.
 
