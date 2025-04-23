@@ -20,6 +20,7 @@ Additionally, not all features are built and shared in the same way. We do our b
 - {bdg-dark}`Git Workflow`
 - {bdg-primary}`Sphinx Extension`
 - {bdg-danger}`iframe`
+- {bdg-success}`WebApp`
 
 Finally, the purpose, installation process and usage of each features is elaborated on in the respective sub-sections.
 
