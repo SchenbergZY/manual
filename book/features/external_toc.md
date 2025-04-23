@@ -69,7 +69,7 @@ The link can be pointing to a file on a branch (which will take the most recent 
 - `external: https://github.com/TeachBooks/manual/blob/06d67e8a0110c94d9147ce07090656dedc7d0e64/README.md` will take the file during the state of a specific commit (06d67e8).
 - `external: https://github.com/TeachBooks/manual/blob/v1.1.1/README.md` will take the file during the state of a specific tag (v1.1.1)
 
-These links can be created manually, copied from your browser, or by using the [TeachBooks Recombiner](https://teachbooks.io/recombiner/). For the TeachBooks Recombiner: add the book you want to take content from, select the chapters and follow the instructions which gives you the syntax to add to your `_toc.yml`.
+These links can be created manually, copied from your browser, or generated using the [TeachBooks Recombiner](https://teachbooks.io/recombiner/). For the TeachBooks Recombiner: add the book you want to take content from, select the chapters and follow the instructions which gives you the syntax to add to your `_toc.yml`.
 
 If you're building your book online in GitHub, the [deploy-book-workflow](../external/deploy-book-workflow/README.md) will deal with these files during the `teachbooks build` command. If you want to build the book locally, run the command `teachbooks build`.
 
