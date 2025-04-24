@@ -1,4 +1,9 @@
 ````{margin}
+```{attributiongrey} Attribution
+:class: attribution
+This page reuses MIT licensed content from {cite:t}`teachbooks_package`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+```
+
 ```{admonition} User types
 :class: tip
 This page is useful for user type 3-5.
@@ -22,7 +27,7 @@ The External TOC features are incorporated in the teachbooks package starting wi
 
 ## What does it do?
 
-This functionality, part of the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) allows you to refer to `.ipynb`, `.md` and `.rst` files stored on public repositories. These files are then handles as if they were normal files in your book, leading to a the file as a page in your built book. To prevent issues it validates that the external content has a permissive license, automatically combines any `reference.bib` files, and warns you if there's a mismatch in `requirements.txt` or with plugins in `_config.yml`.
+This functionality, part of the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) allows you to refer to `.ipynb`, `.md` and `.rst` files stored on public repositories. These files are then handles as if they were normal files in your book, leading to a the file as a page in your built book. To prevent issues it validates that the external content has a permissive license, automatically combines any `reference.bib` files, and warns you if there's a mismatch in `requirements.txt` or with plugins in `_config.yml`. Furthermore, it adds an attribution admonition (like the one on this page) to the page, showing the source of the file in the built book.
 
 To ease the process, the webapp [TeachBooks Recombiner](https://teachbooks.io/recombiner/) allows you to select the pages to take from other books and generate the syntax to add them to your book.
 
@@ -75,6 +80,42 @@ If you're building your book online in GitHub, the [deploy-book-workflow](../ext
 
 If the source file is from another book, the contents of the `requirements.txt`, `_config.yml` are checked for any missing/incompatible entries. If this leads to compatibility issue, you'll be warned during the build which will help you solve these dependencies or plugins manually by updating your main book's `_config.yml` and `requirements.txt`
 Additionally, any `references.bib` files are merged into your main book's `references.bib` file, and the licenses of the external content are validated to allow for re-use. External content without a permissive license will result in an error to try to prevent any accidental copyright infringement.
+
+### Configuration
+The attribution admonition can be configured in the `_config.yml` file. You can adapt the location (top or margin), colour (making use of the sphinx extension [Sphinx-Named-Colors](../external/Sphinx-Named-Colors/README.md)), and symbol (by adding a custom CSS class). This leads to a similar admonition as mentioned [in the chapter on recommendations for copyright and licenses](custom_attribution).
+
+To adapt the location of the admonition (margin or top, top is default option), you can use the following configuration:
+
+```yaml
+teachbooks:
+  attribution_location: margin
+```
+
+To adapt the colour of the admonition (with for example a grey colour, default is blue), you can use the following configuration. Make sure to add the `sphinx-named-colors` extension to your environment (e.g., `requirements.txt`):
+
+```yaml
+sphinx:
+  config:
+    named_colors_custom_colors: {'attributiongrey':[150,150,150]}
+  extra_extensions:
+    - sphinx_named_colors
+
+teachbooks:
+  attribution_color: attributiongrey
+```
+
+To adapt the symbol of the admonition (with for example double quotes), you can add the following [custom CSS class](../_static/attribution.css) to `book/_static/attribution.css`:
+
+```css
+/* Attribution */
+div.attribution > .admonition-title::after {
+  content: "\f10d";
+}
+```
+
+Note that, when making a changes for the configuration locally they are not incorporated to existing external content.
+You will need to remove the `_git/` folder and re-run the build command to see the changes. When building the book on i.e. GitHub Actions, the `_git/` folder is always rebuild from scratch.
+
 
 ## Contribute
 

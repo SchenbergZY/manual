@@ -73,6 +73,7 @@ This produces
 
 > This page reuses CC BY content from {cite:t}`jason_moore`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
 
+(custom_attribution)=
 ##### Format as custom admonition
 The previous syntax might be used for other purposes as well. An alternative is a custom attribution admonition:
 
