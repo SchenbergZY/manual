@@ -77,6 +77,8 @@ This produces
 ##### Format as custom admonition
 The previous syntax might be used for other purposes as well. An alternative is a custom attribution admonition:
 
+Therefore, use the following syntax:
+
 ````{margin}
 ```{attributiongrey} Attribution
 :class: attribution
@@ -84,8 +86,6 @@ Written by <author(s)>
 This page reuses CC BY 4.0 licensed content from {cite:t}`jason_moore`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
 ```
 ````
-
-Therefore, use the following syntax:
 
 `````md
 ````{margin}
