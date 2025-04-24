@@ -97,7 +97,24 @@ This page reuses <license> content from {cite:t}`bib_id`. {fa}`quote-left`{ref}`
 ````
 `````
 
-To make this possible we use the custom admonitions of [the custom named colors sphinx extension](https://teachbooks.io/manual/external/Sphinx-Named-Colors/README.html#admonitions) in combination with a [custom css file](../../_static/attribution.css) in `book/_static/` and the line `named_colors_custom_colors: {'attributiongrey':[150,150,150]}` in `book/_config.yml` under `sphinx: config: `
+To make this possible we use the custom admonitions of [the custom named colors sphinx extension](https://teachbooks.io/manual/external/Sphinx-Named-Colors/README.html#admonitions) in combination with a custom css file. `_config.yml` needs to be configured as follows, making sure to add the `sphinx-named-colors` extension to your environment (e.g., `requirements.txt`):
+
+```yaml
+sphinx:
+  config:
+    named_colors_custom_colors: {'attributiongrey':[150,150,150]}
+  extra_extensions:
+    - sphinx_named_colors
+```
+
+To adapt the symbol of the admonition (to double quotes), you can add the following [custom CSS class](../../_static/attribution.css) to `book/_static/attribution.css`:
+
+```css
+/* Attribution */
+div.attribution > .admonition-title::after {
+  content: "\f10d";
+}
+```
 
 
 (copyright_recc_credits)=
