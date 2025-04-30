@@ -116,6 +116,9 @@ parts:
     - file: section_1_2
 ```
 
+#### Exercise
+Check out [this exercise](https://teachbooks.io/template/syntax_exercises/007.html) in the TeachBooks template to see for yourself how to structure files with titles!
+
 ### Including a chapter twice
 In some cases you want to include the same chapter in two different places in your book (for instance parts). However, you do not want to make the same adjustments in different files, the content should only 'live' in one place. The solution is to use `include`:
 

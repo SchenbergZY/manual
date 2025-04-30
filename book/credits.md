@@ -56,6 +56,7 @@ The following pages are included directly from an external resource and is not e
 - Page [](./external/teachbooks-sphinx-tippy/README.md). Original content licensed under MIT license.
 - Page [](./external/template/README.md). Original content licensed under CC BY 4.0 license.
 - Page [](./external/Sphinx-Named-Colors/README.md). Original content licensed under MIT license.
+- Page [](indexed_defintions). Original content licensed under MIT license.
 - Pages [](./external/Useful_python_code/extensionfildownloadreturn.ipynb), [](./external/Useful_python_code/figshrinker.ipynb) and [](./external/Useful_python_code/snippit.ipynb). Original content licensed under BSD 3-Clause license.
 
 The following pages contain content written by others, part of has been reused and/or modified by the TeachBooks Team:
