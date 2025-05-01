@@ -29,7 +29,7 @@ The workflow is enabled by a `teachbooks` CLI feature that identifies and remove
 
 For example, pages in a developed book (e.g., `draft` branch) can be manually stripped out of the table of contents when a merge request from `draft` to `release` is made. This prevents the page being included in the released book. Pages marked with this feature are still visible in the `draft` book. Lines tagged in the configuration file `_config.yml` can be used in exactly the same manner. The tag is applied as follows:
 
-```
+```yaml
 format: jb-book
 root: intro
 
@@ -38,9 +38,9 @@ parts:
     chapters: 
     - file: ...
       ...
-# START REMOVE-FROM-PUBLISH
+# START REMOVE-FROM-RELEASE
     - file: files_to_remove
-# END REMOVE-FROM-PUBLISH
+# END REMOVE-FROM-RELEASE
 ```
 
 There is no limit to the number of stripped sections, they can be sequential and indentation does not matter.
@@ -48,8 +48,10 @@ There is no limit to the number of stripped sections, they can be sequential and
 To invoke the tag and remove content during the book build process, use the following optional argument when building the book with the `teachbooks` package:
 
 ```
-teachbooks build --publish book
+teachbooks build --release book
 ```
+
+This is done in the [deploy-book-workflow](deploy-book-workflow) by including the branches for which preprocessing needs to be done the repository variable `BRANCHES_TO_PREPROCESS` which is by default set to ` ` (just a space = no branch). It should be a space-separated list of branch names, e.g. 'main second third'.
 
 Note that `teachbooks build book` would build a book without stripping the tagged lines, just as `jupyter-book build book` would. This is called "draft mode" and is the default behavior. You can recognize it in the stdout after running the `build` command:
 
