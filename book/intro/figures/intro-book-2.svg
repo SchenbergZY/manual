@@ -65,12 +65,12 @@
 			<text x="4" y="171.49" class="st2" v:langID="1043"><v:paragraph/><v:tabList/>2</text>		</g>
 		<g id="shape12-20" v:mID="12" v:groupContext="shape" transform="translate(269.666,-109.312)">
 			<title>Blad.12</title>
-			<desc>Markup Software Teachbooks, jupyter-book, sphinx,</desc>
+			<desc>Markup Software teachbooks, jupyter-book, sphinx,</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="2"/>
 			<v:textRect cx="60.2362" cy="152.206" width="120.48" height="70.8661"/>
 			<rect x="0" y="116.773" width="120.472" height="70.8661" class="st3"/>
 			<text x="4" y="128.79" class="st4" v:langID="1043"><v:paragraph/><v:tabList/>Markup Software<v:newlineChar/><tspan
-						x="4" dy="1.2em" class="st6">Teachbooks,<v:newlineChar/></tspan><tspan x="4" dy="1.2em" class="st6">jupyter</tspan><tspan
+						x="4" dy="1.2em" class="st6">teachbooks,<v:newlineChar/></tspan><tspan x="4" dy="1.2em" class="st6">jupyter</tspan><tspan
 						class="st6">-</tspan><tspan class="st6">book, </tspan><tspan x="4" dy="1.213em" class="st6">sphinx, </tspan> </text>		</g>
 		<g id="shape13-28" v:mID="13" v:groupContext="shape" transform="translate(234.233,-180.178)">
 			<title>Blad.13</title>
