@@ -65,10 +65,8 @@ You can see quite clearly that a number of files are listed, and that they are o
 
 A book is made by by writing content in text-based files such as Markdown (`*.md`), Jupyter Notebooks (`*.ipynb`), etc. After that, software is used to "parse" these files and create the final book (e.g., Jupyter Book). Fortunately when getting started you don't need to worry about the software because TeachBooks has set up GitHub tools for you that take care of this process automatically! The process is illustrated in the diagram below.
 
-```{figure} figures/intro-book.svg
----
-width: 700px
----
+```{figure} figures/intro-book-2.svg
+
 The process of building a book with TeachBooks. When just getting started, TeachBooks tools enables you to focus on what matters most: learning to write content for your book!
 ```
 
