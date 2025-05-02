@@ -114,7 +114,7 @@ div.attribution > .admonition-title::after {
 ```
 
 Note that, when making a changes for the configuration locally they are not incorporated to existing external content.
-You will need to remove the `_git/` folder and re-run the build command to see the changes. When building the book on i.e. GitHub Actions, the `_git/` folder is always rebuild from scratch.
+You will need to remove the `_git/` folder or run `teachbooks clean --external` and re-run the build command to see the changes. When building the book on i.e. GitHub Actions, the `_git/` folder is always rebuild from scratch.
 
 
 ## Contribute
