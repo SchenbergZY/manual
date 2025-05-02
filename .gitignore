@@ -138,3 +138,5 @@ book/.jupyterlite.doit.db
 
 # TeachBooks
 **.teachbooks/
+book/_toc_with_local_paths.yml
+book/_git/
