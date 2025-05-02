@@ -1,2 +1,0 @@
-C:\Users\douden\Documents\GitHub\manual\book\_git/github.com_TeachBooks_Sphinx-Indexed-Definitions/manual
-C:\Users\douden\Documents\GitHub\manual\book\_git/github.com_TeachBooks_Sphinx-ref-graph/manual
