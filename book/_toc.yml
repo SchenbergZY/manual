@@ -87,7 +87,7 @@ parts:
         - file: features/exercise_checking.ipynb
       - file: features/jupyterquiz.ipynb
       - file: external/sphinx-iframes/README.md
-      - external: https://github.com/TeachBooks/Sphinx-Indexed-Definitions/blob/manual/README.md
+      - external: https://github.com/TeachBooks/Sphinx-Indexed-Definitions/blob/manual/README.md #BUMP
       - file: external/Sphinx-PRIME-applets/README.md
     - file: features/visuals.md
       sections:
@@ -97,7 +97,7 @@ parts:
       - file: external/teachbooks-sphinx-tippy/README.md
       - file: features/apa
       - file: external/Sphinx-Named-Colors/README.md
-      - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md
+      - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md #BUMP
     - file: features/students
       sections:
       - file: external/annotater/README.md
