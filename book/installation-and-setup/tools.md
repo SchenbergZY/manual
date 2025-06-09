@@ -11,6 +11,11 @@ The setup of tools and URLs is dependent on agreements you've made on [collabora
 
 Choosing between GitHub and GitLab depends on multiple criteria. GitHub provides more functionalities, but you might prefer the TU Delft-closed GitLab system if you're a TU Delft employee.
 
+## Account
+GitHub is owned by Microsoft and anyone can make an account. This allows anyone to interact with the source code of your book by posting issues, forking (duplicating while allowing to sync) your book and suggesting changes with pull requests.
+
+For the TU-Delft closed GitLab system only TU Delft account holders can interact with the source code your book, making it not as open as GitHub: collaboration and reuse is inly pissible with manual exports of the source code. Individual external accounts can be requested for.
+
 ## Book URL
 Github allows you to host your book on the GitHub server using GitHub pages (to be recognized by the `<organization/username>.github.io/<book>` url, for example the [template book](https://teachbooks.github.io/template/)), which takes all the steps of hosting out of your hands. Next to GitHub-provided URLs, you can set up a custom owned URL, although this requires some additional skills on a domain which you should own. 
 
@@ -54,6 +59,7 @@ GitHub has a nice integration with the [GitHub Desktop application](git-setup_lo
 Here's a table summarizing the information:
 |  | GitHub   | TU Delft GitLab      |
 |--|----------|-------------|
+| Account | Free GitHub account (owned by Microsoft) 🤝 | Closed, TU Delft account 🔒 |
 | Book url  | GitHub pages (`<organization/username>.github.io/<book>`), for TU Delft books a custom URL (`oit.tudelft.nl/<book>`), for private books on TU Delft GitHub Enterprise with SSO a random URL (`<random>.github.io/<book>`), or custom url `<anything>.<anything>/<book>`> 🌐         | TU Delft OIT (`interactivetextbooks.tudelft.nl/<book>`) 🎓 |
 | Real-time book editing | Automated and flexible (multiple version of the book, building error insights, fast, custom urls)  🚀   | Automated but simplistic (not easily adaptable, no caching environments, no visual summaries, no parallel processes) 🛵 For TU Delft OIT: restricted adaptations because of copyright checks 🚫   |
 | Setting up book website | Immediate and automated with [template](../external/template/README.md) ⚡️         | Manual setup on personal webserver, or access required by TeachBooks or TU Delft OIT  🚧    |
