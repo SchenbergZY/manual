@@ -125,7 +125,7 @@ parts:
       - file: external/Useful_python_code/extensionfildownloadreturn.ipynb
       - file: external/Useful_python_code/figshrinker.ipynb
        
-  - caption: Miscallaneous
+  - caption: Miscellaneous
     chapters:
     - file: references.md
     - file: credits
