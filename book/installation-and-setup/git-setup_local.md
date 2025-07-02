@@ -27,9 +27,9 @@ Open up a terminal window (*Command + Space*, type in `terminal`). Then, type th
 Click on `install`. The installation may take a couple of minutes. Once it's finished, check if everything has been installed correctly by executing `git` again.
 ````
 
-## Setting up SSH-keys
+## Setting up SSH-keys, for GitLab only
 
-When we want to visit repositories on GitLab or GitHub, we need to log in. The same holds if we want to interact with these repositories with Git from VS Code. This means that everytime we make a commit, pull, et cetera, we need to provide our password, which becomes very tedious. Alternatively, we can provide GitLab/GitHub with an SSH-key of our system, so that GitLab/GitHub knows it is indeed us that are making the changes to the repository, removing the need to provide a password. If you're only using GitHub and GitHub desktop, SSH-keys aren't strictly required, but it's still advised you set these up.
+When we want to visit repositories on GitLab or GitHub, we need to log in. The same holds if we want to interact with these repositories with Git from VS Code. This means that everytime we make a commit, pull, et cetera, we need to provide our password, which becomes very tedious. Alternatively, we can provide GitLab/GitHub with an SSH-key of our system, so that GitLab/GitHub knows it is indeed us that are making the changes to the repository, removing the need to provide a password. If you're only using GitHub and GitHub desktop, SSH-keys aren't required!
 
 1. Open up a terminal window (Git Bash on Windows). Next, type (or copy and paste) the following command:
 
@@ -103,7 +103,7 @@ When we want to visit repositories on GitLab or GitHub, we need to log in. The s
 
 ## Updating the local Git environment
 
-The final step is to provide a username and email address to Git, so our commits can be identified. To do this, in the terminal (Git Bash on Windows) type in the following command for the username:
+The final step is to provide a username and email address to Git, so our commits can be identified. If you use GitHub Desktop, there will be a notification which guides you through this. If you want to do it manually: in the terminal (Git Bash on Windows) type in the following command for the username:
 
     git config --global user.name "<first name> <last name>"
 
