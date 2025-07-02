@@ -9,7 +9,7 @@ sphinx-proof == 0.2.1
 sphinx-named-colors == 1.0.1
 sphinx-iframes == 1.0.5
 sphinx-prime-applets == 1.0.2
-sphinx-dropdown-toggle == 0.0.3
+sphinx-dropdown-toggle == 1.0.0
 
 git+https://github.com/TeachBooks/Sphinx-Thebe
 
