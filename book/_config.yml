@@ -20,6 +20,7 @@ sphinx:
   - sphinx_image_inverter
   - sphinx_exercise
   - sphinx_proof
+  - sphinx_code_examples
   - sphinx_named_colors
   - sphinx_iframes
   - sphinx_prime_applets
