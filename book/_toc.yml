@@ -90,6 +90,7 @@ parts:
       - external: https://github.com/TeachBooks/Sphinx-Indexed-Definitions/blob/manual/README.md #BUMP
       - file: external/Sphinx-PRIME-applets/README.md
       - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
+      - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
     - file: features/visuals.md
       sections:
       - file: external/Sphinx-Image-Inverter/README.md
