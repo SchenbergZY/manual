@@ -93,6 +93,7 @@ parts:
       - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
     - file: features/visuals.md
       sections:
+      - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
       - file: external/Sphinx-Image-Inverter/README.md
       - file: external/JupyterBook-Patches/README.md
       - file: external/Sphinx-TUDelft-theme/README.md
