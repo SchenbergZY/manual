@@ -14,19 +14,7 @@ sphinx:
   extra_extensions:
   - sphinx_inline_tabs
   - sphinx.ext.imgconverter
-  - download_link_replacer
-  - jupyterbook_patches
-  - teachbooks_sphinx_grasple
-  - sphinx_image_inverter
-  - sphinx_exercise
-  - sphinx_proof
-  - sphinx_code_examples
-  - sphinx_named_colors
-  - sphinx_iframes
-  - sphinx_prime_applets
-  - sphinx_dropdown_toggle
-  - sphinx_accessibility
-  - teachbooks_sphinx_tippy
+  - teachbooks_favourites
   config:
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
