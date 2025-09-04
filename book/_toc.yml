@@ -91,7 +91,7 @@ parts:
       - file: external/Sphinx-PRIME-applets/README.md
       - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
       - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
-      - external: https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md
+      - external: "https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md"
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
