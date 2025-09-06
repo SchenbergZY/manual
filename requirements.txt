@@ -3,4 +3,6 @@ sphinx-inline-tabs == 2023.4.21
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
 
+teachbooks-sphinx-grasple
+
 docutils==0.17.1
