@@ -19,6 +19,7 @@ Additionally, not all features are built and shared in the same way. We do our b
 - {bdg-light}`GitHub Template`
 - {bdg-dark}`Git Workflow`
 - {bdg-primary}`Sphinx Extension`
+- {bdg-primary-line}`Part of TeachBooks Favourites`
 - {bdg-danger}`iframe`
 - {bdg-success}`WebApp`
 
@@ -26,7 +27,7 @@ Finally, the purpose, installation process and usage of each features is elabora
 
 To see examples for these features, go to the [Examples chapter](../examples/overview.md).
 
-As the TeachBooks Python Package and the Deploy Book Workflow are important tools that incorporate and deploy more than one feature, an additional explanation is provided on this page in more detail, with links to the pages in this manual where individual features are described.
+As the TeachBooks Python Package, the Deploy Book Workflow and TeachBooks Favourites are important tools that incorporate and deploy more than one feature, an additional explanation is provided on this page in more detail, with links to the pages in this manual where individual features are described.
 
 (teachbooks_package)=
 ## TeachBooks Python Package
@@ -81,11 +82,13 @@ Important for these features:
 ### Book Build Commands
 
 By default the DBW builds books using the following command:
+
 ```
 teachbooks build book/
 ```
 
 To use the [Draft-Release Workflow](./draft-release.md) with the Deploy Book Workflow the `BRANCHES_TO_PREPROCESS` variable must be configured for a specific branch, which will then execute the following command:
+
 ```
 teachbooks build --release book/
 ```
@@ -97,3 +100,8 @@ As described on the [DBW page](../external/deploy-book-workflow/README.md), ther
 Note that Specifying package version numbers explicitly and updating them via [Dependabot](./update_env.md) is an excellent way to ensure that environments in the DBW are always up to date and this issue is avoided.
 
 If you are _not_ using Dependabot and are not able to get your packages updated when the DBW is running, delete the cache manually and rerun your GitHub Actions job (go to Actions tab, then looking for the "Caches" section under the "Management" pane on the left hand side of the screen).
+
+(teachbooks-favourites-intro)=
+## TeachBooks Favourites
+
+The [TeachBooks Favourites](./favourites.md) is a sphinx extension which collects all of TeachBooks favourite features in one place. It is included by default in the [TeachBooks Template](../external/template/README.md). All features which are part of TeachBooks Favourites are indicated with {bdg-primary-line}`Part of TeachBooks Favourites`. If you'd like ot use specific features, but not the entire TeachBooks Favourites, you can remove this extension and replace it with the individual extensions you want to use.
