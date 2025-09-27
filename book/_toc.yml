@@ -42,6 +42,10 @@ parts:
   - caption: Features
     chapters:
     - file: features/overview.md
+      sections:
+      - file: features/teachbooks_intro.md
+      - file: features/DBW_intro.md
+      - file: features/favourites.md
     - file: basic-features/overview.md
       sections:
       - file: basic-features/jupyterbook.md

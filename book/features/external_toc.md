@@ -9,7 +9,7 @@ This page reuses MIT licensed content from {cite:t}`teachbooks_package`. {fa}`qu
 This page is useful for user type 3-5.
 ```
 
-{bdg-link-secondary}`Python Package: teachbooks <./overview#teachbooks-python-package>`
+{bdg-link-secondary}`Python Package: teachbooks <./teachbooks_intro.html>`
 
 {bdg-success}`WebApp`
 ````

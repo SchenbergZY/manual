@@ -27,3 +27,5 @@ TeachBooks Favourites is a Sphinx extension which collects all of TeachBooks' fa
 - [Sphinx accessibility](../_git/github.com_TeachBooks_Sphinx-Accessibility/manual/README.html)
 - [Sphinx toggle button (TeachBooks contribution to the original)](https://sphinx-togglebutton.readthedocs.io/en/latest/)
 - [Notebook execution patterns](../_git/github.com_TeachBooks_Sphinx-NB-Execution-Patterns/Manual/README.html)
+
+All features which are part of TeachBooks Favourites are indicated with {bdg-primary-line}`Part of TeachBooks Favourites`. If you'd like to use specific features, but not the entire TeachBooks Favourites, you can remove this extension and replace it with the individual extensions you want to use.
