@@ -4,8 +4,9 @@
 This section is useful for user type 3-5.
 ```
 
-{bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <https://teachbooks.io/manual/favourites/external/deploy-book-workflow/README.html>`
-{bdg-link-light}`Part of TeachBooks Template <https://teachbooks.io/manual/favourites/external/template/README.html>`
+{bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <https://teachbooks.io/manual/external/deploy-book-workflow/README.html>`
+{bdg-link-light}`Part of TeachBooks Template <https://teachbooks.io/manual/external/template/README.html>`
+{bdg-link-secondary}`Uses TeachBooks package <https://teachbooks.io/manual/features/teachbooks_intro.html>`
 
 ````
 
@@ -13,7 +14,7 @@ This section is useful for user type 3-5.
 
 As you'll start working on your TeachBook, you'll probably want to share it online. And over time you'll create more and more versions of your book, for example for different academic years. 
 
-Our Deploy Book Workflow (described in general [here](https://teachbooks.io/manual/favourites/external/deploy-book-workflow/README.html)) allows you to do so. It builds your book for all branches in your repository and releases them online via GitHub Pages. In simplified terms, it automatically builds the book website based on updates to your repository, creates multiple instances of your book (defined by each branch) and provides the ability to customize the URL's at which each instance of the book can be accessed. This tool is designed specifically for educational contexts, for example, when you may want to preserve book versions from multiple academic years so that students are able to access it later.
+Our Deploy Book Workflow (described in general [here](https://teachbooks.io/manual/external/deploy-book-workflow/README.html)) allows you to do so. It builds your book for all branches in your repository and releases them online via GitHub Pages. In simplified terms, it automatically builds the book website based on updates to your repository, creates multiple instances of your book (defined by each branch) and provides the ability to customize the URL's at which each instance of the book can be accessed. This tool is designed specifically for educational contexts, for example, when you may want to preserve book versions from multiple academic years so that students are able to access it later.
 
 Sharing your book online has many features and customizations:
 - Automatic and manual building and releasing of your book online via GitHub Pages using a Reusable GitHub Actions. See explanation [below](how_to_start).
@@ -210,7 +211,7 @@ Once created during a successful build action, an existing cached environment wi
 
 Note that any change to the `requirements.txt` file will trigger creation of a new environment, not necessarily one that specifies the version number of a package.
 
-Note that Specifying package version numbers explicitly and updating them via [Dependabot](https://teachbooks.io/manual/favourites/features/update_env.html) is an excellent way to ensure that environments in the DBW are always up to date and this issue is avoided.
+Note that Specifying package version numbers explicitly and updating them via [Dependabot](https://teachbooks.io/manual/features/update_env.html) is an excellent way to ensure that environments in the DBW are always up to date and this issue is avoided.
 
 If you are _not_ using Dependabot and are not able to get your packages updated when the DBW is running, delete the cache manually and rerun your GitHub Actions job (go to Actions tab, then looking for the "Caches" section under the "Management" pane on the left hand side of the screen).
 

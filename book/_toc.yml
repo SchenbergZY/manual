@@ -46,9 +46,9 @@ parts:
       - file: features/teachbooks_intro.md
       - file: external/deploy-book-workflow/README.md
       - file: features/favourites.md
+      - file: external/template/README.md
     - file: features/easy-editing.md
       sections:
-      - file: external/template/README.md
       - file: features/write_online.md
       - file: features/release_book_online.md
       - file: features/draft-release
@@ -84,7 +84,9 @@ parts:
       - file: external/Sphinx-PRIME-applets/README.md
       - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
       - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
+      - file: features/sphinx-proof.md
       - external: "https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md"
+      - file: features/exercise.md
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
