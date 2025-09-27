@@ -45,7 +45,7 @@ ex2.simulate(x0)
 ```
 ````
 
-More information can be found in the [official documentation](https://sphinx-proof.readthedocs.io/en/latest/index.html). It can be [configured in combination the TeachBooks extension to include examples with executable code and visuals](../_git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.html).
+More information can be found in the [official documentation](https://sphinx-proof.readthedocs.io/en/latest/index.html). It can be [configured in combination the TeachBooks extension to include examples with executable code and visuals](../_git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb).
 
 ## Installation
 To use this extenstion, follow these steps:

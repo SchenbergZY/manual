@@ -26,7 +26,7 @@ teachbooks build book
 
 This Manual describes the main features and usage of the package. For those who wish to understand more of hte technical details, note that the implementation the API is is documented at [teachbooks.readthedocs.io/](https://teachbooks.readthedocs.io/).
 
-### List of Features
+## List of Features
 
 Items in the list here are currently implemented in the TeachBooks package and described on other pages of this manual:
 - [Draft-Release Workflow](./draft-release.md)

@@ -12,7 +12,7 @@ This section is useful for user type 3-5.
 
 # Write book fully in GitHub interface
 
-Using the GitHub tooling in combination with TeachBook's software, users are able to write their book fully online, without the need to install any software locally. This is especially useful for users that are not familiar with Git and GitHub, or do not have the rights to install software on their computer. To make this possible, users can start with the [TeachBooks Template](../external/template/README.html) after which they make use of the [Deploy Book Workflow](../external/deploy-book-workflow/README.html) to automatically build and release their book online.
+Using the GitHub tooling in combination with TeachBook's software, users are able to write their book fully online, without the need to install any software locally. This is especially useful for users that are not familiar with Git and GitHub, or do not have the rights to install software on their computer. To make this possible, users can start with the [TeachBooks Template](../external/template/README.md) after which they make use of the [Deploy Book Workflow](../external/deploy-book-workflow/README.md) to automatically build and release their book online.
 
 ## How to do this
 
