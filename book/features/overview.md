@@ -15,11 +15,11 @@ Additionally, not all features are built and shared in the same way. We do our b
 - {bdg-success}`Chrome Extension`
 - {bdg-white}`GitHub App and Javascript script`
 - {bdg-link-secondary}`Python Package: teachbooks <./teachbooks_intro.html>`
-- {bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <./DBW_intro.html>`
+- {bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <https://teachbooks.io/manual/favourites/external/deploy-book-workflow/README.html>`
 - {bdg-light}`GitHub Template`
 - {bdg-dark}`Git Workflow`
 - {bdg-primary}`Sphinx Extension`
-- {bdg-primary-line}`Part of TeachBooks Favourites`
+- {bdg-link-primary-line}`Part of TeachBooks Favourites <./favourites.html>`
 - {bdg-danger}`iframe`
 - {bdg-success}`WebApp`
 
