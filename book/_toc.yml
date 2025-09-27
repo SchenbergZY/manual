@@ -49,6 +49,8 @@ parts:
     - file: features/easy-editing.md
       sections:
       - file: external/template/README.md
+      - file: features/write_online.md
+      - file: features/release_book_online.md
       - file: features/draft-release
       - file: features/pull_request_build.md
       - file: features/local_server
