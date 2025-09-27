@@ -27,4 +27,4 @@ Finally, the purpose, installation process and usage of each features is elabora
 
 To see examples for these features, go to the [Examples chapter](../examples/overview.md).
 
-As the [TeachBooks Python Package](./teachbooks_intro.md), the [Deploy Book Workflow](https://teachbooks.io/manual/external/deploy-book-workflow/README.html), [TeachBooks Favourites](./favourites.md) and the TeachBook template are important tools that incorporate and deploy more than one feature, an additional explanation is provided here in subpages in more detail, with links to the pages in this manual where individual features are described.
+As the [TeachBooks Python Package](./teachbooks_intro.md), the [Deploy Book Workflow](https://teachbooks.io/manual/external/deploy-book-workflow/README.html), [TeachBooks Favourites](./favourites.md) and the [TeachBook template](../external/template/README.md) are important tools that incorporate and deploy more than one feature, an additional explanation is provided here in subpages in more detail, with links to the pages in this manual where individual features are described.
