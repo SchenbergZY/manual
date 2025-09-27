@@ -6,7 +6,6 @@ This page is useful for user type 3-5.
 
 {bdg-primary}`Sphinx Extension`
 
-```
 ````
 
 # TeachBooks Favourites
