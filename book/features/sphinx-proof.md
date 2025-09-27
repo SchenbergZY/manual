@@ -10,8 +10,8 @@ This section is useful for user type 3-5.
 ```
 +++
 {bdg-primary}`Sphinx Extension`
-{bdg-link-light}`Included in TeachBooks Template <https://teachbooks.io/manual/external/template/README.html>`
-{bdg-link-primary-line}`Included in TeachBooks Favourites <https://teachbooks.io/manual/features/favourites.html>`
+{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
+{bdg-link-primary-line}`Included in TeachBooks Favourites <./favourites.html>`
 ````
 
 # Sphinx proof
@@ -45,7 +45,7 @@ ex2.simulate(x0)
 ```
 ````
 
-More information can be found in the [official documentation](https://sphinx-proof.readthedocs.io/en/latest/index.html). It can be [configured in combination the TeachBooks extension to include examples with executable code and visuals](https://teachbooks.io/manual/_git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.html).
+More information can be found in the [official documentation](https://sphinx-proof.readthedocs.io/en/latest/index.html). It can be [configured in combination the TeachBooks extension to include examples with executable code and visuals](../_git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.html).
 
 ## Installation
 To use this extenstion, follow these steps:

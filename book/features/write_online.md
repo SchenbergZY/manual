@@ -4,21 +4,21 @@
 This section is useful for user type 3-5.
 ```
 
-{bdg-link-light}`Uses Deploy Book workflow <https://teachbooks.io/manual/external/deploy-book-workflow/README.html>`
-{bdg-link-light}`Uses TeachBooks Template <https://teachbooks.io/manual/external/template/README.html>`
+{bdg-link-light}`Uses Deploy Book workflow <../external/deploy-book-workflow/README.html>`
+{bdg-link-light}`Uses TeachBooks Template <../external/template/README.html>`
 
 
 ````
 
 # Write book fully in GitHub interface
 
-Using the GitHub tooling in combination with TeachBook's software, users are able to write their book fully online, without the need to install any software locally. This is especially useful for users that are not familiar with Git and GitHub, or do not have the rights to install software on their computer. To make this possible, users can start with the [TeachBooks Template](https://teachbooks.io/manual/external/template/README.html) after which they make use of the [Deploy Book Workflow](https://teachbooks.io/manual/external/deploy-book-workflow/README.html) to automatically build and release their book online.
+Using the GitHub tooling in combination with TeachBook's software, users are able to write their book fully online, without the need to install any software locally. This is especially useful for users that are not familiar with Git and GitHub, or do not have the rights to install software on their computer. To make this possible, users can start with the [TeachBooks Template](../external/template/README.html) after which they make use of the [Deploy Book Workflow](../external/deploy-book-workflow/README.html) to automatically build and release their book online.
 
 ## How to do this
 
 New users can start writing their book by following the steps shown in the [TeachBooks Template repository](https://github.com/TeachBooks/template).
 
-Users who already have a TeachBook repository can add the Deploy Book Workflow as explained [here](https://teachbooks.io/manual/external/deploy-book-workflow/README.html)
+Users who already have a TeachBook repository can add the Deploy Book Workflow as explained [here](./release_book_online.md).
 
 After that, users can start writing and editing their book fully online in the GitHub interface. This is supported with:
 - Automatic book builds for all version. See [](./release_book_online.md) for more information

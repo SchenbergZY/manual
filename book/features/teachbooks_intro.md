@@ -5,7 +5,7 @@
 This section is useful for user type 4-5.
 
 {bdg-link-secondary}`Python Package: TeachBooks`
-{bdg-link-light}`Included in TeachBooks Template <https://teachbooks.io/manual/external/template/README.html>`
+{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
 
 ```
 ````

@@ -10,8 +10,8 @@ This section is useful for user type 3-5.
 ```
 +++
 {bdg-primary}`Sphinx Extension`
-{bdg-link-light}`Included in TeachBooks Template <https://teachbooks.io/manual/external/template/README.html>`
-{bdg-link-primary-line}`Included in TeachBooks Favourites <https://teachbooks.io/manual/features/favourites.html>`
+{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
+{bdg-link-primary-line}`Included in TeachBooks Favourites <./favourites.html>`
 ````
 
 # Sphinx exercise
