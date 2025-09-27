@@ -22,7 +22,7 @@ Additionally, not all features are built and shared in the same way. We do our b
 - {bdg-link-primary-line}`TeachBooks Favourites <./favourites.html>`
 - {bdg-danger}`iframe`
 - {bdg-success}`WebApp`
-
+)
 Finally, the purpose, installation process and usage of each features is elaborated on in the respective sub-sections.
 
 To see examples for these features, go to the [Examples chapter](../examples/overview.md).

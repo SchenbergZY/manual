@@ -7,6 +7,7 @@ This section is useful for user type 3-5.
 {bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <../external/deploy-book-workflow/README.html>`
 {bdg-link-light}`Part of TeachBooks Template <../external/template/README.html>`
 {bdg-link-secondary}`Uses TeachBooks package <./teachbooks_intro.html>`
+````
 
 # Share book online for multiple versions
 
