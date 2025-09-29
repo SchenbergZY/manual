@@ -30,7 +30,7 @@ TeachBooks Favourites is a Sphinx extension which collects all of TeachBooks' fa
 - [Notebook execution patterns](../_git/github.com_TeachBooks_Sphinx-NB-Execution-Patterns/Manual/README.md)
 - [Sphinx Launch Buttons](../external/Sphinx-launch-buttons/README.md)
 
-All features which are part of TeachBooks Favourites are indicated with {bdg-primary-line}`Part of TeachBooks Favourites`. If you'd like to use specific features, but not the entire TeachBooks Favourites, you can remove this extension and replace it with the individual extensions you want to use.
+All features which are part of TeachBooks Favourites are include the following label on their respective pages in this manual: {bdg-primary-line}`Part of TeachBooks Favourites`. If you'd like to use specific features, but not the entire TeachBooks Favourites, you can remove this extension and replace it with the individual extensions you want to use.
 
 ## Installation
 To install TeachBooks-Favourites, follow these steps:

@@ -16,9 +16,9 @@ This section is useful for user type 3-5.
 
 # Sphinx proof
 
-This extensions provides an easy way to add proofs, theorem, axioms and much more to your book. It is documented on https://sphinx-proof.readthedocs.io/en/latest/.
+This extensions provides an easy way to add proofs, theorem, axioms and much more to your book. It is created by the Executable Books team and is [documented here](https://sphinx-proof.readthedocs.io/en/latest/).
 
-TeachBooks has made some small modifications to the original extension, such that it works well with translated books.
+TeachBooks has made some small modifications to the original extension, such that it works well with translated books; this modified version is located in the repository [github.com/TeachBooks/sphinx-proof](https://github.com/TeachBooks/sphinx-proof).
 
 ## What does it do?
 
