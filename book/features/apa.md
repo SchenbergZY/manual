@@ -5,6 +5,9 @@ This page is useful for user type 4 and 5.
 ```
 
 {bdg-primary}`(To be converted into) Sphinx Extension`
+{bdg-link-secondary}`Supported by TeachBooks package <./teachbooks_intro.html>`
+
+
 ````
 
 (apa)=

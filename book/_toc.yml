@@ -42,23 +42,16 @@ parts:
   - caption: Features
     chapters:
     - file: features/overview.md
-    - file: basic-features/overview.md
       sections:
-      - file: basic-features/jupyterbook.md
-      - file: basic-features/figures.md
-      - file: basic-features/equations.md
-      - file: basic-features/videos.md
-      - file: basic-features/References.md
-      - file: basic-features/code.md
-      - file: basic-features/Code_block_figures
-      - file: basic-features/badges.md
-      - file: basic-features/banner
-        title: Banner or Announcement
+      - file: features/teachbooks_intro.md
+      - file: external/deploy-book-workflow/README.md
+      - file: features/favourites.md
+      - file: external/template/README.md
     - file: features/easy-editing.md
       sections:
-      - file: external/template/README.md
+      - file: features/write_online.md
+      - file: features/release_book_online.md
       - file: features/draft-release
-      - file: external/deploy-book-workflow/README.md
       - file: features/pull_request_build.md
       - file: features/local_server
       - file: features/external_toc
@@ -91,7 +84,9 @@ parts:
       - file: external/Sphinx-PRIME-applets/README.md
       - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
       - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
+      - file: features/sphinx-proof.md
       - external: "https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md"
+      - file: features/exercise.md
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
@@ -106,17 +101,31 @@ parts:
       sections:
       - file: external/annotater/README.md
       - file: basic-features/hypothesis.md
-
+  - caption: Original Jupyter Book and Sphinx Features
+    chapters:
+    - file: basic-features/overview.md
+      sections:
+      - file: basic-features/jupyterbook.md
+      - file: basic-features/figures.md
+      - file: basic-features/equations.md
+      - file: basic-features/videos.md
+      - file: basic-features/References.md
+      - file: basic-features/code.md
+      - file: basic-features/Code_block_figures
+      - file: basic-features/badges.md
+      - file: basic-features/banner
+        title: Banner or Announcement
   - caption: Examples
     chapters:
     - file: examples/overview.md
-    - file: examples/book_structure.md
-    - file: examples/live_code.md
-    - file: examples/example_gumbel.ipynb
-    - file: examples/theory_questions.md
-    - file: examples/example_quiz_interactive.ipynb
-    - file: examples/coding_theory_widgets.ipynb
-    - file: examples/parametric_questions.ipynb
+      sections:
+      - file: examples/book_structure.md
+      - file: examples/live_code.md
+      - file: examples/example_gumbel.ipynb
+      - file: examples/theory_questions.md
+      - file: examples/example_quiz_interactive.ipynb
+      - file: examples/coding_theory_widgets.ipynb
+      - file: examples/parametric_questions.ipynb
 
   - caption: Editing Tools
     chapters:
