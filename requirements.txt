@@ -1,5 +1,5 @@
 teachbooks == 0.2.1
-sphinx-inline-tabs == 2023.4.21
+sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
 
