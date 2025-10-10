@@ -29,6 +29,7 @@ TeachBooks Favourites is a Sphinx extension which collects all of TeachBooks' fa
 - [Sphinx toggle button (TeachBooks contribution to the original)](https://sphinx-togglebutton.readthedocs.io/en/latest/)
 - [Notebook execution patterns](../_git/github.com_TeachBooks_Sphinx-NB-Execution-Patterns/Manual/README.md)
 - [Sphinx Launch Buttons](../external/Sphinx-launch-buttons/README.md)
+- [Sphinx new tab link](https://pypi.org/project/sphinx-new-tab-link/)
 
 All features which are part of TeachBooks Favourites are include the following label on their respective pages in this manual: {bdg-primary-line}`Part of TeachBooks Favourites`. If you'd like to use specific features, but not the entire TeachBooks Favourites, you can remove this extension and replace it with the individual extensions you want to use.
 
