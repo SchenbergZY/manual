@@ -86,6 +86,7 @@ parts:
       - file: features/sphinx-proof.md
       - external: "https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md"
       - file: features/exercise.md
+      - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md #BUMP
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
@@ -96,7 +97,6 @@ parts:
       - file: features/apa
       - file: external/Sphinx-Named-Colors/README.md
       - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
-      - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md #BUMP
     - file: features/students
       sections:
       - file: external/annotater/README.md
