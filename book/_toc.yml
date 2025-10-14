@@ -82,7 +82,6 @@ parts:
       - file: external/sphinx-iframes/README.md
       - external: https://github.com/TeachBooks/Sphinx-Indexed-Definitions/blob/manual/README.md
       - file: external/Sphinx-PRIME-applets/README.md
-      - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
       - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
       - file: features/sphinx-proof.md
       - external: "https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md"
@@ -96,6 +95,7 @@ parts:
       - file: external/teachbooks-sphinx-tippy/README.md
       - file: features/apa
       - file: external/Sphinx-Named-Colors/README.md
+      - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
       - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md #BUMP
     - file: features/students
       sections:
