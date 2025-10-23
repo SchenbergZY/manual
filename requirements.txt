@@ -4,5 +4,3 @@ sphinx-inline-tabs
 git+https://github.com/TeachBooks/TeachBooks-Favourites
 
 teachbooks-sphinx-grasple
-
-docutils==0.17.1
