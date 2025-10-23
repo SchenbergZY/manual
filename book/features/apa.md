@@ -69,18 +69,6 @@ sphinx:
   ...
 ```
 
-**Step 3: Enable in `_config.yml`**
-
-In your `_config.yml` file, add a `_static` is listed under `html_static_path`. This ensures the CSS file is included.
-
-```
-sphinx:
-  config:
-    ...
-    html_static_path: ["_static", ...]
-  ...
-```
-
 ## Usage
 
 All references are now made in APA-style. See for example this reference: {cite:t}`jason_moore` which shows up on the [references page](../references.md) too. The form of the citation looks like this:
