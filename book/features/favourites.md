@@ -19,7 +19,7 @@ TeachBooks Favourites is a Sphinx extension which collects all of TeachBooks' fa
 - [Download link replacer](../external/Download-Link-Replacer/README.md)
 - [Sphinx image inverter](../external/Sphinx-Image-Inverter/README.md)
 - [Sphinx iframes](../external/sphinx-iframes/README.md)
-- [Sphinx exercise (TeachBooks contribution to the original)](https://ebp-sphinx-exercise.readthedocs.io/en/latest/)
+- [Sphinx exercise (including TeachBooks contributions)](https://ebp-sphinx-exercise.readthedocs.io/en/latest/)
 - [Teachbooks Sphinx tippy](../external/teachbooks-sphinx-tippy/README.md)
 - [Sphinx named colors](../external/Sphinx-Named-Colors/README.md)
 - [Sphinx dropdown toggle](../_git/github.com_TeachBooks_Sphinx-Dropdown-Toggle/main/MANUAL.md)
