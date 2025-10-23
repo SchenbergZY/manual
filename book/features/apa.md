@@ -20,7 +20,7 @@ The instructions provided here will work under conventional usage with Jupyter B
 
 A temporary fix has also been implemented in the TeachBooks package for use with the Deploy Book Workflow (release mode) (see [release notes from v0.1.0](https://github.com/TeachBooks/TeachBooks/releases/tag/v0.1.0)).
 
-_Update, October 21, 2025: a new fix was necessitated due to dependency issues with docutils making it no longer necessary to pin this package. See [PR 207 of the Manual for a description](https://github.com/TeachBooks/manual/pull/207).
+_Update, October 21, 2025:_ a new fix was necessitated due to dependency issues with docutils making it no longer necessary to pin this package. See [PR 207 of the Manual for a description](https://github.com/TeachBooks/manual/pull/207).
 ```
 
 ## Introduction
