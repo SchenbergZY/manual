@@ -37,7 +37,7 @@ sphinx:
           thebe: true
     html_show_copyright: false
     html_last_updated_fmt: '%B %-d, %Y'
-    html_static_path: ["images"]
+    html_static_path: ["images", "_static"]
     bibtex_default_style: myapastyle
     bibtex_reference_style: author_year_round
     mathjax3_config:
