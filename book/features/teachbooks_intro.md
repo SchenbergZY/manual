@@ -1,7 +1,7 @@
 
 ````{margin}
 
-```{topic} Feature type
+```{note}
 
 {bdg-link-secondary}`Python Package: TeachBooks`
 
@@ -9,8 +9,7 @@
 
 ```
 
-```{admonition} User types
-:class: tip
+```{tip}
 This section is useful for user type 4-5.
 
 ```
