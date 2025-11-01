@@ -1,7 +1,7 @@
 
 ````{margin}
 
-```{topic}
+```{topic} Feature type
 
 {bdg-link-secondary}`Python Package: TeachBooks`
 
