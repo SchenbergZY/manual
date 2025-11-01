@@ -2,8 +2,11 @@
 ````{margin}
 
 ```{topic}
+
 {bdg-link-secondary}`Python Package: TeachBooks`
+
 {bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
+
 ```
 
 ```{admonition} User types
@@ -17,6 +20,8 @@ This section is useful for user type 4-5.
 [{octicon}`mark-github` repository](https://github.com/teachbooks/teachbooks)
 
 [{octicon}`book` documentation](https://teachbooks.readthedocs.io/)
+
+```
 
 ````
 
