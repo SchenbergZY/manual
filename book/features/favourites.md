@@ -11,10 +11,6 @@
 This page is useful for user type 3-5.
 ```
 
-{bdg-primary}`Sphinx Extension`
-{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
-
-
 ```{seealso}
 
 [{octicon}`mark-github` Repository](https://github.com/TeachBooks/TeachBooks-Favourites)
