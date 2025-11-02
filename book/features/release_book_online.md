@@ -18,7 +18,7 @@ This section is useful for user type 3-5.
 
 [{octicon}`mark-github` Repository deploy book workflow](https://github.com/TeachBooks/deploy-book-workflow)
 
-[{octicon}`book` Documentation](../installation-and-setup/versions_URLs.md)
+[{octicon}`book` Publish version on separate (fixed) URLs](../installation-and-setup/versions_URLs.md)
 
 {octicon}`pencil` Exercises:
 - [Your version of the book](https://teachbooks.io/template/exercises/004.html)
