@@ -1,12 +1,27 @@
 ````{margin}
-```{admonition} User types
-:class: tip
+
+```{note}
+{bdg-primary}`Sphinx Extension`
+
+{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
+
+```
+
+```{tip}
 This page is useful for user type 3-5.
 ```
 
 {bdg-primary}`Sphinx Extension`
 {bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
 
+
+```{seealso}
+
+[{octicon}`mark-github` Repository](https://github.com/TeachBooks/TeachBooks-Favourites)
+
+[{octicon}`pencil` Exercise](https://teachbooks.io/template/extension_exercises/017.html)
+
+```
 
 ````
 

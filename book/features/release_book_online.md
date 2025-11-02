@@ -1,12 +1,31 @@
 ````{margin}
-```{admonition} User types
-:class: tip
+
+```{note}
+
+{bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <../external/deploy-book-workflow/README.html>`
+
+{bdg-link-light}`Part of TeachBooks Template <../external/template/README.html>`
+
+{bdg-link-secondary}`Uses TeachBooks package <./teachbooks_intro.html>`
+
+```
+
+```{tip}
 This section is useful for user type 3-5.
 ```
 
-{bdg-link-light}`GitHub Reusable Action: Deploy Book workflow <../external/deploy-book-workflow/README.html>`
-{bdg-link-light}`Part of TeachBooks Template <../external/template/README.html>`
-{bdg-link-secondary}`Uses TeachBooks package <./teachbooks_intro.html>`
+```{seealso}
+
+[{octicon}`mark-github` Repository deploy book workflow](https://github.com/TeachBooks/deploy-book-workflow)
+
+[{octicon}`book` Documentation](../installation-and-setup/versions_URLs.md)
+
+{octicon}`pencil` Exercises:
+- [Your version of the book](https://teachbooks.io/template/exercises/004.html)
+- [Deploy book workflow](https://teachbooks.io/template/extension_exercises/015.html)
+
+```
+
 ````
 
 # Share book online for multiple versions

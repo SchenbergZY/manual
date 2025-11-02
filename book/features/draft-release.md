@@ -1,14 +1,25 @@
 
 ````{margin}
 
-```{admonition} User types
-:class: tip
+```{note}
+
+{bdg-link-secondary}`Uses TeachBooks package <./teachbooks_intro.html>`
+
+{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
+
+{bdg-link-light}`Supported by Deploy Book workflow <../external/deploy-book-workflow/README.html>`
+
+```{tip}
 This page is useful for user type 3-5.
 ```
 
-{bdg-link-secondary}`Uses TeachBooks package <./teachbooks_intro.html>`
-{bdg-link-light}`Included in TeachBooks Template <../external/template/README.html>`
-{bdg-link-light}`Supported by Deploy Book workflow <../external/deploy-book-workflow/README.html>`
+```{seealso}
+
+[{octicon}`mark-github` Repository](https://github.com/TeachBooks/teachbooks)
+
+[{octicon}`book` Documentation](https://teachbooks.readthedocs.io/latest/cli/cli.html)
+
+```
 
 ````
 

@@ -16,9 +16,9 @@ This section is useful for user type 4-5.
 
 ```{seealso}
 
-[{octicon}`mark-github` repository](https://github.com/teachbooks/teachbooks)
+[{octicon}`mark-github` Repository](https://github.com/teachbooks/teachbooks)
 
-[{octicon}`book` documentation](https://teachbooks.readthedocs.io/)
+[{octicon}`book` Documentation](https://teachbooks.readthedocs.io/)
 
 ```
 

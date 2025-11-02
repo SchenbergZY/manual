@@ -1,14 +1,34 @@
 ````{margin}
-```{admonition} User types
-:class: tip
+
+```{note}
+
+{bdg-link-light}`Uses Deploy Book workflow <../external/deploy-book-workflow/README.html>`
+
+{bdg-link-light}`Uses TeachBooks Template <../external/template/README.html>`
+
+```
+
+```{tip}
 This section is useful for user type 3-5.
 ```
 
-{bdg-link-light}`Uses Deploy Book workflow <../external/deploy-book-workflow/README.html>`
-{bdg-link-light}`Uses TeachBooks Template <../external/template/README.html>`
+```{seealso}
 
+[{octicon}`mark-github` Repository deploy book workflow](https://github.com/TeachBooks/deploy-book-workflow)
+
+[{octicon}`mark-github` Repository template](https://github.com/TeachBooks/template)
+
+[{octicon}`book` Documentation](../workflows/collaboration.md)
+
+{octicon}`pencil` Exercises:
+- [First file edit](https://teachbooks.io/template/exercises/001.html)
+- [Add a new file to the table of contents](https://teachbooks.io/template/exercises/002.html)
+- [Change book configuration](https://teachbooks.io/template/exercises/003.html)
+- [Syntax exercises](https://teachbooks.io/template/syntax_exercises.html)
+```
 
 ````
+
 
 # Write book fully in GitHub interface
 
