@@ -36,7 +36,7 @@ A python virtual environment is, like the name might suggest, a reserved space w
 
 ### Set-up environments
 
-Now we will set up your first environment. The following steps will create an Anaconda environment and install Python 3.11. Even if you already have Python 3.11, it is still good practice to create a dedicated Anaconda environment for each of your major projects such as creating a jupyter book.
+Now we will set up your first environment. The following steps will create an Anaconda environment and install Python 3.11. Even if you already have Python 3.11, it is still good practice to create a dedicated Anaconda environment for each of your major projects such as creating a TeachBook.
 
 For simplicity we will call this environment `my_new_book_env`, but you can give it any name you like.
 
@@ -47,7 +47,7 @@ For simplicity we will call this environment `my_new_book_env`, but you can give
 
 4. Additional 4th step: `pip install -r requirements.txt` (explanation in the following section)
 
-Now everytime you want to work on your jupyter-book, you need to activate the environment! (step 3) If you don't activate your environment, you will work in a 'wrong' working environment that might not contain all the packages you need.
+Now everytime you want to work on your TeachBook, you need to activate the environment! (step 3) If you don't activate your environment, you will work in a 'wrong' working environment that might not contain all the packages you need.
 
 As mentioned before, python packages can be downloaded in the environments you create. Both NumPy and pandas are popular Python packages used for data manipulation and analysis. For the creation of Jupyter Books, we will use the package `teachbooks` which is a wrapper around JupyterBooks. More information about this package [here](jupyter-book-setup.md).
 

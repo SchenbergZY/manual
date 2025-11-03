@@ -118,7 +118,7 @@ One possible modification to this setup would be if you are progressively releas
 - Set `PRIMARY_BRANCH` to `2024`
 - Set `BEHAVIOR_PRIMARY` to `copy`
 
-As your current students may then accidentally go to the older version of the book, we recommend you use a banner to indicate to readers that there is a (partial) new version available, and advise them where to find it. You can add a banner using this workflow (`BRANCHES_ARCHIVED`) or the [standard Jupyter Book banner feature](https://jupyterbook.org/v1/web/announcements.html).
+As your current students may then accidentally go to the older version of the book, we recommend you use a banner to indicate to readers that there is a (partial) new version available, and advise them where to find it. You can add a banner using this workflow (`BRANCHES_ARCHIVED`) or the [standard Jupyter Book v1 banner feature](https://jupyterbook.org/v1/web/announcements.html).
 
 ### Books with active editors working in parallel
 

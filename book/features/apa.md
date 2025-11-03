@@ -16,7 +16,7 @@ This page is useful for user type 4 and 5.
 ```{note}
 This feature is stable but because it relies on a local extension that is part of your book files and _not_ managed as part of a computing environment (e.g., `pip` or `conda`), unknown issues may arise. We would like to convert this feature into an independent Sphinx extension and/or Pybtext plugin. Visit the README in the [project page on GitHub](https://github.com/orgs/TeachBooks/projects/17?pane=info) to learn more.
 
-The instructions provided here will work under conventional usage with Jupyter Book (e.g., `jupyter book build book`).
+The instructions provided here will work under conventional usage with TeachBooks and Jupyter Book v1 (e.g., `jupyter book build book`).
 
 A temporary fix has also been implemented in the TeachBooks package for use with the Deploy Book Workflow (release mode) (see [release notes from v0.1.0](https://github.com/TeachBooks/TeachBooks/releases/tag/v0.1.0)).
 
@@ -25,7 +25,7 @@ _Update, October 21, 2025:_ a new fix was necessitated due to dependency issues 
 
 ## Introduction
 
-Do you include references in your book, but you're tired of the default options available in Jupyter Book? For example, the square-bracket style of citation and reference, where the first three letters of the name year are combined in a way that seems designed to minimize transparency?
+Do you include references in your book, but you're tired of the default options available in a TeachBook / Jupyter Book v1? For example, the square-bracket style of citation and reference, where the first three letters of the name year are combined in a way that seems designed to minimize transparency?
 
 There is a solution! This extension allows you to have APA formatting in your book.
 
@@ -97,7 +97,7 @@ Two issues are known:
 
 The extension is based on [`pybtex`](https://pybtex.org/), which is a BibTeX-compatible bibliography processor in Python that is extendible with plugins. 
 
-Although some customization is possible with the standard Jupyter Book features, [as described here](https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style), this extension implements the complete APA style, as well as enforcing round brackets (like this).
+Although some customization is possible with the standard Jupyter Book v1 features, [as described here](https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style), this extension implements the complete APA style, as well as enforcing round brackets (like this).
 
 The need to include a CSS file is an easy solution to the issue where empty brackets `[]` are left on the references page (to try it, simply delete `apastyle.css`).
 

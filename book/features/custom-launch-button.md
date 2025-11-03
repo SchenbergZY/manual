@@ -8,7 +8,7 @@ This page is useful for user type 4 and 5.
 ````
 
 # Multilingual book
-The custom launch button extension allows you to create a customizable button in the top right of your jupyter book. 
+The custom launch button extension allows you to create a customizable button in the top right of your TeachBook. 
 This may have many applications, one of them being that you can create different language versions of the book available for the user. 
 
 This section will explain how to create a "Languages" or " <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">

@@ -26,7 +26,7 @@ preferred-citation:
       value: 'https://github.com/TeachBooks/manual'
       description: 'GitHub repository'
   abstract: >-
-    his manual assists you in creating and collaborating on JupyterBooks
+    his manual assists you in creating and collaborating on TeachBooks
     for educational purposes. Some parts are specifically aimed for
     teachers at Delft University of Technology, although all material and
     tools are openly available. This manual aims at providing an easy start

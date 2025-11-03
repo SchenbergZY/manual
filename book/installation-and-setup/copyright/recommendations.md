@@ -22,7 +22,7 @@ The recommendations on this page are designed for content that is available in t
 
 ## Key Locations in the Book
 
-Note that there are several types of pages and files that can be incorporated into your TeachBook which, together, accomplish our goals of proper attribution and referencing. These are summarized in the table and explained in more detail in the following sections, along with examples for implementation in a Jupyter Book.
+Note that there are several types of pages and files that can be incorporated into your TeachBook which, together, accomplish our goals of proper attribution and referencing. These are summarized in the table and explained in more detail in the following sections, along with examples for implementation in a TeachBook..
 
 ```{list-table} Key Locations in the Book for Attribution and Referencing Best Practices
 :header-rows: 1

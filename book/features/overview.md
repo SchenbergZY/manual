@@ -4,7 +4,7 @@
 As TeachBooks, we collect a suite of existing open-source software so you don't have to! Some of the software is developed with our TA's to improve the learning experience of our students and ease the book-development process for our teachers. As the open-source software landscape changes rapidly, it is essential to keep in contact and share resources amongst ourselves to minimize maintenance and downtime for our book websites and focus on what really matters: teaching!
 
 Since the list of TeachBook features is getting quite long, we have grouped them in categories:
-- [Original Jupyter Book and Sphinx features](../basic-features/overview.md)
+- [Original Jupyter Book v1 and Sphinx features](../basic-features/overview.md)
 - [Easy editing process](./easy-editing.md)
 - [Additional functionality](./sphinx_extensions.md)
 - [Book styling](./visuals.md)

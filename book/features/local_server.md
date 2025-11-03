@@ -17,7 +17,7 @@ Technically what is needed to facilitate this during the editing and checking of
 ```{admonition} Why do you need a local server?
 :class: tip
 
-A Jupyter Book is really just a _static website._ This means that all book content _and interactivity_ is available via the (static) files that are provided to you by a webserver when you visit a specific URL. After this initial request, all required files are available in your web browser, however, some features require the request and response protocol to work properly. 
+A TeachBook is really just a _static website._ This means that all book content _and interactivity_ is available via the (static) files that are provided to you by a webserver when you visit a specific URL. After this initial request, all required files are available in your web browser, however, some features require the request and response protocol to work properly. 
 ```
 
 We recommend you use the **TeachBooks Python Package**, which has a `serve` command in the CLI tool to start and stop local servers. Find out more on {ref}`the TeachBooks Package page <teachbooks-serve>`.

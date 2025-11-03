@@ -15,7 +15,7 @@ VS Code can be downloaded from [here](https://code.visualstudio.com). The instal
 
 ## Extensions
 
-When working with Jupyter Book (or Notebooks in general), these extensions are highly recommended:
+When working with TeachBooks (or Jupyter Notebooks in general), these extensions are highly recommended:
 
 - User type 4-5:
     - [MyST-Markdown](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight) - adds support for MyST markdown, including previews.

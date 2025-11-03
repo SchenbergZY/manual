@@ -13,7 +13,7 @@ Pull Requests are a key tool for allowing anyone with a GitHub account to make a
 
 Read the Docs is not recommended for final versions of your book because of the advertisement in the free version. If you'd like to pay for it, it can replace the functionality of the [deploy-book-workflow](../external/deploy-book-workflow/README.md).
 
-This tool works using Sphinx, which is the core engine for Jupyter Book; it is carried out using a Jupyter Book command to generate a Sphinx configuration file, for example:
+This tool works using Sphinx, which is the core engine for Jupyter Book v1; it is carried out using a Jupyter Book command to generate a Sphinx configuration file, for example:
 
 ```
 jupyter-book config sphinx book/

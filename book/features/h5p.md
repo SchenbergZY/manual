@@ -10,7 +10,7 @@ This section is useful for user type 3-5.
 # H5p interactive elements
 
 ## Instruction
-H5p elements are interactive HTML-blocks which can be embedded in a Jupyter Book using an iframe. H5p requires a server to host those elements. For TU Delft employees, this is arranged for on a [TU Delft portal on the H5p website](https://tudelft.h5p.com/content) (sign in via Brightspace to H5p required first as described [here](https://www.tudelft.nl/teaching-support/educational-tools/h5p)).
+H5p elements are interactive HTML-blocks which can be embedded in a TeachBook using an iframe. H5p requires a server to host those elements. For TU Delft employees, this is arranged for on a [TU Delft portal on the H5p website](https://tudelft.h5p.com/content) (sign in via Brightspace to H5p required first as described [here](https://www.tudelft.nl/teaching-support/educational-tools/h5p)).
 
 After creating an H5p element, the iframe code can be copied at Edit - Publish - Public - Embed code. This html link of that embed can be directly added to your markdown file using [](../external/sphinx-iframes/README.md):
 

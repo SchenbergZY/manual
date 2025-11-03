@@ -113,7 +113,7 @@ And type the following command to set the email address:
 
 ## GitHub Desktop
 
-GitHub is a competitor company to GitLab. It provides very similar services, but they are often called different names, or have slightly different features. GitHub provides a free software that is very useful: [GitHub Desktop](https://desktop.github.com/)! While GitLab is a cloud-based version control system built around Git, GitHub Desktop makes it possible to manage our Git repositories locally on our computers, even though they are stored on GitLab. This is very useful for working with the jupyter-book more extensively and work on interactive features. GitHub Desktop provides an alternative to Git in VS Code, and will be described on a later stage.
+GitHub is a competitor company to GitLab. It provides very similar services, but they are often called different names, or have slightly different features. GitHub provides a free software that is very useful: [GitHub Desktop](https://desktop.github.com/)! While GitLab is a cloud-based version control system built around Git, GitHub Desktop makes it possible to manage our Git repositories locally on our computers, even though they are stored on GitLab. This is very useful for working with the TeachBook more extensively and work on interactive features. GitHub Desktop provides an alternative to Git in VS Code, and will be described on a later stage.
 
 ## Terminology
 This is a (non-exhaustive) list of terminology that will be used in Git for local use.
