@@ -6,7 +6,7 @@ Never seen a TeachBook before? Here's a small demo of the MUDE-book!
 :class: blend
 ```
 
-So what are you looking at? It's a website generated with the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) which in turn makes use of many other tools, of which [Jupyter Book package](https://jupyterbook.org/) and [Sphinx](https://www.sphinx-doc.org/) are the most prominent. Various extensions have been added to improve the student-experience, especially for technical topics! With TeachBooks we aim to make it easy to collaboratively use it, even if you've little experience with the software package which is part of it.
+So what are you looking at? It's a website generated with the [TeachBooks package](https://github.com/TeachBooks/TeachBooks) which in turn makes use of many other tools, of which [Jupyter Book package](https://jupyterbook.org/v1/) and [Sphinx](https://www.sphinx-doc.org/) are the most prominent. Various extensions have been added to improve the student-experience, especially for technical topics! With TeachBooks we aim to make it easy to collaboratively use it, even if you've little experience with the software package which is part of it.
 
 ## Three Key Ingredients
 

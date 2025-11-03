@@ -32,7 +32,7 @@ Technically speaking, a `_config.yml` file is not required to build a Jupyter Bo
 
 In addition, the following option can also be useful:
 
-- `execute_notebooks`: *turn on/off* the execution of Jupyter Notebooks during the build process. *On* by default. If you perform heavy computations in your notebook (machine learning, FEM models, et cetera), you might be better off running the notebooks on a more powerful machine as opposed to the CI/CD server. To turn it off, specify the value `'off'`. You can also exclude specific notebooks by creating exclude patterns in the filenames. For more info, see the [Jupyter Book documentation](https://jupyterbook.org/en/stable/content/execute.html#exclude-files-from-execution).
+- `execute_notebooks`: *turn on/off* the execution of Jupyter Notebooks during the build process. *On* by default. If you perform heavy computations in your notebook (machine learning, FEM models, et cetera), you might be better off running the notebooks on a more powerful machine as opposed to the CI/CD server. To turn it off, specify the value `'off'`. You can also exclude specific notebooks by creating exclude patterns in the filenames. For more info, see the [Jupyter Book documentation](https://jupyterbook.org/v1/content/execute.html#exclude-files-from-execution).
 
 
 ```{warning}

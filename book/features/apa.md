@@ -85,7 +85,7 @@ Here are three examples for making citations:
 |`{cite:p}`| {cite:p}`jason_moore` |
 |`{cite}`| {cite}`jason_moore` |
 
-For more options on the in-line citation style, see https://jupyterbook.org/en/stable/content/citations.html#change-the-in-line-citation-style.
+For more options on the in-line citation style, see https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style.
 
 ### Known Issues
 
@@ -97,7 +97,7 @@ Two issues are known:
 
 The extension is based on [`pybtex`](https://pybtex.org/), which is a BibTeX-compatible bibliography processor in Python that is extendible with plugins. 
 
-Although some customization is possible with the standard Jupyter Book features, [as described here](https://jupyterbook.org/en/stable/content/citations.html#change-the-in-line-citation-style), this extension implements the complete APA style, as well as enforcing round brackets (like this).
+Although some customization is possible with the standard Jupyter Book features, [as described here](https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style), this extension implements the complete APA style, as well as enforcing round brackets (like this).
 
 The need to include a CSS file is an easy solution to the issue where empty brackets `[]` are left on the references page (to try it, simply delete `apastyle.css`).
 

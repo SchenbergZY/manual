@@ -1,6 +1,6 @@
 # Badges, Buttons & Icons
 
-<a href="https://jupyterbook.org/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="../images/logo-wide.svg" alt="Jupyter book"></a> provides a range of features which are visually appealing and functional. These elements can enhance the interactivity and visual design of your book, offering additional information or links in a compact and visually engaging way. The badges, buttons and icons are made available through Sphinx and they themselves wrote a [documentation](https://sphinx-design.readthedocs.io/en/latest/badges_buttons.html) about it.
+<a href="https://jupyterbook.org/v1/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="../images/logo-wide.svg" alt="Jupyter book"></a> provides a range of features which are visually appealing and functional. These elements can enhance the interactivity and visual design of your book, offering additional information or links in a compact and visually engaging way. The badges, buttons and icons are made available through Sphinx and they themselves wrote a [documentation](https://sphinx-design.readthedocs.io/en/latest/badges_buttons.html) about it.
 
 (my_ref)=
 ## Badges
@@ -119,12 +119,12 @@ To add an icon, use the following syntax:
 
 **1. Image Icons**
 
-Let's have a look at the first sentence of this chapter again: <a href="https://jupyterbook.org/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="../images/logo-wide.svg" alt="Jupyter book"></a> provides a range of features which are visually appealing and functional.
+Let's have a look at the first sentence of this chapter again: <a href="https://jupyterbook.org/v1/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="../images/logo-wide.svg" alt="Jupyter book"></a> provides a range of features which are visually appealing and functional.
 
 Here the Jupyter-book logo was inserted for a more professional look. It's including a link `href` and and image saved as `../images/logo-wide.svg`
 
 ```
-<a href="https://jupyterbook.org/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="../images/logo-wide.svg" alt="Jupyter book"></a> provides a range of features which are visually appealing and functional.
+<a href="https://jupyterbook.org/v1/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="../images/logo-wide.svg" alt="Jupyter book"></a> provides a range of features which are visually appealing and functional.
 ```
 
 **2. SVG Icons**

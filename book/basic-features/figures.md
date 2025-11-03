@@ -39,7 +39,7 @@ example 1: width (70%) as percentage, align center
 
 Using the name label, you can refer to the figure as done with {numref}`Figure {number} <demoexample1>`.
 
-You can find more documentation on including figures [here](https://jupyterbook.org/en/stable/content/figures.html).<br> 
+You can find more documentation on including figures [here](https://jupyterbook.org/v1/content/figures.html).<br> 
 
 There are many settings, for instance aligning right: 
 
