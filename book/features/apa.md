@@ -74,6 +74,37 @@ The references section at the end of your book will also be formatted in APA sty
 ```
 ::::
 
+## Duplicate label warning
+
+You might encounter a warning during the build process that has this structure:
+
+```
+<filename>:<lineno>: WARNING: duplicate label "<authors>, <year>" for keys "<key1>" and "<key2>"
+```
+
+This is might have different cause, but often it is because two different references have the same author(s) and the same year. A common solution is to add letters to the year in the `.bib` file, like this:
+
+```bibtex
+@misc{launch_buttons,
+  author = {{TeachBooks}},
+  title = {Custom launch buttons},
+  url = {https://github.com/TeachBooks/Sphinx-launch-buttons},
+  year = {2024a},
+  note = {Retrieved December, 2024. BSD-3-Clause.},
+}
+
+@misc{nested,
+  author = {{TeachBooks}},
+  title = {Git workflow: Share content between book},
+  url = {https://github.com/TeachBooks/Nested-Books},
+  year = {2024b},
+  note = {Retrieved December, 2024. CC BY 4.0.},
+}
+
+```
+
+This does negate the automatic ordering of references by the order `authors > year > title`, so our advice is to only use this solution when the bibliography contains duplicate author-year combinations ánd the bibliography is final. That way the you can use the sorted order with warnings to determine the correct letters to add to the years.
+
 ## Implementation
 
 The extension is based on [`pybtex`](https://pybtex.org/), which is a BibTeX-compatible bibliography processor in Python that is extendible with plugins. 
