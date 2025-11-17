@@ -4,24 +4,12 @@
 This page is useful for user type 4 and 5.
 ```
 
-{bdg-primary}`(To be converted into) Sphinx Extension`
-{bdg-link-secondary}`Supported by TeachBooks package <./teachbooks_intro.html>`
-
+{bdg-primary}`Sphinx Extension`
 
 ````
 
 (apa)=
 # APA References
-
-```{note}
-This feature is stable but because it relies on a local extension that is part of your book files and _not_ managed as part of a computing environment (e.g., `pip` or `conda`), unknown issues may arise. We would like to convert this feature into an independent Sphinx extension and/or Pybtext plugin. Visit the README in the [project page on GitHub](https://github.com/orgs/TeachBooks/projects/17?pane=info) to learn more.
-
-The instructions provided here will work under conventional usage with TeachBooks and Jupyter Book v1 (e.g., `jupyter book build book`).
-
-A temporary fix has also been implemented in the TeachBooks package for use with the Deploy Book Workflow (release mode) (see [release notes from v0.1.0](https://github.com/TeachBooks/TeachBooks/releases/tag/v0.1.0)).
-
-_Update, October 21, 2025:_ a new fix was necessitated due to dependency issues with docutils making it no longer necessary to pin this package. See [PR 207 of the Manual for a description](https://github.com/TeachBooks/manual/pull/207).
-```
 
 ## Introduction
 
@@ -30,77 +18,64 @@ Do you include references in your book, but you're tired of the default options 
 There is a solution! This extension allows you to have APA formatting in your book.
 
 ## Installation
-To use APA-references, a set of Python files need to be manually loaded into your book.
 
-**Step 1: files to root directory of your book**
+To use APA-references, install the [Sphinx-APA-References extension](https://github.com/TeachBooks/Sphinx-APA-References) by following these two steps:
 
-Download this zip-file [`apa_config.zip`](apa_config.zip), which contains the necessary files, located in _two_ subdirectories: `_ext` and `_static`. Unzip and place the contents in the root of your book directory so that it looks like the schematic here:
+**Step 1: Install the Package**
 
+Install the module `sphinx-apa-references` package using `pip`:
 ```
-book
-├── _ext/
-│   ├── pybtexapastyle/
-│   ├── apastyle.py
-│   └── bracket_citation_style.py
-├── _static/
-|   ├── ...
-│   └── apastyle.css
-├── _config.yml
-├── _toc.yml
-├── requirements.txt
-├── <book files>
+pip install sphinx-apa-references
+```
+    
+**Step 2: Add to `requirements.txt`**
+
+Make sure that the package is included in your project's `requirements.txt` to track the dependency:
+```
+sphinx-apa-references
 ```
 
-Note that you may or may not already have a `_static` subdirectory, to which the file `apastyle.css` should be added.
+**Step 3: Enable in `_config.yml`
 
-**Step 2: Enable in `_config.yml`**
-
-In your `_config.yml` file, add a `bibtex_default_style`, `bybtex_reference_style` and the local extensions `apastyle` and `bracket_citation_style.py`. This enables the (local) extension.
-
+In your `_config.yml` file, add the extension to the list of Sphinx extra extensions (**important**: underscore, not dash this time):
 ```
-sphinx:
-  config:
-    ...
-    bibtex_default_style: myapastyle
-    bibtex_reference_style: author_year_round
-  local_extensions:
-    apastyle: _ext/
-    bracket_citation_style: _ext/
-  ...
+sphinx: 
+    extra_extensions:
+        .
+        .
+        .
+        - sphinx_apa_references
+        .
+        .
+        .
 ```
 
 ## Usage
 
-All references are now made in APA-style. See for example this reference: {cite:t}`jason_moore` which shows up on the [references page](../references.md) too. The form of the citation looks like this:
+All references are now made in APA-style. Here are five examples how to create a citation in APA style:
 
-```
-{cite:t}`jason_moore`
-```
-
-Here are three examples for making citations:
-
-| Syntax | Result |
-| :---: | :---: |
-|`{cite:t}` | {cite:t}`jason_moore` |
-|`{cite:p}`| {cite:p}`jason_moore` |
-|`{cite}`| {cite}`jason_moore` |
+| Syntax | Result with 1 author | Result with many authors | Explanation |
+| :---: | :---: | :---: | :---: |
+|`{cite:t}` | {cite:t}`jason_moore` | {cite:t}`dummyreference` | Textual citation |
+|`{cite:p}`| {cite:p}`jason_moore` | {cite:p}`dummyreference` | Parenthetical citation |
+|`{cite}`| {cite}`jason_moore` | {cite}`dummyreference` | Same as `{cite:p}` |
+|`{cite:ts}` | {cite:ts}`jason_moore` | {cite:ts}`dummyreference` | Same as `{cite:t}`, but without abbreviation of authors |
+|`{cite:ps}`| {cite:ps}`jason_moore` | {cite:ps}`dummyreference` |Same as `{cite:p}`, but without abbreviation of authors |
 
 For more options on the in-line citation style, see https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style.
 
-### Known Issues
+The references section at the end of your book will also be formatted in APA style:
 
-Two issues are known:
-- During the build, warning will be raised with `... WARNING: duplicate label for keys ...`. In most cases, these warnings can be ignored. As noted above, the book will not build references properly 
-- In case you have both an `.ipynb` and `.md` version of a file, the `.md` version will always be used whenever this extension is used. This removes the possibility to show code outputs.
+::::{admonition} Example of APA References
+:class: example
+
+```{iframe} ../references.html
+:class: no-blend
+```
+::::
 
 ## Implementation
 
 The extension is based on [`pybtex`](https://pybtex.org/), which is a BibTeX-compatible bibliography processor in Python that is extendible with plugins. 
 
-Although some customization is possible with the standard Jupyter Book v1 features, [as described here](https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style), this extension implements the complete APA style, as well as enforcing round brackets (like this).
-
-The need to include a CSS file is an easy solution to the issue where empty brackets `[]` are left on the references page (to try it, simply delete `apastyle.css`).
-
-## Contribute
-
-This tool needs to be developed further to make it into a proper sphinx-extension (and/or an independent `pybtext` plugin). The process is described in the README of this [project page on GitHub](https://github.com/orgs/TeachBooks/projects/17?pane=info). If you've ideas or questions, please reach out to us at info@teachbooks.io!
+Although some customization is possible with the standard Jupyter Book v1 features, [as described here](https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style), this extension implements a complete APA style, as well as enforcing round brackets (like this).
