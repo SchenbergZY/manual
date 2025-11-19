@@ -35,9 +35,9 @@ Make sure that the package is included in your project's `requirements.txt` to t
 sphinx-apa-references
 ```
 
-**Step 3: Enable in `_config.yml`
+**Step 3: Enable in `_config.yml`**
 
-In your `_config.yml` file, add the extension to the list of Sphinx extra extensions (**important**: underscore, not dash this time):
+In your `_config.yml` file, add the extension to the list of Sphinx extra extensions (**important**: underscore, not dash this time) and specify the location of your bib file (note indentation of the bibtex file path specification; any number of bib files are allowed):
 ```
 sphinx: 
     extra_extensions:
@@ -48,6 +48,7 @@ sphinx:
         .
         .
         .
+bibtex_bibfiles: "<path_to_bib_file>/references.bib"
 ```
 
 ## Usage
@@ -110,3 +111,23 @@ This does negate the automatic ordering of references by the order `authors > ye
 The extension is based on [`pybtex`](https://pybtex.org/), which is a BibTeX-compatible bibliography processor in Python that is extendible with plugins. 
 
 Although some customization is possible with the standard Jupyter Book v1 features, [as described here](https://jupyterbook.org/v1/content/citations.html#change-the-in-line-citation-style), this extension implements a complete APA style, as well as enforcing round brackets (like this).
+
+### Previous implementation
+
+APA referencing was previously implemented by including a local extension in a book subdirectory `_ext` (described [here](https://github.com/jupyter-book/jupyter-book/issues/1090)). To upgrade, once this Sphinx extension is implemented in your book, the local extension files in `_ext` can be deleted and the four lines indicated below removed from your `_config.yml` file:
+
+```yaml
+sphinx:
+  config:
+    .
+    .
+    .
+    bibtex_reference_style: author_year_round   # remove
+    bibtex_default_style: myapastyle            # remove
+    .
+    .
+    .
+  local_extensions:
+    apastyle: _ext/                             # remove
+    bracket_citation_style: _ext/               # remove
+```
