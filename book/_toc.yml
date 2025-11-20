@@ -86,7 +86,8 @@ parts:
       - file: features/sphinx-proof.md
       - external: "https://github.com/TeachBooks/Sphinx-NB-Execution-Patterns/blob/Manual/README.md"
       - file: features/exercise.md
-      - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md #BUMP
+      - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md
+      - external: https://github.com/TeachBooks/Sphinx-GitHub-Alerts/blob/main/README.md
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
