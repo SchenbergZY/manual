@@ -6,3 +6,8 @@ git+https://github.com/TeachBooks/TeachBooks-Favourites
 teachbooks-sphinx-grasple
 
 sphinx-apa-references
+
+# For executing Jupyter Notebooks
+myst_nb
+numpy
+matplotlib
