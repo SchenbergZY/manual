@@ -1,7 +1,7 @@
 teachbooks == 0.2.3
 sphinx-inline-tabs
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites
+git+https://github.com/TeachBooks/TeachBooks-Favourites@test_metadata
 
 sphinx-metadata-figure == 1.0.3
 

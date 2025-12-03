@@ -52,6 +52,7 @@ sphinx:
       license:
         summaries: false
         individual: false
+    nb_execution_includepatterns: "**/MANUAL.ipynb"
 
 teachbooks:
   attribution_location: margin
