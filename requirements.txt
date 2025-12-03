@@ -3,8 +3,6 @@ sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites@test_metadata
 
-sphinx-metadata-figure == 1.0.3
-
 teachbooks-sphinx-grasple
 
 sphinx-apa-references
