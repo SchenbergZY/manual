@@ -88,7 +88,7 @@ parts:
       - file: features/exercise.md
       - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md
       - external: https://github.com/TeachBooks/Sphinx-GitHub-Alerts/blob/main/README.md
-      - external: https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb #BUMPBUMPBUMP
+      - external: https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
