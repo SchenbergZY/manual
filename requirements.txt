@@ -1,7 +1,7 @@
 teachbooks == 0.2.3
 sphinx-inline-tabs
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites #BUMP8-12
+git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.7.3
 
 teachbooks-sphinx-grasple
 
@@ -11,3 +11,4 @@ sphinx-apa-references
 myst_nb
 numpy
 matplotlib
+
