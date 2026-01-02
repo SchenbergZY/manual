@@ -32,10 +32,9 @@ print(f"{a} {b} {c}")
 :::{prf:theorem-end}
 :::
 
-:::{figure-start} images/logo-wide.svg
+:::{figure-start} images/nothing.svg
 :name: figure-label
-:alt: JupyterBook logo
-:width: 200px
+:alt: Nothing
 :align: center
 
 This is a figure. This text is inside the caption.
