@@ -450,13 +450,6 @@ class MergeGatedDirectivesTransform(SphinxTransform):
             end_index = parent.children.index(end_n)
             between_nodes = parent.children[start_index + 1:end_index]
 
-            # print the nodes for debugging
-            logger.info(f"{start_n.pformat()}",color="green")
-            if between_nodes:
-                for bn in between_nodes:
-                    logger.info(f"{bn.pformat()}",color="yellow")
-            logger.info(f"{end_n.pformat()}",color="red")
-
             # We have to merge, but how is the question.
             # we handle based on "experience" and "observation" of what kind of nodes are generated
             # step 1: create a new container node to hold the merged content
@@ -490,14 +483,10 @@ class MergeGatedDirectivesTransform(SphinxTransform):
                     for i, bn in enumerate(between_nodes):
                             content.insert(pos + i, bn)  # insert sets parent/doc links
                 else:
-                    logger.info(f"Found no caption and no section node in start_node content.",color="blue")
                     # otherwise, we add all between nodes to the main content directly\
                     for bn in between_nodes:
                         content += bn  # add sets parent/doc links
-                    logger.info(f"New nodes after merging:",color="blue")
-                    for nn in new_nodes:
-                        logger.info(f"{nn.pformat()}",color="blue")
-
+                    
             # finally, replace start_n with new_nodes, and remove end_n and between_nodes
             start_pos = parent.children.index(start_n)
             # remove end_n

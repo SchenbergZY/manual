@@ -1,4 +1,66 @@
+---
+file_format: mystnb
+kernelspec:
+  name: python3
+---
+
 # TeachBooks Manual
+
+:::{prf:theorem-start} A title
+:label: theorem-label
+
+This is a theorem. This text is inside the directive.
+:::
+
+Now some extra text that should come inside the theorem.
+
+:::{figure} images/sphinx-logo.svg
+:alt: Sphinx logo
+:width: 200px
+:align: center
+
+Sphinx is a great tool for documentation! This figure should be inside the theorem.
+:::
+
+```{code-cell} ipython3
+a = "This is some"
+b = "Python code"
+c = "that should be inside the theorem."
+print(f"{a} {b} {c}")
+```
+
+:::{prf:theorem-end}
+:::
+
+:::{figure-start} images/logo-wide.svg
+:name: figure-label
+:alt: JupyterBook logo
+:width: 200px
+:align: center
+
+This is a figure. This text is inside the caption.
+:::
+
+```{code-cell} ipython3
+a = "This is some"
+b = "Python code"
+c = "that should be inside the figure,"
+d = "above the caption."
+print(f"{a} {b} {c} {d}")
+```
+
+Now some extra text that should come inside the figure, above the caption.
+
+:::{figure} images/sphinx-logo.svg
+:alt: Sphinx logo
+:width: 200px
+:align: center
+
+Sphinx is a great tool for documentation! This figure should be inside the parent figure, above the parent caption.
+:::
+
+:::{figure-end}
+:::
 
 This manual is primarily designed for and by teachers for use in education, but should be a useful resource for anyone interested in creating and collaborating on a TeachBook: a <a href="https://jupyterbook.org/v1/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="images/logo-wide.svg" alt="Jupyter book v1"> v1</a> using the <a href="https://www.sphinx-doc.org/"><img  style="display:inline-block; height:1.5em; width:auto; transform:translate(0, -0.15em)" src="images/sphinx-logo.svg" alt="Sphinx logo"> Sphinx backend</a> with additional editing tools and book features. Our aim is to provide a simple way to start book-making for new users (it only takes 10 clicks!), ease the editing process for anyone, and provide additional features developed for education-purposes. We hope you find this resource useful and refer back to it often.
 
