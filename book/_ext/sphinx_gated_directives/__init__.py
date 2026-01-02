@@ -149,27 +149,27 @@ def make_startified_class(
         # Get environment from state.document.settings
         env = getattr(self.state.document.settings, "env", None)
         if env is not None:
-            # 1) Check whether main registry is already created, if not, create it
-            if not hasattr(env, "sphinx_gated_directives_registry"):
-                env.sphinx_gated_directives_registry = {}
-            # 2) Check whether a sub-registry for current directive type is already created, if not, create it
-            if orig_name not in env.sphinx_gated_directives_registry:
-                env.sphinx_gated_directives_registry[orig_name] = {}
-            # 3) Register current usage in the registry for this doc and this type
-            gated_registry = env.sphinx_gated_directives_registry[orig_name]
             docname = env.docname
-            if docname not in gated_registry:
-                gated_registry[docname] = {
-                    "start": [],
-                    "end": [],
-                    "sequence": [],
-                    "msg": [],
-                }
-            gated_registry[docname]["start"].append(self.lineno)
-            gated_registry[docname]["sequence"].append("S")
-            gated_registry[docname]["msg"].append(
-                f"{self.name} at line: {self.lineno}"
-            )
+            # # 1) Check whether main registry is already created, if not, create it
+            # if not hasattr(env, "sphinx_gated_directives_registry"):
+            #     env.sphinx_gated_directives_registry = {}
+            # # 2) Check whether a sub-registry for current directive type is already created, if not, create it
+            # if orig_name not in env.sphinx_gated_directives_registry:
+            #     env.sphinx_gated_directives_registry[orig_name] = {}
+            # # 3) Register current usage in the registry for this doc and this type
+            # gated_registry = env.sphinx_gated_directives_registry[orig_name]
+            # if docname not in gated_registry:
+            #     gated_registry[docname] = {
+            #         "start": [],
+            #         "end": [],
+            #         "sequence": [],
+            #         "msg": [],
+            #     }
+            # gated_registry[docname]["start"].append(self.lineno)
+            # gated_registry[docname]["sequence"].append("S")
+            # gated_registry[docname]["msg"].append(
+            #     f"{self.name} at line: {self.lineno}"
+            # )
             # 4) Check whether super registry has been created, if not, create it
             if not hasattr(env, "sphinx_gated_directives_super_registry"):
                 env.sphinx_gated_directives_super_registry = {}
@@ -223,27 +223,27 @@ def make_endified_class(
         # Get environment from state.document.settings
         env = getattr(self.state.document.settings, "env", None)
         if env is not None:
-            # 1) Check whether main registry is already created, if not, create it
-            if not hasattr(env, "sphinx_gated_directives_registry"):
-                env.sphinx_gated_directives_registry = {}
-            # 2) Check whether a sub-registry for current directive type is already created, if not, create it
-            if orig_name not in env.sphinx_gated_directives_registry:
-                env.sphinx_gated_directives_registry[orig_name] = {}
-            # 3) Register current usage in the registry for this doc and this type
-            gated_registry = env.sphinx_gated_directives_registry[orig_name]
             docname = env.docname
-            if docname not in gated_registry:
-                gated_registry[docname] = {
-                    "start": [],
-                    "end": [],
-                    "sequence": [],
-                    "msg": [],
-                }
-            gated_registry[docname]["end"].append(self.lineno)
-            gated_registry[docname]["sequence"].append("E")
-            gated_registry[docname]["msg"].append(
-                f"{self.name} at line: {self.lineno}"
-            )
+            # # 1) Check whether main registry is already created, if not, create it
+            # if not hasattr(env, "sphinx_gated_directives_registry"):
+            #     env.sphinx_gated_directives_registry = {}
+            # # 2) Check whether a sub-registry for current directive type is already created, if not, create it
+            # if orig_name not in env.sphinx_gated_directives_registry:
+            #     env.sphinx_gated_directives_registry[orig_name] = {}
+            # # 3) Register current usage in the registry for this doc and this type
+            # gated_registry = env.sphinx_gated_directives_registry[orig_name]
+            # if docname not in gated_registry:
+            #     gated_registry[docname] = {
+            #         "start": [],
+            #         "end": [],
+            #         "sequence": [],
+            #         "msg": [],
+            #     }
+            # gated_registry[docname]["end"].append(self.lineno)
+            # gated_registry[docname]["sequence"].append("E")
+            # gated_registry[docname]["msg"].append(
+            #     f"{self.name} at line: {self.lineno}"
+            # )
             # 4) Check whether super registry has been created, if not, create it
             if not hasattr(env, "sphinx_gated_directives_super_registry"):
                 env.sphinx_gated_directives_super_registry = {}
@@ -341,17 +341,16 @@ class end_node(nodes.Admonition, nodes.Element):
 # purge_registry
 def purge_registries(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
 
-    if hasattr(env, "sphinx_gated_directives_registry") or hasattr(env, "sphinx_gated_directives_super_registry"):
-        # only perge if needed
-        if hasattr(env, "sphinx_gated_directives_registry"):
-            registry = env.sphinx_gated_directives_registry
-            for directive_name in registry:
-                if docname in registry[directive_name]:
-                    del registry[directive_name][docname]
-        if hasattr(env, "sphinx_gated_directives_super_registry"):
-            super_registry = env.sphinx_gated_directives_super_registry
-            if docname in super_registry:
-                del super_registry[docname]
+    # only perge if needed
+    # if hasattr(env, "sphinx_gated_directives_registry"):
+    #     registry = env.sphinx_gated_directives_registry
+    #     for directive_name in registry:
+    #         if docname in registry[directive_name]:
+    #             del registry[directive_name][docname]
+    if hasattr(env, "sphinx_gated_directives_super_registry"):
+        super_registry = env.sphinx_gated_directives_super_registry
+        if docname in super_registry:
+            del super_registry[docname]
 
 # Transform to check validity of start-end pairs
 class CheckGatedDirectivesTransform(SphinxTransform):
@@ -359,8 +358,8 @@ class CheckGatedDirectivesTransform(SphinxTransform):
 
     def apply(self, **kwargs):
         env = self.env
-        if not hasattr(env, "sphinx_gated_directives_registry"):
-            return
+        # if not hasattr(env, "sphinx_gated_directives_registry"):
+        #     return
         if not hasattr(env, "sphinx_gated_directives_super_registry"):
             return
         
