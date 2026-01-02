@@ -6,6 +6,124 @@ kernelspec:
 
 # TeachBooks Manual
 
+## Nesting inside of a start-directive
+
+### Different directives
+
+::::{prf:theorem-start} The parent theorem
+:label: parent-theorem-label
+
+This is a parent theorem. This text is inside the parent theorem.
+
+:::{prf:axiom-start} A child theorem
+:label: child-axiom-label
+
+This is a child axiom. This text is inside the child directive.
+:::
+
+This is text after the child-start, before the child-end, inside the parent theorem.
+
+:::{prf:axiom-end}
+:::
+
+Finally some text after the entire child, inside the theorem start.
+
+::::
+
+Some text after the entire parent theorem start, but before the parent theorem end.
+
+:::{prf:theorem-end}
+:::
+
+### Same directives
+
+::::{prf:theorem-start} The parent theorem
+:label: parent-theorem-label2
+
+This is a parent theorem. This text is inside the parent theorem.
+
+:::{prf:theorem-start} A child theorem
+:label: child-theorem-label
+
+This is a child theorem. This text is inside the child directive.
+:::
+
+This is text after the child-start, before the child-end, inside the parent theorem.
+
+:::{prf:theorem-end}
+:::
+
+Finally some text after the entire child, inside the theorem start.
+
+::::
+
+Some text after the entire parent theorem start, but before the parent theorem end.
+
+:::{prf:theorem-end}
+:::
+
+## Nesting outside of a start-directive
+
+### Different directives
+
+Crashes still:
+
+<!-- ::::{prf:theorem-start} The parent theorem
+:label: parent-theorem-label3
+
+This is a parent theorem. This text is inside the parent theorem.
+::::
+
+Some text outside the parent theorem start, before the child start directive.
+
+:::{prf:axiom-start} A child theorem
+:label: child-axiom-label2
+
+This is a child axiom. This text is inside the child directive.
+:::
+
+This is text after the child-start, before the child-end.
+
+:::{prf:axiom-end}
+:::
+
+Finally some text after the entire child, outside the theorem start, before the end.
+
+:::{prf:theorem-end}
+::: -->
+
+### Same directives
+
+Crashes still:
+
+<!-- ::::{prf:theorem-start} The parent theorem
+:label: parent-theorem-label4
+
+This is a parent theorem. This text is inside the parent theorem.
+::::
+
+Some text outside the parent theorem start, before the child start directive.
+
+:::{prf:theorem-start} A child theorem
+:label: child-theorem-label5
+
+This is a child theorem. This text is inside the child directive.
+:::
+
+This is text after the child-start, before the child-end.
+
+:::{prf:theorem-end}
+:::
+
+Finally some text after the entire child, outside the theorem start, before the end.
+
+:::{prf:theorem-end}
+::: -->
+
+## Examples with code
+
+### Block directive with also a figure
+
 :::{prf:theorem-start} A title
 :label: theorem-label
 
@@ -31,6 +149,8 @@ print(f"{a} {b} {c}")
 
 :::{prf:theorem-end}
 :::
+
+### Figure directive with nothing with also another figure
 
 :::{figure-start} images/nothing.svg
 :name: figure-label

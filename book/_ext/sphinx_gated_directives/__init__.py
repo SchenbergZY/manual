@@ -30,6 +30,9 @@ from docutils import nodes
 from docutils.parsers.rst import Directive
 from docutils.parsers.rst import directives as du_directives
 
+from dataclasses import dataclass, field
+from typing import Dict, Optional
+
 SUFFIX_START = "-start"
 SUFFIX_END = "-end"
 
@@ -142,7 +145,7 @@ def make_startified_class(
             else:
                 children = [children]
         # create a start_node and add all result nodes as its children
-        start_node_instance = start_node()
+        start_node_instance = start_node(orig_name)
         start_node_instance += children
         result = [start_node_instance]
 
@@ -267,7 +270,7 @@ def make_endified_class(
         # return []
         # next line should be good enough, but raises an error as not all has been implemented
         # maybe we need end nodes per directive type?
-        return [end_node()]
+        return [end_node(orig_name)]
 
     attrs["run"] = run
     new_cls_name = f"{base_cls.__name__}_End_For_{orig_name.replace(':', '_')}"
@@ -333,10 +336,15 @@ def setup(app):
 # Node classes for start and end directives
 
 class start_node(nodes.Admonition, nodes.Element):
-    pass
+    
+    def __init__(self, type_of_directive: str=""):
+        self.type_of_directive = type_of_directive
+        super().__init__()
 
 class end_node(nodes.Admonition, nodes.Element):
-    pass
+    def __init__(self, type_of_directive: str=""):
+        self.type_of_directive = type_of_directive
+        super().__init__()
 
 # purge_registry
 def purge_registries(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
@@ -375,7 +383,7 @@ class CheckGatedDirectivesTransform(SphinxTransform):
             end = super_registry[docname]["end"]
             structure = "\n  ".join(super_registry[docname]["msg"])
             sequence = "".join(super_registry[docname]["sequence"])
-            groups = re.findall("(SE)", sequence)
+            validate_SE_result = validate_SE(sequence)
             if len(start) > len(end):
                 msg = f"The document {docname} contains more start directives than end directives:\n  {structure}\nPlease ensure each start directive has a corresponding end directive."
                 logger.error(msg)
@@ -385,21 +393,23 @@ class CheckGatedDirectivesTransform(SphinxTransform):
                 logger.error(msg)
                 error = True
             # at this point, len(start) == len(end)
-            elif len(groups) != len(start) or len(groups) != len(end):
-                msg = f"The document {docname} contains nested start and end directives:\n  {structure}\nThis is not allowed. Please correct the nesting."
+            # now check for correct nesting
+            elif not validate_SE_result.is_valid:
+                msg = f"The document {docname} contains incorrectly nested start and end directives:\n  {structure}\nThis is not allowed. Please correct the nesting."
                 logger.error(msg)
                 error = True
             else:
-                # At this point, every start is followed by an end.
+                # At this point, every start is matched with an end
                 # Now check that types match in order.
                 types = super_registry[docname]["type"]
-                start_type = types[::2]
-                end_type = types[1::2]
+                start_type = [types[k] for k in validate_SE_result.pairs.keys()]
+                end_type = [types[v] for v in validate_SE_result.pairs.values()]
                 for i in range(len(start_type)):
                     if start_type[i] != end_type[i]:
                         msg = f"The document {docname} contains mismatched start and end directives at lines {start[i]} and {end[i]}:\n  {structure}\nPlease ensure that start and end directives match in type."
                         logger.error(msg)
                         error = True
+                        break
 
         if error:
             raise Exception(f"[sphinx-gated-directives] An error has occurred when parsing gated directives in {docname}.\nPlease check warning messages above.")
@@ -506,3 +516,59 @@ def findall(node: Element, *args, **kwargs) -> Iterator[Element]:
     # note a difference is that findall is an iterator
     impl = getattr(node, "findall", node.traverse)
     return iter(impl(*args, **kwargs))
+
+@dataclass
+class SEValidationResult:
+    is_valid: bool
+    pairs: Dict[int, int] = field(default_factory=dict)  # {S_index: E_index}
+    error_index: Optional[int] = None                   # index of first error, if any
+    error_message: Optional[str] = None                 # description of the error, if any
+
+def validate_SE(s: str) -> SEValidationResult:
+    """
+    Validates a string containing only 'S' (open) and 'E' (close).
+    Returns:
+        SEValidationResult with:
+        - is_valid: True iff all brackets match and no invalid characters occur.
+        - pairs: dict mapping each 'S' index to the corresponding 'E' index.
+                 (zero-based indices in the original string)
+        - error_index, error_message: populated on first failure.
+    Errors reported:
+        * Invalid character (not 'S' or 'E').
+        * 'E' encountered before any available 'S'.
+        * Unmatched 'S' remaining at the end.
+    The pairs dict is still returned for all successfully matched pairs up to the error.
+    """
+    stack = []            # stack of indices of unmatched 'S'
+    pairs: Dict[int, int] = {}
+
+    for i, ch in enumerate(s):
+        if ch == 'S':
+            stack.append(i)
+        elif ch == 'E':
+            if not stack:
+                return SEValidationResult(
+                    is_valid=False,
+                    pairs=pairs,
+                    error_index=i,
+                    error_message="Encountered 'E' before a matching 'S'."
+                )
+            s_index = stack.pop()
+            pairs[s_index] = i
+        else:
+            return SEValidationResult(
+                is_valid=False,
+                pairs=pairs,
+                error_index=i,
+                error_message=f"Invalid character: {ch!r}. Only 'S' and 'E' are allowed."
+            )
+
+    if stack:
+        return SEValidationResult(
+            is_valid=False,
+            pairs=pairs,
+            error_index=len(s),
+            error_message=f"{len(stack)} unmatched 'S' remaining at end."
+        )
+
+    return SEValidationResult(is_valid=True, pairs=pairs)

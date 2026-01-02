@@ -19,6 +19,7 @@ sphinx:
   - teachbooks_favourites
   - teachbooks_sphinx_grasple
   - sphinx_apa_references
+  - sphinx_tudelft_theme
   config:
     language: en
     html_js_files:
