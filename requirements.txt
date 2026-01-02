@@ -11,3 +11,5 @@ sphinx-apa-references
 myst_nb
 numpy
 matplotlib
+
+sphinx-tudelft-theme == 1.2.1

@@ -15,7 +15,7 @@ kernelspec:
 
 This is a parent theorem. This text is inside the parent theorem.
 
-:::{prf:axiom-start} A child theorem
+:::{prf:axiom-start} A child axiom
 :label: child-axiom-label
 
 This is a child axiom. This text is inside the child directive.
