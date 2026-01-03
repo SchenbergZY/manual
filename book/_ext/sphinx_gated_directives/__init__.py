@@ -249,9 +249,12 @@ def _register_new_directives(app, env, docnames):
     snapshot_names = set(unified.keys())
     added = 0
 
+    suffix_separator = cfg["suffix_separator"]
+    suffix_start = cfg["suffix_start"]
+    suffix_end = cfg["suffix_end"]
     for orig_name, obj in sorted(unified.items()):
 
-        new_name = f"{orig_name}{cfg["suffix_separator"]}{cfg["suffix_start"]}"
+        new_name = f"{orig_name}{suffix_separator}{suffix_start}"
         # add start and end directives if not already present, or if override is requested explicitly
         if new_name in snapshot_names:
             if isinstance(cfg["override_existing"], bool):
@@ -260,7 +263,7 @@ def _register_new_directives(app, env, docnames):
             else:
                 if orig_name not in cfg["override_existing"]:
                     continue
-        end_name = f"{orig_name}{cfg["suffix_separator"]}{cfg["suffix_end"]}"
+        end_name = f"{orig_name}{suffix_separator}{suffix_end}"
         if end_name in snapshot_names:
             if isinstance(cfg["override_existing"], bool):
                 if cfg["override_existing"] is False:
