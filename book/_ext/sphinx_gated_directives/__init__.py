@@ -210,22 +210,25 @@ def make_end_class(orig_name: str, base_cls: type[Directive]) -> type[Directive]
     return type(new_cls_name, (base_cls,), attrs)
 
 def _should_skip_name(orig_name: str, cfg: dict) -> bool:
+    suffix_separator = cfg["suffix_separator"]
+    suffix_start = cfg["suffix_start"]
+    suffix_end = cfg["suffix_end"]
     if isinstance(cfg["override_existing"],bool):
         if cfg["override_existing"] is True:
             return False
         else:
-            if orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_start"]}"):
+            if orig_name.endswith(f"{suffix_separator}{suffix_start}"):
                 return True
             else:
-                return orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_end"]}")
+                return orig_name.endswith(f"{suffix_separator}{suffix_end}")
     elif isinstance(cfg["override_existing"],list):
         if orig_name in cfg["override_existing"]:
             return False
         else:
-            if orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_start"]}"):
+            if orig_name.endswith(f"{suffix_separator}{suffix_start}"):
                 return True
             else:
-                return orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_end"]}")
+                return orig_name.endswith(f"{suffix_separator}{suffix_end}")
 
 def _register_new_directives(app, env, docnames):
 
