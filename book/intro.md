@@ -74,20 +74,26 @@ This is a parent theorem. This text is inside the parent theorem.
 
 Some text outside the parent theorem start, before the child start directive.
 
-:::{prf:axiom-start} A child theorem
-:label: child-axiom-label2
+:::{exercise-start} A child exercise
+:label: child-exercise-label2
 
-This is a child axiom. This text is inside the child directive.
+This is a child exercise. This text is inside the child directive.
 :::
 
 This is text after the child-start, before the child-end.
 
-:::{prf:axiom-end}
+:::{exercise-end}
 :::
 
 Finally some text after the entire child, outside the theorem start, before the end.
 
 :::{prf:theorem-end}
+:::
+
+:::{exercise} This is an exercise outside any theorem.
+:label: exercise-outside-theorem
+
+Solve this exercise.
 :::
 
 ### Same directives
@@ -114,6 +120,27 @@ This is text after the child-start, before the child-end.
 Finally some text after the entire child, outside the theorem start, before the end.
 
 :::{prf:theorem-end}
+:::
+
+### Nested exercise directives
+
+:::{exercise-start} An outer exercise with an inner exercise between start and end
+:label: outer-exercise-label
+This is an outer exercise. This text is inside the outer exercise.
+:::
+
+:::{exercise-start} An inner exercise
+:label: inner-exercise-label
+This is an inner exercise. This text is inside the inner exercise.
+:::
+This is text after the inner exercise start, before the inner exercise end.
+
+:::{exercise-end}
+:::
+
+Finally some text after the entire inner exercise, inside the outer exercise.
+
+:::{exercise-end}
 :::
 
 ## Examples with code

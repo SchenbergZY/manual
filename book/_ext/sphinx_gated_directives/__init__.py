@@ -42,8 +42,9 @@ from docutils.parsers.rst import directives as du_directives
 
 from dataclasses import dataclass, field
 
-SUFFIX_START = "-start"
-SUFFIX_END = "-end"
+SUFFIX_START = "start"
+SUFFIX_END = "end"
+SUFFIX_SEPARATOR = "-"
 
 def _is_class_directive(obj) -> bool:
     return inspect.isclass(obj) and issubclass(obj, Directive)
@@ -134,24 +135,24 @@ def make_start_class(orig_name: str, base_cls: type[Directive]) -> type[Directiv
         if env is not None:
             docname = env.docname
             # 1) Check whether super registry has been created, if not, create it
-            if not hasattr(env, "sphinx_gated_directives_super_registry"):
-                env.sphinx_gated_directives_super_registry = {}
+            if not hasattr(env, "sphinx_gated_directives_registry"):
+                env.sphinx_gated_directives_registry = {}
             # 2) Register current usage in the super registry
-            super_registry = env.sphinx_gated_directives_super_registry
-            if docname not in super_registry:
-                super_registry[docname] = {
+            registry = env.sphinx_gated_directives_registry
+            if docname not in registry:
+                registry[docname] = {
                     "start": [],
                     "end": [],
                     "sequence": [],
                     "msg": [],
                     "type": [],
                 }
-            super_registry[docname]["start"].append(self.lineno)
-            super_registry[docname]["sequence"].append("S")
-            super_registry[docname]["msg"].append(
+            registry[docname]["start"].append(self.lineno)
+            registry[docname]["sequence"].append("S")
+            registry[docname]["msg"].append(
                 f"{self.name} at line: {self.lineno}"
             )
-            super_registry[docname]["type"].append(orig_name)
+            registry[docname]["type"].append(orig_name)
 
         return result
 
@@ -183,24 +184,24 @@ def make_end_class(orig_name: str, base_cls: type[Directive]) -> type[Directive]
         if env is not None:
             docname = env.docname
             # 1) Check whether super registry has been created, if not, create it
-            if not hasattr(env, "sphinx_gated_directives_super_registry"):
-                env.sphinx_gated_directives_super_registry = {}
+            if not hasattr(env, "sphinx_gated_directives_registry"):
+                env.sphinx_gated_directives_registry = {}
             # 2) Register current usage in the super registry
-            super_registry = env.sphinx_gated_directives_super_registry
-            if docname not in super_registry:
-                super_registry[docname] = {
+            registry = env.sphinx_gated_directives_registry
+            if docname not in registry:
+                registry[docname] = {
                     "start": [],
                     "end": [],
                     "sequence": [],
                     "msg": [],
                     "type": [],
                 }
-            super_registry[docname]["end"].append(self.lineno)
-            super_registry[docname]["sequence"].append("E")
-            super_registry[docname]["msg"].append(
+            registry[docname]["end"].append(self.lineno)
+            registry[docname]["sequence"].append("E")
+            registry[docname]["msg"].append(
                 f"{self.name} at line: {self.lineno}"
             )
-            super_registry[docname]["type"].append(orig_name)
+            registry[docname]["type"].append(orig_name)
 
         return [end_node()]
 
@@ -208,28 +209,73 @@ def make_end_class(orig_name: str, base_cls: type[Directive]) -> type[Directive]
     new_cls_name = f"{base_cls.__name__}_End_For_{orig_name.replace(':', '_')}"
     return type(new_cls_name, (base_cls,), attrs)
 
-def _should_skip_name(orig_name: str) -> bool:
-    return orig_name.endswith(SUFFIX_START) or orig_name.endswith(SUFFIX_END)
+def _should_skip_name(orig_name: str, cfg: dict) -> bool:
+    if isinstance(cfg["override_existing"],bool):
+        if cfg["override_existing"] is True:
+            return False
+        else:
+            if orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_start"]}"):
+                return True
+            else:
+                return orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_end"]}")
+    elif isinstance(cfg["override_existing"],list):
+        if orig_name in cfg["override_existing"]:
+            return False
+        else:
+            if orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_start"]}"):
+                return True
+            else:
+                return orig_name.endswith(f"{cfg["suffix_separator"]}{cfg["suffix_end"]}")
 
 def _register_new_directives(app, env, docnames):
+
+    # get options and add missing default values
+    cfg = app.config.sphinx_gated_directives
+    if "override_existing" not in cfg:
+        cfg["override_existing"] = False
+    elif isinstance(cfg["override_existing"], str):
+        cfg["override_existing"] = [cfg["override_existing"]]
+    if "suffix_start" not in cfg:
+        cfg["suffix_start"] = SUFFIX_START
+    if "suffix_end" not in cfg:
+        cfg["suffix_end"] = SUFFIX_END
+    if "suffix_separator" not in cfg:
+        cfg["suffix_separator"] = SUFFIX_SEPARATOR
+
     unified = _get_unified_registry(app)
     snapshot_names = set(unified.keys())
     added = 0
 
     for orig_name, obj in sorted(unified.items()):
-        if _should_skip_name(orig_name):
-            continue
 
-        new_name = f"{orig_name}{SUFFIX_START}"
+        new_name = f"{orig_name}{cfg["suffix_separator"]}{cfg["suffix_start"]}"
+        # add start and end directives if not already present, or if override is requested explicitly
         if new_name in snapshot_names:
+            if isinstance(cfg["override_existing"], bool):
+                if cfg["override_existing"] is False:
+                    continue
+            else:
+                if orig_name not in cfg["override_existing"]:
+                    continue
+        end_name = f"{orig_name}{cfg["suffix_separator"]}{cfg["suffix_end"]}"
+        if end_name in snapshot_names:
+            if isinstance(cfg["override_existing"], bool):
+                if cfg["override_existing"] is False:
+                    continue
+            else:
+                if orig_name not in cfg["override_existing"]:
+                    continue
+
+        # if the original name is itself a start or end directive, skip
+        if _should_skip_name(orig_name,cfg):
             continue
 
         try:
             if _is_class_directive(obj):
                 start_cls = make_start_class(orig_name, obj) # new class based on original so all properties are inherited
-                app.add_directive(new_name, start_cls)
+                app.add_directive(new_name, start_cls,override=True)
                 end_cls = make_end_class(orig_name, Directive) # because it does not generate anything, most simple directive possible
-                app.add_directive(f"{orig_name}{SUFFIX_END}", end_cls)
+                app.add_directive(end_name, end_cls,override=True)
                 added += 1
             else:
                 logger.debug(f"[sphinx-gated-directives] '{orig_name}' is not a class directive; skipping.")
@@ -237,6 +283,11 @@ def _register_new_directives(app, env, docnames):
             logger.warning(f"[sphinx-gated-directives] failed to register new classes for directive '{orig_name}':\n{e}")
 
 def setup(app):
+    # Register a config value to set options for the extension
+    app.add_config_value("sphinx_gated_directives", {}, "env")
+
+    # Register a function to check if config value structure is correct
+    app.connect("config-inited", check_config_values)
 
     # register function to purge registries at start of build per document
     app.connect("env-purge-doc", purge_registries)
@@ -267,10 +318,10 @@ class end_node(nodes.Admonition, nodes.Element):
 
 def purge_registries(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
 
-    if hasattr(env, "sphinx_gated_directives_super_registry"):
-        super_registry = env.sphinx_gated_directives_super_registry
-        if docname in super_registry:
-            del super_registry[docname]
+    if hasattr(env, "sphinx_gated_directives_registry"):
+        registry = env.sphinx_gated_directives_registry
+        if docname in registry:
+            del registry[docname]
 
 # Transform to check validity of start-end pairs
 class CheckGatedDirectivesTransform(SphinxTransform):
@@ -278,17 +329,17 @@ class CheckGatedDirectivesTransform(SphinxTransform):
 
     def apply(self, **kwargs):
         env = self.env
-        if not hasattr(env, "sphinx_gated_directives_super_registry"):
+        if not hasattr(env, "sphinx_gated_directives_registry"):
             return
         
-        super_registry = env.sphinx_gated_directives_super_registry
+        registry = env.sphinx_gated_directives_registry
         error = False
         docname = self.env.docname
-        if docname in super_registry:
-            start = super_registry[docname]["start"]
-            end = super_registry[docname]["end"]
-            structure = "\n  ".join(super_registry[docname]["msg"])
-            sequence = "".join(super_registry[docname]["sequence"])
+        if docname in registry:
+            start = registry[docname]["start"]
+            end = registry[docname]["end"]
+            structure = "\n  ".join(registry[docname]["msg"])
+            sequence = "".join(registry[docname]["sequence"])
             validate_SE_result = validate_SE(sequence)
             if len(start) > len(end):
                 msg = f"[sphinx-gated-directives] The document {docname} contains more start directives than end directives:\n  {structure}\nPlease ensure each start directive has a corresponding end directive."
@@ -307,7 +358,7 @@ class CheckGatedDirectivesTransform(SphinxTransform):
             else:
                 # At this point, every start is matched with an end
                 # Now check that types match in order.
-                types = super_registry[docname]["type"]
+                types = registry[docname]["type"]
                 start_type = [types[k] for k in validate_SE_result.pairs.keys()]
                 end_type = [types[v] for v in validate_SE_result.pairs.values()]
                 for i in range(len(start_type)):
@@ -325,11 +376,11 @@ class MergeGatedDirectivesTransform(SphinxTransform):
 
     def apply(self, **kwargs):
         env = self.env
-        if not hasattr(env, "sphinx_gated_directives_super_registry"):
+        if not hasattr(env, "sphinx_gated_directives_registry"):
             return
-        super_registry = env.sphinx_gated_directives_super_registry
+        registry = env.sphinx_gated_directives_registry
         docname = self.env.docname
-        if docname not in super_registry:
+        if docname not in registry:
             return
         
         start_nodes = findall(self.document, start_node)
@@ -445,3 +496,44 @@ def validate_SE(s: str) -> SEValidationResult:
         )
 
     return SEValidationResult(is_valid=True, pairs=pairs)
+
+def check_config_values(app: Sphinx, config) -> None:
+    cfg = config.sphinx_gated_directives
+    if not isinstance(cfg, dict):
+        logger.error("[sphinx-gated-directives] The configuration value 'sphinx_gated_directives' should be a dictionary.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives'. Expected a dictionary.")
+        return
+    # Implemented options:
+    # - override_existing: bool (default: False), string or list of strings
+    override_existing = cfg.get("override_existing", False)
+    if not (isinstance(override_existing, bool) or isinstance(override_existing, str) or (isinstance(override_existing, list) and all(isinstance(x, str) for x in override_existing))):
+        logger.error("[sphinx-gated-directives] The configuration option 'override_existing' should be a boolean, a string, or a list of strings.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.override_existing'. Expected a boolean, string, or list of strings.")
+    # - suffix_start: string (default: 'start'), only a-z allowed, or empty string
+    suffix_start = cfg.get("suffix_start", SUFFIX_START)
+    if not isinstance(suffix_start, str):
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_start' should be a string.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_start'. Expected a string.")
+    if suffix_start != "" and (not suffix_start.islower() or not suffix_start.isalpha()):
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_start' should contain only lowercase letters (a-z).")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_start'. Expected only lowercase letters (a-z).")
+    # - suffix_end: string (default: 'end'), only a-z allowed, or empty string
+    suffix_end = cfg.get("suffix_end", SUFFIX_END)
+    if not isinstance(suffix_end, str):
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_end' should be a string.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_end'. Expected a string.")
+    if suffix_end != "" and (not suffix_end.islower() or not suffix_end.isalpha()):
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_end' should contain only lowercase letters (a-z).")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_end'. Expected only lowercase letters (a-z).")
+    # - suffix_separator: string (default: '-'), single character, no space, no underscore, no colon, or empty string
+    suffix_separator = cfg.get("suffix_separator", SUFFIX_SEPARATOR)
+    if not isinstance(suffix_separator, str):
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_separator' should be a string.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_separator'. Expected a string.")
+    if len(suffix_separator) > 1:
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_separator' should be a single character or an empty string.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_separator'. Expected a single character or an empty string.")
+    if suffix_separator in [' ', '_',':']:
+        logger.error("[sphinx-gated-directives] The configuration option 'suffix_separator' should not be a space, nor an underscore, nor a colon.")
+        raise ValueError("Invalid configuration for 'sphinx_gated_directives.suffix_separator'. Expected something other than a space, an underscore, or a colon.")
+    
