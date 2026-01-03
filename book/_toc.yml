@@ -2,6 +2,11 @@ format: jb-book
 root: intro
 
 parts:
+  - caption: test sphinx_gated_directives
+    chapters:
+    - file: instructie.ipynb
+    - file: instructie_2.ipynb
+    - file: lesoefeningen.ipynb
   - caption: Your First TeachBook!
     chapters:
     - file: intro/book.md

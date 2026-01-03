@@ -57,6 +57,8 @@ sphinx:
         summaries: false
         individual: false
     nb_execution_includepatterns: "**/MANUAL.ipynb"
+    sphinx_codex_name: "Voorbeeld"
+    sphinx_codex_merge_with_proof:     true # default value
 
 teachbooks:
   attribution_location: margin
