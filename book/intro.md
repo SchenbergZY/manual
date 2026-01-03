@@ -66,9 +66,7 @@ Some text after the entire parent theorem start, but before the parent theorem e
 
 ### Different directives
 
-Crashes still:
-
-<!-- ::::{prf:theorem-start} The parent theorem
+::::{prf:theorem-start} The parent theorem
 :label: parent-theorem-label3
 
 This is a parent theorem. This text is inside the parent theorem.
@@ -90,13 +88,11 @@ This is text after the child-start, before the child-end.
 Finally some text after the entire child, outside the theorem start, before the end.
 
 :::{prf:theorem-end}
-::: -->
+:::
 
 ### Same directives
 
-Crashes still:
-
-<!-- ::::{prf:theorem-start} The parent theorem
+::::{prf:theorem-start} The parent theorem
 :label: parent-theorem-label4
 
 This is a parent theorem. This text is inside the parent theorem.
@@ -118,7 +114,7 @@ This is text after the child-start, before the child-end.
 Finally some text after the entire child, outside the theorem start, before the end.
 
 :::{prf:theorem-end}
-::: -->
+:::
 
 ## Examples with code
 

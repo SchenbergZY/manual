@@ -1,24 +1,34 @@
-# startify_directives_all.py
 """
-Create a '-start' companion for every registered directive (class-based).
+~~~~~~~~~~~~~~~~~~~~
 
-Rules:
-  - Skip originals whose name already ends with '-start' or '-end'.
-  - Skip if '<name>-start' already exists.
-  - Class-based originals -> register a subclass calling original run().
+sphinx_gated_directives
 
-Usage:
-  extensions = ["startify_directives_all"]
+~~~~~~~~~~~~~~~~~~~~
+
+This package is an extension for Sphinx that creates a '-start' companion
+and a '-end' companion for every registered class-based directive.
+
+These new directives can be used to "gate" content in the documentation,
+similar to how the gated directives of sphinx-exercise work.
+
+This extension is based on the extension executablebooks/sphinx-exercise:
+https://github.com/executablebooks/sphinx-exercise
+
+Original project licensed under MIT © Executable Books Developers.
+See the repository LICENSE for details.
+
+Our implementation reuses certain ideas and code snippets (e.g., Docutils
+compatibility helpers) to fit the needs of this extension.
+
 """
 
 from __future__ import annotations
 from docutils.nodes import Element
 from typing import Iterator
-import re
 import copy
 import importlib
 import inspect
-from typing import Callable, Dict, Iterable, List, Optional
+from typing import Dict, Iterable, Optional
 from sphinx.transforms import SphinxTransform
 from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
@@ -31,34 +41,14 @@ from docutils.parsers.rst import Directive
 from docutils.parsers.rst import directives as du_directives
 
 from dataclasses import dataclass, field
-from typing import Dict, Optional
 
 SUFFIX_START = "-start"
 SUFFIX_END = "-end"
 
-
-# ---------------------------
-# Helpers: identification
-# ---------------------------
-
 def _is_class_directive(obj) -> bool:
     return inspect.isclass(obj) and issubclass(obj, Directive)
 
-
-# ---------------------------
-# Helpers: registry access
-# ---------------------------
-
 def _get_unified_registry(app=None) -> Dict[str, object]:
-    """
-    Build a unified {name -> implementation} mapping of directives.
-
-    Sources:
-      1) docutils.parsers.rst.directives._directives  (loaded/added so far)
-      2) docutils.parsers.rst.directives._directive_registry (lazy map of
-         name -> (module, class) for builtins); import any missing ones.
-      3) Sphinx app.registry (if provided) for extension-registered directives
-    """
     # 1) Already-loaded directives (includes Sphinx & extensions registered via add_directive)
     unified: Dict[str, object] = dict(getattr(du_directives, "_directives", {}))
 
@@ -104,21 +94,11 @@ def _get_unified_registry(app=None) -> Dict[str, object]:
 
     return unified
 
-
-# ---------------------------
-# Helpers: class generation
-# ---------------------------
-
 def _copy_option_spec(option_spec):
     return copy.copy(option_spec) if isinstance(option_spec, dict) else option_spec
 
-def make_startified_class(
-    orig_name: str,
-    base_cls: type[Directive],
-) -> type[Directive]:
-    """
-    Subclass `base_cls` to call original run().
-    """
+def make_start_class(orig_name: str, base_cls: type[Directive]) -> type[Directive]:
+    
     attrs = {}
     for attr in (
         "required_arguments",
@@ -145,7 +125,7 @@ def make_startified_class(
             else:
                 children = [children]
         # create a start_node and add all result nodes as its children
-        start_node_instance = start_node(orig_name)
+        start_node_instance = start_node()
         start_node_instance += children
         result = [start_node_instance]
 
@@ -153,30 +133,10 @@ def make_startified_class(
         env = getattr(self.state.document.settings, "env", None)
         if env is not None:
             docname = env.docname
-            # # 1) Check whether main registry is already created, if not, create it
-            # if not hasattr(env, "sphinx_gated_directives_registry"):
-            #     env.sphinx_gated_directives_registry = {}
-            # # 2) Check whether a sub-registry for current directive type is already created, if not, create it
-            # if orig_name not in env.sphinx_gated_directives_registry:
-            #     env.sphinx_gated_directives_registry[orig_name] = {}
-            # # 3) Register current usage in the registry for this doc and this type
-            # gated_registry = env.sphinx_gated_directives_registry[orig_name]
-            # if docname not in gated_registry:
-            #     gated_registry[docname] = {
-            #         "start": [],
-            #         "end": [],
-            #         "sequence": [],
-            #         "msg": [],
-            #     }
-            # gated_registry[docname]["start"].append(self.lineno)
-            # gated_registry[docname]["sequence"].append("S")
-            # gated_registry[docname]["msg"].append(
-            #     f"{self.name} at line: {self.lineno}"
-            # )
-            # 4) Check whether super registry has been created, if not, create it
+            # 1) Check whether super registry has been created, if not, create it
             if not hasattr(env, "sphinx_gated_directives_super_registry"):
                 env.sphinx_gated_directives_super_registry = {}
-            # 5) Register current usage in the super registry
+            # 2) Register current usage in the super registry
             super_registry = env.sphinx_gated_directives_super_registry
             if docname not in super_registry:
                 super_registry[docname] = {
@@ -199,13 +159,8 @@ def make_startified_class(
     new_cls_name = f"{base_cls.__name__}_Start_For_{orig_name.replace(':', '_')}"
     return type(new_cls_name, (base_cls,), attrs)
 
-def make_endified_class(
-    orig_name: str,
-    base_cls: type[Directive],
-) -> type[Directive]:
-    """
-    Just create a subclass to obtain an end node.
-    """
+def make_end_class(orig_name: str, base_cls: type[Directive]) -> type[Directive]:
+
     attrs = {}
     for attr in (
         "required_arguments",
@@ -227,30 +182,10 @@ def make_endified_class(
         env = getattr(self.state.document.settings, "env", None)
         if env is not None:
             docname = env.docname
-            # # 1) Check whether main registry is already created, if not, create it
-            # if not hasattr(env, "sphinx_gated_directives_registry"):
-            #     env.sphinx_gated_directives_registry = {}
-            # # 2) Check whether a sub-registry for current directive type is already created, if not, create it
-            # if orig_name not in env.sphinx_gated_directives_registry:
-            #     env.sphinx_gated_directives_registry[orig_name] = {}
-            # # 3) Register current usage in the registry for this doc and this type
-            # gated_registry = env.sphinx_gated_directives_registry[orig_name]
-            # if docname not in gated_registry:
-            #     gated_registry[docname] = {
-            #         "start": [],
-            #         "end": [],
-            #         "sequence": [],
-            #         "msg": [],
-            #     }
-            # gated_registry[docname]["end"].append(self.lineno)
-            # gated_registry[docname]["sequence"].append("E")
-            # gated_registry[docname]["msg"].append(
-            #     f"{self.name} at line: {self.lineno}"
-            # )
-            # 4) Check whether super registry has been created, if not, create it
+            # 1) Check whether super registry has been created, if not, create it
             if not hasattr(env, "sphinx_gated_directives_super_registry"):
                 env.sphinx_gated_directives_super_registry = {}
-            # 5) Register current usage in the super registry
+            # 2) Register current usage in the super registry
             super_registry = env.sphinx_gated_directives_super_registry
             if docname not in super_registry:
                 super_registry[docname] = {
@@ -267,23 +202,16 @@ def make_endified_class(
             )
             super_registry[docname]["type"].append(orig_name)
 
-        # return []
-        # next line should be good enough, but raises an error as not all has been implemented
-        # maybe we need end nodes per directive type?
-        return [end_node(orig_name)]
+        return [end_node()]
 
     attrs["run"] = run
     new_cls_name = f"{base_cls.__name__}_End_For_{orig_name.replace(':', '_')}"
     return type(new_cls_name, (base_cls,), attrs)
 
-# ---------------------------
-# Core logic
-# ---------------------------
-
 def _should_skip_name(orig_name: str) -> bool:
     return orig_name.endswith(SUFFIX_START) or orig_name.endswith(SUFFIX_END)
 
-def _register_startified_directives(app, env, docnames):
+def _register_new_directives(app, env, docnames):
     unified = _get_unified_registry(app)
     snapshot_names = set(unified.keys())
     added = 0
@@ -298,27 +226,26 @@ def _register_startified_directives(app, env, docnames):
 
         try:
             if _is_class_directive(obj):
-                start_cls = make_startified_class(orig_name, obj)
+                start_cls = make_start_class(orig_name, obj) # new class based on original so all properties are inherited
                 app.add_directive(new_name, start_cls)
-                end_cls = make_endified_class(orig_name, Directive) # because it does generate anything, most simple directive
+                end_cls = make_end_class(orig_name, Directive) # because it does not generate anything, most simple directive possible
                 app.add_directive(f"{orig_name}{SUFFIX_END}", end_cls)
                 added += 1
             else:
-                logger.debug(f"[startify] '{orig_name}' is not a class directive; skipping.")
+                logger.debug(f"[sphinx-gated-directives] '{orig_name}' is not a class directive; skipping.")
         except Exception as e:
-            logger.warning(f"[startify] failed to register '{new_name}': {e}")
+            logger.warning(f"[sphinx-gated-directives] failed to register new classes for directive '{orig_name}':\n{e}")
 
 def setup(app):
 
-    # register function to perge registries at start of build per document
+    # register function to purge registries at start of build per document
     app.connect("env-purge-doc", purge_registries)
     
-    # At the latest possible moment, register startified directives (also creates the endified ones)
-    app.connect("env-before-read-docs", _register_startified_directives,priority=10000000000000000000000000000)
+    # At the latest possible moment, register new directives
+    app.connect("env-before-read-docs", _register_new_directives,priority=10000000000000000000000000000)
 
-    # Register nodes, used as placeholder for end directives
-    # will be resolved in the transforms to something meaningful
-    # during merging of start-end blocks
+    # Register nodes
+    # During transformation phase, these nodes will be removed
     app.add_node(start_node)
     app.add_node(end_node)
 
@@ -329,32 +256,17 @@ def setup(app):
     app.add_transform(MergeGatedDirectivesTransform)
 
     return {
-        "version": "1.0",
         "parallel_read_safe": True,
     }
 
-# Node classes for start and end directives
-
 class start_node(nodes.Admonition, nodes.Element):
-    
-    def __init__(self, type_of_directive: str=""):
-        self.type_of_directive = type_of_directive
-        super().__init__()
+    pass
 
 class end_node(nodes.Admonition, nodes.Element):
-    def __init__(self, type_of_directive: str=""):
-        self.type_of_directive = type_of_directive
-        super().__init__()
+    pass
 
-# purge_registry
 def purge_registries(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
 
-    # only perge if needed
-    # if hasattr(env, "sphinx_gated_directives_registry"):
-    #     registry = env.sphinx_gated_directives_registry
-    #     for directive_name in registry:
-    #         if docname in registry[directive_name]:
-    #             del registry[directive_name][docname]
     if hasattr(env, "sphinx_gated_directives_super_registry"):
         super_registry = env.sphinx_gated_directives_super_registry
         if docname in super_registry:
@@ -366,15 +278,9 @@ class CheckGatedDirectivesTransform(SphinxTransform):
 
     def apply(self, **kwargs):
         env = self.env
-        # if not hasattr(env, "sphinx_gated_directives_registry"):
-        #     return
         if not hasattr(env, "sphinx_gated_directives_super_registry"):
             return
         
-        # First check the super registry for a correct structure
-        # demands:
-        # 1) equal number of start and end directives
-        # 2) no nesting of start-end pairs (so SSEE is not allowed, only SESE)
         super_registry = env.sphinx_gated_directives_super_registry
         error = False
         docname = self.env.docname
@@ -385,17 +291,17 @@ class CheckGatedDirectivesTransform(SphinxTransform):
             sequence = "".join(super_registry[docname]["sequence"])
             validate_SE_result = validate_SE(sequence)
             if len(start) > len(end):
-                msg = f"The document {docname} contains more start directives than end directives:\n  {structure}\nPlease ensure each start directive has a corresponding end directive."
+                msg = f"[sphinx-gated-directives] The document {docname} contains more start directives than end directives:\n  {structure}\nPlease ensure each start directive has a corresponding end directive."
                 logger.error(msg)
                 error = True
             elif len(end) > len(start):
-                msg = f"The document {docname} contains more end directives than start directives:\n  {structure}\nPlease ensure each end directive has a corresponding start directive."
+                msg = f"[sphinx-gated-directives] The document {docname} contains more end directives than start directives:\n  {structure}\nPlease ensure each end directive has a corresponding start directive."
                 logger.error(msg)
                 error = True
             # at this point, len(start) == len(end)
             # now check for correct nesting
             elif not validate_SE_result.is_valid:
-                msg = f"The document {docname} contains incorrectly nested start and end directives:\n  {structure}\nThis is not allowed. Please correct the nesting."
+                msg = f"[sphinx-gated-directives] The document {docname} contains incorrectly nested start and end directives:\n  {structure}\nThis is not allowed. Please correct the nesting."
                 logger.error(msg)
                 error = True
             else:
@@ -406,7 +312,7 @@ class CheckGatedDirectivesTransform(SphinxTransform):
                 end_type = [types[v] for v in validate_SE_result.pairs.values()]
                 for i in range(len(start_type)):
                     if start_type[i] != end_type[i]:
-                        msg = f"The document {docname} contains mismatched start and end directives at lines {start[i]} and {end[i]}:\n  {structure}\nPlease ensure that start and end directives match in type."
+                        msg = f"[sphinx-gated-directives] The document {docname} contains mismatched start and end directives at lines {start[i]} and {end[i]}:\n  {structure}\nPlease ensure that start and end directives match in type."
                         logger.error(msg)
                         error = True
                         break
@@ -414,22 +320,11 @@ class CheckGatedDirectivesTransform(SphinxTransform):
         if error:
             raise Exception(f"[sphinx-gated-directives] An error has occurred when parsing gated directives in {docname}.\nPlease check warning messages above.")
         
-        # no check per directive type is needed if no error in super registry is raised,
-        # as the super registry already ensures correctness for each type.
-        # if nesting is allowed in the future, this part needs to be re-implemented.
-        
-        
 class MergeGatedDirectivesTransform(SphinxTransform):
     default_priority = 10
 
     def apply(self, **kwargs):
         env = self.env
-        # Something to do here
-        # idea:
-        # 1) Find all start_nodes
-        # 2) for each start_node, find the corresponding end_node (i.e. next end_node)
-        # 3) collect all nodes in between
-        # 4) Take the first node after start_node, and add all other collected nodes as its children
         if not hasattr(env, "sphinx_gated_directives_super_registry"):
             return
         super_registry = env.sphinx_gated_directives_super_registry
@@ -437,80 +332,72 @@ class MergeGatedDirectivesTransform(SphinxTransform):
         if docname not in super_registry:
             return
         
-        # Each start-end pair is valid (checked before), so we can proceed to merge
-        # find all start nodes, as an iterator
-        # for each start node, find the next end node within the parent of start node
         start_nodes = findall(self.document, start_node)
         for start_n in start_nodes:
             parent = start_n.parent
-            # find the next end_node after start_n in parent
             found_start = False
             end_n = None
+            skip_end = 0
             for child in parent.children:
                 if child is start_n:
                     found_start = True
-                elif found_start and isinstance(child, end_node):
+                elif found_start and isinstance(child, end_node) and skip_end==0:
                     end_n = child
                     break
+                elif found_start and isinstance(child, end_node):
+                    skip_end -= 1
+                elif found_start and isinstance(child, start_node):
+                    skip_end += 1
             if end_n is None:
-                continue  # should not happen due to prior checks
+                logger.error(f"[sphinx-gated-directives] Could not find matching end directive for start directive at line {start_n.line} in document {docname}. Skipping merging for this pair.")
+                raise Exception(f"[sphinx-gated-directives] An error has occurred when parsing gated directives in {docname}.\nPlease check warning messages above.")
 
-            # collect all nodes between start_n and end_n
             start_index = parent.children.index(start_n)
             end_index = parent.children.index(end_n)
             between_nodes = parent.children[start_index + 1:end_index]
 
-            # We have to merge, but how is the question.
-            # we handle based on "experience" and "observation" of what kind of nodes are generated
-            # step 1: create a new container node to hold the merged content
-            # content of start_node
             new_nodes = start_n.children
-            # add content in between, depending on content in start_n
             if between_nodes:
                 has_section = False
                 has_caption = False
                 si = -1
-                content = new_nodes[-1]  # we assume that the last child of start_n holds the main content
+                content = new_nodes[-1]
                 for sn in content.children:
                     si += 1
                     if isinstance(sn, nodes.section):
-                        has_section = True # So probably a topic or similar (from sphinx-proof)
+                        has_section = True
                         section_index = si
                         section_node = sn
                         break
                     elif isinstance(sn, nodes.caption):
-                        has_caption = True # So probably a figure or similar
+                        has_caption = True
                         caption_index = si
                         caption_node = sn
                         break
                 if has_section:
-                    # if there are sections, we add all between nodes to this section
                     content[section_index] += between_nodes
                 elif has_caption:
-                    # if there is a caption, we add all between nodes before the caption
                     n = len(content.children)
                     pos = n - 1
                     for i, bn in enumerate(between_nodes):
-                            content.insert(pos + i, bn)  # insert sets parent/doc links
+                            content.insert(pos + i, bn)
                 else:
-                    # otherwise, we add all between nodes to the main content directly\
                     for bn in between_nodes:
-                        content += bn  # add sets parent/doc links
+                        content += bn
                     
-            # finally, replace start_n with new_nodes, and remove end_n and between_nodes
             start_pos = parent.children.index(start_n)
-            # remove end_n
             parent.remove(end_n)
-            # remove start_n
             parent.remove(start_n)
-            # remove between_nodes
             for bn in between_nodes:
                 parent.remove(bn)
-            # insert new_nodes at start_pos
             for i, nn in enumerate(new_nodes):
-                parent.insert(start_pos + i, nn)  # insert new structure
+                parent.insert(start_pos + i, nn)
 
 
+# SPDX-License-Identifier: MIT
+# Adapted from: executablebooks/sphinx-exercise, file: sphinx_exercise/_compat.py
+# Source: https://github.com/executablebooks/sphinx-exercise/blob/main/sphinx_exercise/_compat.py
+# License: MIT — © Executable Books Developers (see repository LICENSE).
 def findall(node: Element, *args, **kwargs) -> Iterator[Element]:
     # findall replaces traverse in docutils v0.18
     # note a difference is that findall is an iterator
@@ -525,21 +412,7 @@ class SEValidationResult:
     error_message: Optional[str] = None                 # description of the error, if any
 
 def validate_SE(s: str) -> SEValidationResult:
-    """
-    Validates a string containing only 'S' (open) and 'E' (close).
-    Returns:
-        SEValidationResult with:
-        - is_valid: True iff all brackets match and no invalid characters occur.
-        - pairs: dict mapping each 'S' index to the corresponding 'E' index.
-                 (zero-based indices in the original string)
-        - error_index, error_message: populated on first failure.
-    Errors reported:
-        * Invalid character (not 'S' or 'E').
-        * 'E' encountered before any available 'S'.
-        * Unmatched 'S' remaining at the end.
-    The pairs dict is still returned for all successfully matched pairs up to the error.
-    """
-    stack = []            # stack of indices of unmatched 'S'
+    stack = []
     pairs: Dict[int, int] = {}
 
     for i, ch in enumerate(s):
