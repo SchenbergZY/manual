@@ -19,8 +19,6 @@ sphinx:
   - sphinx_apa_references
   - sphinx_gated_directives
   config:
-    sphinx_gated_directives:
-      override_existing: ['exercise']
     language: en
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
@@ -55,8 +53,6 @@ sphinx:
         summaries: false
         individual: false
     nb_execution_includepatterns: "**/MANUAL.ipynb"
-    sphinx_codex_name: "Voorbeeld"
-    sphinx_codex_merge_with_proof:     true # default value
 
 teachbooks:
   attribution_location: margin
