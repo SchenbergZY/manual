@@ -1,8 +1,8 @@
-# teachbooks == 0.2.3
-git+https://github.com/TeachBooks/TeachBooks@issue-127
+teachbooks == 0.2.3
 sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
+sphinx-gated-directives
 
 teachbooks-sphinx-grasple
 
@@ -12,7 +12,3 @@ sphinx-apa-references
 myst_nb
 numpy
 matplotlib
-
-sphinx-tudelft-theme == 1.2.1
-
-git+https://github.com/TeachBooks/Sphinx-Gated-Directives

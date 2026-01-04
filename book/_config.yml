@@ -11,8 +11,6 @@ html:
   baseurl  : "https://teachbooks.io/manual/"
 
 sphinx:
-  local_extensions:
-    include_remove_yaml: _ext/
   extra_extensions:
   - sphinx_inline_tabs
   - sphinx.ext.imgconverter
