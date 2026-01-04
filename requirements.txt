@@ -1,7 +1,8 @@
-teachbooks == 0.2.3
+# teachbooks == 0.2.3
+git+https://github.com/TeachBooks/TeachBooks@issue-127
 sphinx-inline-tabs
 
-git+https://github.com/TeachBooks/TeachBooks-Favourites #bump codex
+git+https://github.com/TeachBooks/TeachBooks-Favourites
 
 teachbooks-sphinx-grasple
 
