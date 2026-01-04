@@ -13,3 +13,5 @@ numpy
 matplotlib
 
 sphinx-tudelft-theme == 1.2.1
+
+git+https://github.com/TeachBooks/Sphinx-Gated-Directives

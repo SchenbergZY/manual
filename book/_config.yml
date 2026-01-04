@@ -11,8 +11,6 @@ html:
   baseurl  : "https://teachbooks.io/manual/"
 
 sphinx:
-  local_extensions:
-    sphinx_gated_directives: _ext
   extra_extensions:
   - sphinx_inline_tabs
   - sphinx.ext.imgconverter
@@ -20,6 +18,7 @@ sphinx:
   - teachbooks_sphinx_grasple
   - sphinx_apa_references
   - sphinx_tudelft_theme
+  - sphinx_gated_directives
   config:
     sphinx_gated_directives:
       override_existing: ['exercise']
