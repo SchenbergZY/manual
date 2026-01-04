@@ -2,12 +2,6 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: test sphinx_gated_directives
-    chapters:
-    - external: https://github.com/TeachBooks/Sphinx-Gated-Directives/blob/main/MANUAL.md
-    - file: instructie.ipynb
-    - file: instructie_2.ipynb
-    - file: lesoefeningen.ipynb
   - caption: Your First TeachBook!
     chapters:
     - file: intro/book.md
@@ -95,6 +89,7 @@ parts:
       - external: https://github.com/TeachBooks/Sphinx-ref-graph/blob/manual/README.md
       - external: https://github.com/TeachBooks/Sphinx-GitHub-Alerts/blob/main/README.md
       - external: https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb # BUMP
+      - external: https://github.com/TeachBooks/Sphinx-Gated-Directives/blob/main/MANUAL.md
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
