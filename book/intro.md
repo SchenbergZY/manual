@@ -24,6 +24,7 @@ This is a child axiom. This text is inside the child directive.
 This is text after the child-start, before the child-end, inside the parent theorem.
 
 :::{prf:axiom-end}
+Text inside the end. This text will not be rendered.
 :::
 
 Finally some text after the entire child, inside the theorem start.
