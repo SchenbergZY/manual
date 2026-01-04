@@ -17,7 +17,6 @@ sphinx:
   - teachbooks_favourites
   - teachbooks_sphinx_grasple
   - sphinx_apa_references
-  - sphinx_tudelft_theme
   - sphinx_gated_directives
   config:
     sphinx_gated_directives:
