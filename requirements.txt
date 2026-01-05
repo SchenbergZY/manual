@@ -3,7 +3,6 @@ git+https://github.com/TeachBooks/TeachBooks@issue-127
 sphinx-inline-tabs
 
 git+https://github.com/TeachBooks/TeachBooks-Favourites
-sphinx-gated-directives
 
 teachbooks-sphinx-grasple
 
