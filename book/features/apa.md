@@ -131,3 +131,6 @@ sphinx:
     apastyle: _ext/                             # remove
     bracket_citation_style: _ext/               # remove
 ```
+```{bibliography}
+:filter: docname in docnames
+```
