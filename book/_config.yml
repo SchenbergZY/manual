@@ -53,6 +53,7 @@ sphinx:
         summaries: false
         individual: false
     nb_execution_includepatterns: "**/MANUAL.ipynb"
+    git_show_all_authors: true
 
 teachbooks:
   attribution_location: margin
