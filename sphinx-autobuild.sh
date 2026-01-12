@@ -24,4 +24,4 @@ sed -i "s/external_toc_path = '_toc.yml'/external_toc_path = '_toc_with_local_pa
 
 # Build and serve the Sphinx documentation with auto-reload
 # Opens browser automatically and ignores build artifacts and Python files
-sphinx-autobuild book book/_build/html --open-browser --ignore "book/_build/**" --pre-build "teachbooks build book/ --process-only"
+sphinx-autobuild book book/_build/html --open-browser --ignore "book/_build/**" --ignore "*.py" --ignore "book/references.bib" --ignore "book/_toc_with_local_paths.yml" --pre-build "teachbooks build book/ --process-only"
