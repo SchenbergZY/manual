@@ -40,7 +40,6 @@ TeachBooks Favourites is a Sphinx extension which collects all of TeachBooks' fa
 - [Sphinx toggle button (from Executable Books including TeachBooks contributions)](https://sphinx-togglebutton.readthedocs.io/en/latest/)
 - [Notebook execution patterns](../_git/github.com_TeachBooks_Sphinx-NB-Execution-Patterns/Manual/README.md)
 - [Sphinx Launch Buttons](../external/Sphinx-launch-buttons/README.md)
-- [Sphinx External ToC (from Executable Books, TeachBooks version of the original)](https://github.com/TeachBooks/sphinx-external-toc/blob/main/README.md)
 - [Sphinx GitHub Alerts](../_git/github.com_TeachBooks_Sphinx-GitHub-Alerts/main/README.md)
 - [Sphinx Metadata Figure](../_git/github.com_TeachBooks_Sphinx-Metadata-Figure/main/MANUAL.ipynb)
 - [Sphinx last updated by git (from Matthias Geier, TeachBooks version of the original)](https://github.com/TeachBooks/sphinx-last-updated-by-git)
