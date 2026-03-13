@@ -43,6 +43,10 @@ TeachBooks Favourites is a Sphinx extension which collects all of TeachBooks' fa
 - [Sphinx GitHub Alerts](../_git/github.com_TeachBooks_Sphinx-GitHub-Alerts/main/README.md)
 - [Sphinx Metadata Figure](../_git/github.com_TeachBooks_Sphinx-Metadata-Figure/main/MANUAL.ipynb)
 - [Sphinx last updated by git (from Matthias Geier, TeachBooks version of the original)](https://github.com/TeachBooks/sphinx-last-updated-by-git)
+- [Sphinx Gated Directives](../_git/github.com_TeachBooks_Sphinx-Gated-Directives/main/MANUAL.md)
+- [Teachbooks Zoomies](https://github.com/TeachBooks/TeachBooks-Zoomies/)
+- [TeachBooks Questions](../_git/github.com_TeachBooks_TeachBooks-Questions/main/MANUAL.md)
+
 
 The extension [Open in new tab](https://pypi.org/project/sphinx-new-tab-link/) is nice, but is not compatible with all setups (dependency clash) so is not included in TeachBooks-Favourites. 
 
