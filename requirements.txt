@@ -12,4 +12,4 @@ myst_nb
 numpy
 matplotlib
 
-git+https://github.com/TeachBooks/Sphinx-Sticky-Margin@test-manual
+git+https://github.com/TeachBooks/Sphinx-Sticky-Margin@first-steps #BUMP
