@@ -18,6 +18,7 @@ sphinx:
   - teachbooks_sphinx_grasple
   - sphinx_apa_references
   - sphinx_gated_directives
+  - sphinx_sticky_margin
   config:
     language: en
     html_js_files:
