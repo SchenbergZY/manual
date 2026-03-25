@@ -11,3 +11,5 @@ sphinx-apa-references
 myst_nb
 numpy
 matplotlib
+
+git+https://github.com/TeachBooks/Sphinx-Sticky-Margin@first-steps
