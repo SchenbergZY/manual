@@ -5,7 +5,8 @@ git+https://github.com/TeachBooks/TeachBooks-Favourites@all_authors
 
 teachbooks-sphinx-grasple
 
-sphinx-apa-references == 1.0.1
+# sphinx-apa-references == 1.0.1
+git+https://github.com/SchenbergZY/Sphinx-APA-References.git
 
 # For executing Jupyter Notebooks
 myst_nb
