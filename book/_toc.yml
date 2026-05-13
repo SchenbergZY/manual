@@ -91,6 +91,7 @@ parts:
       - external: https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb
       - external: https://github.com/TeachBooks/Sphinx-Gated-Directives/blob/main/MANUAL.md
       - external: https://github.com/TeachBooks/TeachBooks-Questions/blob/main/MANUAL.md
+      - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md
     - file: features/visuals.md
       sections:
       - external: https://github.com/TeachBooks/Sphinx-Accessibility/blob/manual/README.md
