@@ -102,6 +102,7 @@ parts:
       - file: external/Sphinx-Named-Colors/README.md
       - external: https://github.com/TeachBooks/Sphinx-Dropdown-Toggle/blob/main/MANUAL.md
       - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md
+      - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md
     - file: features/students
       sections:
       - file: external/annotater/README.md
